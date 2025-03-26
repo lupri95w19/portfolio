@@ -3,7 +3,7 @@ import { ref } from "vue";
 </script>
 
 <template>
-	<div class="bg-transparent">
+	<div class="bg-transparent mb-4">
 		<div class="bg-black rounded-full py-4 px-8 sticky top-0 right-0">
 			<div class="flex gap-4">
 				<div>
