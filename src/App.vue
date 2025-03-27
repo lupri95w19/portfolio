@@ -114,7 +114,7 @@ import { ref } from "vue";
 							alt="Luca at the graduation"
 						/>
 						<div
-							class="absolute -left-25 top-50 flex flex-col items-center rotate-320"
+							class="absolute -left-20 top-50 flex flex-col items-center rotate-320"
 						>
 							<p>Questo sono io</p>
 							<i
@@ -140,9 +140,10 @@ import { ref } from "vue";
 							la mia creatività pure col 3D 😉
 						</p>
 
-						<div class="flex justify-between h-full">
+						<div class="flex justify-between h-full max-h-[50%]">
+							<!-- Spero che questo max-height non diventi un problema nel futuro -->
 							<div class="absolute bottom-0 left-0">
-								<h2 class="text-3xl">Cosa so fare:</h2>
+								<h2 class="text-3xl">Soft skills</h2>
 								<ul class="list-disc pl-6">
 									<li>Adattarsi ai cambiamenti</li>
 									<li>Lavorare in team</li>
@@ -154,7 +155,7 @@ import { ref } from "vue";
 							</div>
 
 							<div class="absolute bottom-0 right-0">
-								<h2 class="text-3xl">Cosa so usare:</h2>
+								<h2 class="text-3xl">Tecnologie che utilizzo</h2>
 								<ul class="list-disc pl-6">
 									<li>Front-end</li>
 									<li>Back-end</li>
