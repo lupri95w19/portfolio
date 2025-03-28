@@ -104,6 +104,7 @@ import { ref } from "vue";
 		</section>
 		<Header />
 
+		<!-- Sezione Su di me -->
 		<section class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]">
 			<div class="max-w-screen-lg container m-auto">
 				<div class="grid grid-cols-12 gap-8 h-[700px] text-black relative">
@@ -137,7 +138,7 @@ import { ref } from "vue";
 							Col tempo ho continuato a portare avanti le mie passioni per la
 							programmazione, Photoshop e per il video-editing... l'elaborazione
 							3D è molto più sopita rispetto alle altre, ma ogni tanto sfoggio
-							la mia creatività pure col 3D 😉
+							la mia creatività pure col 3D 😉.
 						</p>
 
 						<div class="flex justify-between h-full max-h-[50%]">
@@ -150,7 +151,7 @@ import { ref } from "vue";
 									<li>Ascoltare</li>
 									<li>Proporre nuove idee</li>
 									<li>Aiutare gli altri</li>
-									<li>Mantenere la calma</li>
+									<li>Rimanere aggiornato</li>
 								</ul>
 							</div>
 
@@ -168,6 +169,34 @@ import { ref } from "vue";
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- Sezione carriera -->
+		<section class="h-[100vh] flex flex-col justify-center bg-[#0A1128]">
+			<div class="max-w-screen-lg container m-auto">
+				<h1>La mia carriera</h1>
+				<!-- Path che parte dalle superiori fino a oggi -->
+			</div>
+		</section>
+
+		<!-- Sezione I miei lavori -->
+		<section class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]">
+			<div
+				class="max-w-screen-lg container m-auto text-black flex justify-center"
+			>
+				<h1>I miei lavori</h1>
+				<!-- Card Dev e Card Grafico -->
+			</div>
+		</section>
+
+		<!-- Sezione contattami -->
+		<section class="h-[100vh] flex flex-col justify-center bg-[red]">
+			<div
+				class="max-w-screen-lg container m-auto text-black flex justify-center"
+			>
+				<h1>Contattami bg da scegliere!!!</h1>
+				<!-- Form-->
 			</div>
 		</section>
 	</div>
