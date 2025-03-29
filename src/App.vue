@@ -115,7 +115,7 @@ import { ref } from "vue";
 							alt="Luca at the graduation"
 						/>
 						<div
-							class="absolute -left-20 top-50 flex flex-col items-center rotate-320"
+							class="absolute -left-23 xl:-left-25 top-50 flex flex-col items-center rotate-320"
 						>
 							<p>Questo sono io</p>
 							<i
@@ -174,9 +174,92 @@ import { ref } from "vue";
 
 		<!-- Sezione carriera -->
 		<section class="h-[100vh] flex flex-col justify-center bg-[#0A1128]">
-			<div class="max-w-screen-lg container m-auto">
-				<h1>La mia carriera</h1>
+			<div
+				class="max-w-screen-lg container m-auto h-full flex flex-col justify-center"
+			>
+				<div class="grid grid-cols-12">
+					<div class="col-span-12 text-lg">
+						<h1 class="mt-32 text-center">La mia carriera</h1>
+					</div>
+				</div>
+
 				<!-- Path che parte dalle superiori fino a oggi -->
+
+				<div
+					class="relative flex items-center justify-between w-full px-8 h-full"
+				>
+					<!-- Linea centrale -->
+					<div class="absolute inset-x-0 top-1/2 h-1 bg-yellow-500"></div>
+
+					<!-- Step 1 (Sopra) -->
+					<div class="relative flex flex-col items-center w-1/3 mb-7">
+						<!-- Linea verticale -->
+						<div class="absolute top-10 h-18 w-1 bg-yellow-500"></div>
+
+						<!-- Pallino -->
+						<div
+							class="w-10 h-10 bg-green-500 rounded-full flex flex-col items-center"
+						>
+							<div class="w-10 h-10 bg-green-500 rounded-full"></div>
+							<h2 class="absolute mt-28 text-5xl">2013-2019</h2>
+							<!-- MT-4 in più rispetto al pallino -->
+						</div>
+
+						<div class="mt-4 text-center relative bottom-55">
+							<h3 class="text-2xl font-semibold text-4xl">Scuole superiori</h3>
+							<p class="text-gray-300 mt-2 text-xl">
+								Ho studiato informatica alle superiori, acquisendo le basi della
+								programmazione e della tecnologia
+							</p>
+						</div>
+					</div>
+
+					<!-- Step 2 (Sotto) -->
+					<div
+						class="relative flex flex-col items-center w-1/3 translate-y-[149px]"
+					>
+						<h2 class="absolute -mt-8 text-5xl">2020-2024</h2>
+						<!-- Pallino sotto -->
+						<div class="flex flex-col items-center">
+							<div class="h-[116.5px] w-1 bg-yellow-500 mt-7"></div>
+							<div class="w-10 h-10 bg-yellow-500 rounded-full mt-0"></div>
+						</div>
+
+						<!-- Linea verticale -->
+
+						<!-- Testo sotto il pallino -->
+						<div class="mt-4 text-center">
+							<h3 class="text-2xl font-semibold">Accademia di Belle Arti</h3>
+							<p class="text-gray-300 mt-2 text-xl">
+								Ho studiato Design della Comunicazione Visiva, acquisendo
+								nozioni importanti nel campo del Graphic Design
+							</p>
+						</div>
+					</div>
+
+					<!-- Step 3 (Sopra) -->
+					<div class="relative flex flex-col items-center w-1/3 mb-7">
+						<!-- Linea verticale -->
+						<div class="absolute top-10 h-18 w-1 bg-yellow-500"></div>
+
+						<!-- Pallino -->
+						<div
+							class="w-10 h-10 bg-green-500 rounded-full flex flex-col items-center"
+						>
+							<div class="w-10 h-10 bg-green-500 rounded-full"></div>
+							<h2 class="absolute mt-28 text-5xl">2024</h2>
+							<!-- MT-4 in più rispetto al pallino -->
+						</div>
+
+						<div class="mt-4 text-center relative bottom-55">
+							<h3 class="text-2xl font-semibold text-4xl">Master</h3>
+							<p class="text-gray-300 mt-2 text-xl">
+								Corso di 700 ore, dove ho appreso le nozioni
+								fondamentali della programmazione front e back-end
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -191,7 +274,9 @@ import { ref } from "vue";
 		</section>
 
 		<!-- Sezione contattami -->
-		<section class="h-[100vh] flex flex-col justify-center bg-[red]">
+		<section
+			class="h-[100vh] flex flex-col justify-center bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-15% to-[#FFD447] to-90%"
+		>
 			<div
 				class="max-w-screen-lg container m-auto text-black flex justify-center"
 			>
