@@ -189,18 +189,22 @@ import { ref } from "vue";
 					class="relative flex items-center justify-between w-full px-8 h-full"
 				>
 					<!-- Linea centrale -->
-					<div class="absolute inset-x-0 top-1/2 h-1 bg-yellow-500"></div>
+					<div class="absolute inset-x-0 top-1/2 h-1 bg-yellow-500 z-4"></div>
 
 					<!-- Step 1 (Sopra) -->
 					<div class="relative flex flex-col items-center w-1/3 mb-7">
 						<!-- Linea verticale -->
-						<div class="absolute top-10 h-18 w-1 bg-yellow-500"></div>
+						<div
+							class="absolute top-10 h-18 w-1 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100%"
+						></div>
 
 						<!-- Pallino -->
 						<div
-							class="w-10 h-10 bg-green-500 rounded-full flex flex-col items-center"
+							class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full flex flex-col items-center"
 						>
-							<div class="w-10 h-10 bg-green-500 rounded-full"></div>
+							<div
+								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full"
+							></div>
 							<h2 class="absolute mt-28 text-5xl">2013-2019</h2>
 							<!-- MT-4 in più rispetto al pallino -->
 						</div>
@@ -221,8 +225,12 @@ import { ref } from "vue";
 						<h2 class="absolute -mt-8 text-5xl">2020-2024</h2>
 						<!-- Pallino sotto -->
 						<div class="flex flex-col items-center">
-							<div class="h-[116.5px] w-1 bg-yellow-500 mt-7"></div>
-							<div class="w-10 h-10 bg-yellow-500 rounded-full mt-0"></div>
+							<div
+								class="h-[116.5px] w-1 bg-gradient-to-b from-[#FFD447] via-[#FFB347] via-66% to-[#FF8C00] z-0 mt-7"
+							></div>
+							<div
+								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full mt-0"
+							></div>
 						</div>
 
 						<!-- Linea verticale -->
@@ -240,13 +248,15 @@ import { ref } from "vue";
 					<!-- Step 3 (Sopra) -->
 					<div class="relative flex flex-col items-center w-1/3 mb-7">
 						<!-- Linea verticale -->
-						<div class="absolute top-10 h-18 w-1 bg-yellow-500"></div>
+						<div
+							class="absolute top-10 h-18 w-1 bg-gradient-to-b from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] left-1/2 -translate-x-1/2"
+						></div>
 
 						<!-- Pallino -->
-						<div
-							class="w-10 h-10 bg-green-500 rounded-full flex flex-col items-center"
-						>
-							<div class="w-10 h-10 bg-green-500 rounded-full"></div>
+						<div class="w-10 h-10 rounded-full flex flex-col items-center">
+							<div
+								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full"
+							></div>
 							<h2 class="absolute mt-28 text-5xl">2024</h2>
 							<!-- MT-4 in più rispetto al pallino -->
 						</div>
@@ -254,8 +264,8 @@ import { ref } from "vue";
 						<div class="mt-4 text-center relative bottom-55">
 							<h3 class="text-2xl font-semibold text-4xl">Master</h3>
 							<p class="text-gray-300 mt-2 text-xl">
-								Corso di 700 ore, dove ho appreso le nozioni
-								fondamentali della programmazione front e back-end
+								Corso di 700 ore, dove ho appreso le nozioni fondamentali della
+								programmazione front e back-end
 							</p>
 						</div>
 					</div>
@@ -265,11 +275,85 @@ import { ref } from "vue";
 
 		<!-- Sezione I miei lavori -->
 		<section class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]">
+			<div class="text-lg">
+				<h1 class="mt-32 text-center text-black">I miei lavori</h1>
+			</div>
+
 			<div
-				class="max-w-screen-lg container m-auto text-black flex justify-center"
+				class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center"
 			>
-				<h1>I miei lavori</h1>
 				<!-- Card Dev e Card Grafico -->
+				<div class="grid grid-cols-12 gap-20 place-items-center">
+					<!-- Web Dev -->
+					<div class="col-span-6">
+						<a class="inline-block mb-8" href="#"
+							><h2
+								class="inline text-black text-4xl font-jetbrains-mono relative group"
+							>
+								Web Development
+								<span
+									class="cursor absolute right-0 top-0 h-full w-[5px] bg-black opacity-0 group-hover:opacity-100 animate-blink"
+								></span>
+							</h2>
+						</a>
+						<a href="#">
+							<div
+								class="w-96 border bg-[#303031] rounded-md shadow-lg h-[318px]"
+							>
+								<!-- Header -->
+								<div
+									class="flex justify-end items-center bg-[#161616] px-4 py-2 text-sm font-semibold rounded-md"
+								>
+									<div class="flex gap-2 text-[#E5E7EB] place-items-center">
+										<div>&#x2212;</div>
+										<div>&#x25FB;</div>
+										<div>&#x2715;</div>
+									</div>
+								</div>
+								<div class="p-0 flex items-center justify-center h-[282px]">
+									<img
+										class="max-h-full object-contain p-8 transition-all duration-500 ease-in-out hover:animate-bob"
+										src="/codice.svg"
+										alt="icona codice"
+									/>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<!-- Graphic Design -->
+					<div class="col-span-6">
+						<a href="#" class="inline-block mb-8"
+							><h2 class="inline text-black text-4xl font-inter">
+								graphic design
+							</h2></a
+						>
+						<a href="#">
+							<div
+								class="w-96 border bg-[#181818] rounded-md shadow-lg h-[318px]"
+							>
+								<!-- Header -->
+
+								<div
+									class="flex justify-between items-center bg-black px-4 py-2 text-sm font-semibold rounded-md"
+								>
+									<div class="flex gap-2 text-[#E5E7EB]">
+										<span class="w-3 h-3 bg-red-500 rounded-full"></span>
+										<span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+										<span class="w-3 h-3 bg-green-500 rounded-full"></span>
+									</div>
+								</div>
+								<div class="p-0 flex items-center justify-center h-[290px]">
+									<img
+										class="max-h-full object-contain p-8 transition-transform duration-300 hover:scale-110 ease-[cubic-bezier(0,0,0.618,1)]"
+										src="/monogramma.svg"
+										alt="monogramma graphic design"
+									/>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
 			</div>
 		</section>
 
