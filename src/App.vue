@@ -1,6 +1,51 @@
 <script setup>
-import Header from "./components/Header.vue";
-import { ref } from "vue";
+import Header from './components/Header.vue';
+
+import { ref, computed } from 'vue';
+import axios from 'axios';
+
+
+const userEmail = ref('');
+const userSubject = ref('');
+const userMessage = ref('');
+const status = ref('');
+const isValidEmail = ref(true);
+const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+// Computed per verificare la validità del modulo
+const isValid = computed(() => {
+	return (
+		userEmail.value &&
+		userSubject.value &&
+		userMessage.value &&
+		isValidEmail.value
+	);
+});
+
+// Funzione per inviare l'email
+const sendEmail = async () => {
+	// Verifica che l'email sia valida utilizzando la regex
+	if (!emailRegex.test(userEmail.value)) {
+		isValidEmail.value = false;
+		return;
+	}
+	isValidEmail.value = true;
+
+	const data = {
+		userEmail: userEmail.value, // L'email dell'utente
+		subject: userSubject.value, // Oggetto dell'email
+		message: userMessage.value, // Corpo del messaggio
+	};
+
+	try {
+		status.value = 'Invio in corso...'; // Imposta lo stato su "Inviando"
+		const response = await axios.post('http://localhost:3000/send-email', data);
+		status.value = response.data.message; // Mostra il messaggio di successo
+	} catch (error) {
+		console.error(error);
+		status.value = "Errore durante l'invio dell'email.";
+	}
+};
 </script>
 
 <template>
@@ -105,7 +150,7 @@ import { ref } from "vue";
 		<Header />
 
 		<!-- Sezione Su di me -->
-		<section class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]">
+		<section id="about" class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]">
 			<div class="max-w-screen-lg container m-auto">
 				<div class="grid grid-cols-12 gap-8 h-[700px] text-black relative">
 					<div class="col-span-5 h-full relative">
@@ -173,7 +218,7 @@ import { ref } from "vue";
 		</section>
 
 		<!-- Sezione carriera -->
-		<section class="h-[100vh] flex flex-col justify-center bg-[#0A1128]">
+		<section id="career" class="h-[100vh] flex flex-col justify-center bg-[#0A1128]">
 			<div
 				class="max-w-screen-lg container m-auto h-full flex flex-col justify-center"
 			>
@@ -203,7 +248,7 @@ import { ref } from "vue";
 							class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full flex flex-col items-center"
 						>
 							<div
-								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full"
+								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full translate-y-px"
 							></div>
 							<h2 class="absolute mt-28 text-5xl">2013-2019</h2>
 							<!-- MT-4 in più rispetto al pallino -->
@@ -229,7 +274,7 @@ import { ref } from "vue";
 								class="h-[116.5px] w-1 bg-gradient-to-b from-[#FFD447] via-[#FFB347] via-66% to-[#FF8C00] z-0 mt-7"
 							></div>
 							<div
-								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full mt-0"
+								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full mt-0 -translate-y-px"
 							></div>
 						</div>
 
@@ -255,7 +300,7 @@ import { ref } from "vue";
 						<!-- Pallino -->
 						<div class="w-10 h-10 rounded-full flex flex-col items-center">
 							<div
-								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full"
+								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-66% to-[#FFD447] to-100% rounded-full translate-y-px"
 							></div>
 							<h2 class="absolute mt-28 text-5xl">2024</h2>
 							<!-- MT-4 in più rispetto al pallino -->
@@ -274,7 +319,7 @@ import { ref } from "vue";
 		</section>
 
 		<!-- Sezione I miei lavori -->
-		<section class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]">
+		<section id="works" class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]">
 			<div class="text-lg">
 				<h1 class="mt-32 text-center text-black">I miei lavori</h1>
 			</div>
@@ -358,14 +403,95 @@ import { ref } from "vue";
 		</section>
 
 		<!-- Sezione contattami -->
-		<section
+		<section id="contact"
 			class="h-[100vh] flex flex-col justify-center bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-15% to-[#FFD447] to-90%"
 		>
-			<div
-				class="max-w-screen-lg container m-auto text-black flex justify-center"
-			>
-				<h1>Contattami bg da scegliere!!!</h1>
-				<!-- Form-->
+			<div class="flex justify-center">
+				<div class="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96 relative">
+					<h2 class="text-3xl font-semibold text-center mb-6 text-gray-800">
+						Contattami
+					</h2>
+					<form @submit.prevent="sendEmail">
+						<!-- Email -->
+						<div class="mb-4">
+							<label
+								for="userEmail"
+								class="block text-lg font-medium text-gray-700"
+								>La tua email</label
+							>
+							<input
+								v-model="userEmail"
+								id="userEmail"
+								type="email"
+								placeholder="Es. paolo@example.com"
+								class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-black"
+								required
+							/>
+							<span
+								v-if="!isValidEmail && userEmail.length > 0"
+								class="text-red-500 text-sm"
+								>Email non valida</span
+							>
+						</div>
+
+						<!-- Subject -->
+						<div class="mb-4">
+							<label
+								for="userSubject"
+								class="block text-lg font-medium text-gray-700"
+								>Oggetto</label
+							>
+							<input
+								v-model="userSubject"
+								id="userSubject"
+								type="text"
+								placeholder="Oggetto del messaggio"
+								class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-black"
+								required
+							/>
+							<span
+								v-if="!userSubject && userSubject.length > 0"
+								class="text-red-500 text-sm"
+								>Oggetto richiesto</span
+							>
+						</div>
+
+						<!-- Message -->
+						<div class="mb-6">
+							<label
+								for="userMessage"
+								class="block text-lg font-medium text-gray-700"
+								>Messaggio</label
+							>
+							<textarea
+								v-model="userMessage"
+								id="userMessage"
+								placeholder="Scrivi il tuo messaggio"
+								class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-black"
+								rows="4"
+								required
+							></textarea>
+							<span
+								v-if="!userMessage && userMessage.length > 0"
+								class="text-red-500 text-sm"
+								>Messaggio richiesto</span
+							>
+						</div>
+
+						<!-- Submit Button -->
+						<button
+							type="submit"
+							:disabled="!isValid"
+							class="w-full py-3 bg-orange-500 text-white font-semibold rounded-lg disabled:opacity-50 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 btn-submit"
+						>
+							Invia
+						</button>
+					</form>
+					<div class="relative">
+						<p class="mt-4 text-center text-gray-600 opacity-0">segnaposto</p>
+						<p class="absolute top-0 text-center text-gray-600">{{ status }}</p>
+					</div>
+				</div>
 			</div>
 		</section>
 	</div>
@@ -400,5 +526,25 @@ import { ref } from "vue";
 	width: 15px;
 	height: 15px;
 	visibility: hidden;
+}
+
+.input {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.btn {
+	width: 100%;
+	padding: 10px;
+	background-color: #ff8c00;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.btn:hover {
+	background-color: #ff7000;
 }
 </style>

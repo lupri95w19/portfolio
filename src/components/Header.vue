@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+
 </script>
 
 <template>
@@ -10,16 +11,17 @@ import { ref } from "vue";
 		>
 			<div class="flex gap-4">
 				<div>
-					<a href="#">About</a>
+					<a href="#about" target="_self" id="about-link">About</a>
+
 				</div>
 				<div>
-					<a href="#">La mia carriera</a>
+					<a href="#career" target="_self">La mia carriera</a>
 				</div>
 				<div>
-					<a href="#">I miei lavori</a>
+					<a href="#works" target="_self">I miei lavori</a>
 				</div>
 				<div>
-					<a href="#">Contattami</a>
+					<a href="#contact" target="_self">Contattami</a>
 				</div>
 			</div>
 		</div>
