@@ -4,7 +4,6 @@ import Header from './components/Header.vue';
 import { ref, computed } from 'vue';
 import axios from 'axios';
 
-
 const userEmail = ref('');
 const userSubject = ref('');
 const userMessage = ref('');
@@ -24,7 +23,6 @@ const isValid = computed(() => {
 
 // Funzione per inviare l'email
 const sendEmail = async () => {
-	// Verifica che l'email sia valida utilizzando la regex
 	if (!emailRegex.test(userEmail.value)) {
 		isValidEmail.value = false;
 		return;
@@ -32,18 +30,31 @@ const sendEmail = async () => {
 	isValidEmail.value = true;
 
 	const data = {
-		userEmail: userEmail.value, // L'email dell'utente
-		subject: userSubject.value, // Oggetto dell'email
-		message: userMessage.value, // Corpo del messaggio
+		userEmail: userEmail.value,
+		subject: userSubject.value,
+		message: userMessage.value,
 	};
 
 	try {
-		status.value = 'Invio in corso...'; // Imposta lo stato su "Inviando"
-		const response = await axios.post('http://localhost:3000/send-email', data);
-		status.value = response.data.message; // Mostra il messaggio di successo
+		status.value = 'Invio in corso...';
+		const response = await axios.post(
+			'http://localhost:3000/send-email',
+			data,
+			{
+				timeout: 10000, // Aumenta il timeout
+			}
+		);
+		status.value = response.data.message;
 	} catch (error) {
-		console.error(error);
-		status.value = "Errore durante l'invio dell'email.";
+		console.error('Dettagli errore:', {
+			message: error.message,
+			response: error.response?.data,
+			status: error.response?.status,
+		});
+
+		status.value =
+			error.response?.data?.error ||
+			"Errore durante l'invio. Controlla la console per dettagli.";
 	}
 };
 </script>
@@ -150,7 +161,10 @@ const sendEmail = async () => {
 		<Header />
 
 		<!-- Sezione Su di me -->
-		<section id="about" class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]">
+		<section
+			id="about"
+			class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]"
+		>
 			<div class="max-w-screen-lg container m-auto">
 				<div class="grid grid-cols-12 gap-8 h-[700px] text-black relative">
 					<div class="col-span-5 h-full relative">
@@ -218,7 +232,10 @@ const sendEmail = async () => {
 		</section>
 
 		<!-- Sezione carriera -->
-		<section id="career" class="h-[100vh] flex flex-col justify-center bg-[#0A1128]">
+		<section
+			id="career"
+			class="h-[100vh] flex flex-col justify-center bg-[#0A1128]"
+		>
 			<div
 				class="max-w-screen-lg container m-auto h-full flex flex-col justify-center"
 			>
@@ -319,7 +336,10 @@ const sendEmail = async () => {
 		</section>
 
 		<!-- Sezione I miei lavori -->
-		<section id="works" class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]">
+		<section
+			id="works"
+			class="h-[100vh] flex flex-col justify-center bg-[#E5E7EB]"
+		>
 			<div class="text-lg">
 				<h1 class="mt-32 text-center text-black">I miei lavori</h1>
 			</div>
@@ -403,7 +423,8 @@ const sendEmail = async () => {
 		</section>
 
 		<!-- Sezione contattami -->
-		<section id="contact"
+		<section
+			id="contact"
 			class="h-[100vh] flex flex-col justify-center bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-15% to-[#FFD447] to-90%"
 		>
 			<div class="flex justify-center">
