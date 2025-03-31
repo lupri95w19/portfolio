@@ -396,7 +396,7 @@ const sendEmail = async () => {
 								graphic design
 							</h2>
 						</router-link>
-						<a href="#">
+						<router-link to="/graphic" class="">
 							<div
 								class="w-96 border bg-[#181818] rounded-md shadow-lg h-[318px]"
 							>
@@ -419,7 +419,7 @@ const sendEmail = async () => {
 									/>
 								</div>
 							</div>
-						</a>
+						</router-link>
 					</div>
 				</div>
 			</div>

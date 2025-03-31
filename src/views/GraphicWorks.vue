@@ -20,7 +20,7 @@ import Header from '../components/Header.vue';
 					<div class="col-span-4 flex flex-col">
 						<div
 							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col">
-							<div class="overflow-hidden h-[405px] flex-shrink-0">
+							<div class="overflow-hidden h-[405px] flex-shrink-0 rounded-t-lg">
 								<a href="#">
 									<img class="rounded-t-lg scale-120 w-full h-full object-cover" src="/tesi.png" alt="" />
 								</a>
@@ -135,7 +135,7 @@ import Header from '../components/Header.vue';
 					<div class="col-span-4 flex flex-col">
 						<div
 							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col">
-							<div class="overflow-hidden h-[405px] flex-shrink-0">
+							<div class="overflow-hidden h-[405px] flex-shrink-0 rounded-t-lg">
 								<a href="#">
 									<img class="rounded-t-lg h-full w-full object-cover" src="/manuale.png" alt="infografica" />
 								</a>
@@ -217,7 +217,7 @@ import Header from '../components/Header.vue';
 							<div class="relative h-[405px] overflow-hidden flex-shrink-0">
 								<a href="#" class="block h-full w-full">
 									<!-- Contenitore per lo zoom -->
-									<div class="h-full w-full overflow-hidden">
+									<div class="h-full w-full overflow-hidden rounded-t-lg">
 										<img
 											class="rounded-t-lg w-full h-full object-cover object-top scale-150 origin-top"
 											src="/Guida_Lol.png"
@@ -261,7 +261,7 @@ import Header from '../components/Header.vue';
 							<div class="relative h-[405px] overflow-hidden flex-shrink-0">
 								<a href="#" class="block h-full w-full">
 									<!-- Contenitore per lo zoom -->
-									<div class="h-full w-full overflow-hidden">
+									<div class="h-full w-full overflow-hidden rounded-t-lg">
 										<img
 											class="rounded-t-lg w-full h-full object-cover object-top scale-150 origin-top"
 											src="/Guida_Lol_Redone.png"
