@@ -32,6 +32,24 @@ const routes = [
 const router = createRouter({
 	history: createWebHistory(),
 	routes,
+	scrollBehavior(to, from, savedPosition) {
+		// Se la route ha un hash (es. #section), scrolla a quell'elemento
+		if (to.hash) {
+			return {
+				el: to.hash,
+				behavior: 'smooth',
+				top: 100, // Offset per l'header
+			};
+		}
+		// Se c'è una posizione salvata (tasto indietro/avanti), usala
+		else if (savedPosition) {
+			return savedPosition;
+		}
+		// Altrimenti scrolla in cima
+		else {
+			return { top: 0, behavior: 'smooth' };
+		}
+	},
 });
 
 router.beforeEach((to, from, next) => {

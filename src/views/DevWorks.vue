@@ -9,9 +9,11 @@ const projectStore = useProjectStoreDev();
 <template>
 	<div class="w-screen">
 		<section id="works" class="flex flex-col justify-center bg-[#E5E7EB]">
+			<Header />
 			<div class="text-lg">
-				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come graphic designer</h1>
+				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come Developer</h1>
 			</div>
+			
 
 			<div class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center">
 				<!-- Card Dev e Card Grafico -->
@@ -40,7 +42,7 @@ const projectStore = useProjectStoreDev();
 							</div>
 
 							<!-- Sezione Contenuto -->
-							<div class="p-5 flex-grow flex flex-col">
+							<div class="p-5 flex-grow flex flex-col h-[480px]">
 								<div class="h-[100px]">
 									<a href="#">
 										<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -80,7 +82,6 @@ const projectStore = useProjectStoreDev();
 					</div>
 				</div>
 			</div>
-			<Header />
 		</section>
 
 		<!-- Pallino 

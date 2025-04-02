@@ -5,7 +5,7 @@ export const useProjectStore = defineStore('projectStore', {
 		projects: [
 			{
 				id: 1,
-				image: '/tesi.png',
+				image: '/graphic/tesi.png',
 				title: 'Ground Zeroes',
 				subtitle: 'Tesi',
 				paragraph1:
@@ -16,7 +16,7 @@ export const useProjectStore = defineStore('projectStore', {
 			},
 			{
 				id: 2,
-				image: '/magazineEGE.png',
+				image: '/graphic/magazineEGE.png',
 				title: 'O.T.R.',
 				subtitle: 'Elementi di grafica editoriale',
 				paragraph1: "Materia incentrata sull'editoria.",
@@ -25,7 +25,7 @@ export const useProjectStore = defineStore('projectStore', {
 			},
 			{
 				id: 3,
-				image: '/infografica.png',
+				image: '/graphic/infografica.png',
 				title: 'Infografiche',
 				subtitle: 'Graphic Design 3',
 				paragraph1: 'Il progetto finale prevedeva di realizzare alcune infografiche',
@@ -34,7 +34,7 @@ export const useProjectStore = defineStore('projectStore', {
 			},
 			{
 				id: 4,
-				image: '/manuale.png',
+				image: '/graphic/manuale.png',
 				title: 'Manuale identità visiva',
 				subtitle: 'Graphic Design 2',
 				paragraph1:
@@ -44,7 +44,7 @@ export const useProjectStore = defineStore('projectStore', {
 			},
 			{
 				id: 5,
-				image: '/monogramma_1.svg',
+				image: '/graphic/monogramma.svg',
 				title: 'Monogramma personale',
 				subtitle: 'Graphic Design',
 				paragraph1: 'Sviluppo di un monogramma personale.',
@@ -53,18 +53,18 @@ export const useProjectStore = defineStore('projectStore', {
 			},
 			{
 				id: 6,
-				image: '/Guida_Lol.png',
+				image: '/graphic/Guida_Lol.png',
 				title: 'Ez+ LoL',
 				subtitle: 'Web Design',
 				paragraph1: 'Progettazione e sviluppo end-to-end di un sito web.',
 				paragraph2:
-					"Realizzato completamente in autonomia: dall'UI/UX design all'implementazione con HTML5, CSS3 e JavaScript vanilla, garantendo prestazioni ottimali senza l'utilizzo di framework.",
+					"Realizzato completamente in autonomia: dall'UI/UX design all'implementazione con HTML5, CSS3 e JavaScript vanilla.",
 				tags: ['HTML5', 'CSS3', 'JavaScript', `jQuery`],
 				specialClass: '',
 			},
 			{
 				id: 7,
-				image: '/Guida_Lol_Redone.png',
+				image: '/graphic/Guida_Lol_Redone.png',
 				title: 'Ez+ LoL',
 				subtitle: 'Rifacimento con stack moderno',
 				paragraph1: 'Rearchitettura completa del frontend con tecnologie performanti',
@@ -74,7 +74,7 @@ export const useProjectStore = defineStore('projectStore', {
 			},
 			{
 				id: 8,
-				image: '/calendario.png',
+				image: '/graphic/calendario.png',
 				title: 'Calendario 2023',
 				subtitle: 'Computer Graphic',
 				paragraph1: 'Calendario realizzato come progetto dimostrativo delle tecniche apprese durante le lezioni',
@@ -97,12 +97,12 @@ export const useProjectStore = defineStore('projectStore', {
 			// Aggiungi altri progetti qui
 			{
 				id: 9,
-				image: '/zapp.png',
+				image: '/graphic/zapp.png',
 				title: 'Vari',
 				subtitle: 'Computer Vision',
 				paragraph1: 'Vari progetti realizzati per dimostrare le tecniche apprese durante le lezioni',
 				paragraph2:
-					'I progetti sono stati realizzati applicando tecniche di> Fotogrammetria, 3D, After Effects con Motion Tracking, e utilizzare Google Earth per generare un percorso',
+					'I progetti sono stati realizzati applicando tecniche di Fotogrammetria, 3D, After Effects con Motion Tracking, e utilizzare Google Earth per generare un percorso',
 				tags: ['3D', 'Google Earth Studio', 'After Effects', `AR`, `3DF Zephyr`],
 				specialClass: 'object-contain',
 			},
