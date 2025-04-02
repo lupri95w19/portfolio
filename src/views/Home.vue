@@ -354,6 +354,8 @@ const sendEmail = async () => {
 				<div class="grid grid-cols-12 gap-20 place-items-center">
 					<!-- Web Dev -->
 					<div class="col-span-6">
+
+						<router-link to="/dev" class="">
 						<a class="inline-block mb-8" href="#"
 							><h2
 								class="inline text-black text-4xl font-jetbrains-mono relative group"
@@ -387,6 +389,7 @@ const sendEmail = async () => {
 								</div>
 							</div>
 						</a>
+						</router-link>
 					</div>
 
 					<!-- Graphic Design -->

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Graphic from '../views/GraphicWorks.vue';
+import Dev from '../views/DevWorks.vue';
 // import Aboutfrom '../views/About.vue'
 
 const routes = [
@@ -16,6 +17,13 @@ const routes = [
 		component: Graphic,
 		meta: {
 			title: 'Luca Privitera - Lavori da graphic designer',
+		},
+	},
+	{
+		path: '/dev',
+		component: Dev,
+		meta: {
+			title: 'Luca Privitera - Lavori da Developer',
 		},
 	},
 	//   { path: '/about', component: About }
