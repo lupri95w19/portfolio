@@ -60,8 +60,8 @@ const sendEmail = async () => {
 </script>
 
 <template>
-	<div class="w-screen bg-[#0A1128]">
-		<section class="h-[93.5vh] bg-[#0A1128] relative flex flex-col justify-center">
+	<div class="w-screen bg-[#0A1128] snap-y">
+		<section class="h-[93.5vh] bg-[#0A1128] relative flex flex-col justify-center snap-mandatory">
 			<div class="max-w-screen-lg container m-auto flex">
 				<div>
 					<div class="grid grid-cols-12 mb-4 gap-4">
@@ -150,7 +150,7 @@ const sendEmail = async () => {
 		<!-- Sezione Su di me -->
 		<section
 			id="about"
-			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-[#E5E7EB]">
+			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-[#E5E7EB] snap-mandatory">
 			<div class="max-w-screen-lg container m-auto">
 				<div class="grid grid-cols-12 gap-8 h-[600px] text-black relative">
 					<!-- Prima aveva 700px ma su mac dava problemi -->
@@ -213,7 +213,7 @@ const sendEmail = async () => {
 		</section>
 
 		<!-- Sezione carriera -->
-		<section id="career" class="min-h-[100svh] py-16 bg-[#0A1128] flex items-center">
+		<section id="career" class="min-h-[100svh] py-16 bg-[#0A1128] flex items-center snap-mandatory">
 			<div class="max-w-screen-lg mx-auto px-4 w-full">
 				<!-- Titolo -->
 				<h1 class="text-center text-4xl md:text-5xl mb-16 md:mb-24 text-white">La mia carriera</h1>
@@ -494,5 +494,12 @@ const sendEmail = async () => {
 }
 .btn:hover {
 	background-color: #ff7000;
+}
+
+
+section{
+	scroll-snap-align: start;
+	scroll-snap-stop: always;
+	scroll-behavior: smooth;
 }
 </style>
