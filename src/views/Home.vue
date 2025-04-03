@@ -150,13 +150,14 @@ const sendEmail = async () => {
 			id="about"
 			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-[#E5E7EB]">
 			<div class="max-w-screen-lg container m-auto">
-				<div class="grid grid-cols-12 gap-8 h-[700px] text-black relative">
+				<div class="grid grid-cols-12 gap-8 h-[600px] text-black relative">
+					<!-- Prima aveva 700px ma su mac dava problemi -->
 					<div class="col-span-5 h-full relative">
 						<img
 							src="/lucae.jpg"
 							class="w-full h-full object-cover rounded rounded-[30px]"
 							alt="Luca at the graduation" />
-						<div class="absolute -left-23 xl:-left-25 top-50 flex flex-col items-center rotate-320">
+						<div class="absolute -left-23 lg:-left-28 top-50 flex flex-col items-center rotate-320">
 							<p>Questo sono io</p>
 							<i class="fa-solid fa-arrow-turn-down scale-x-[-1] rotate-280"></i>
 						</div>
@@ -221,7 +222,7 @@ const sendEmail = async () => {
 					<div class="absolute left-1/2 top-0 h-full w-1 md:w-1.5 bg-yellow-500 transform -translate-x-1/2 z-0"></div>
 
 					<!-- Step 1 -->
-					<div class="relative mb-24 md:mb-32 flex flex-col md:flex-row items-center justify-between">
+					<div class="relative mb-24 md:mb-32 lg:mb-12 flex flex-col md:flex-row items-center justify-between">
 						<!-- Contenuto sinistro -->
 						<div class="w-full md:w-5/12 mb-8 md:mb-0 md:pr-8 text-right order-1">
 							<h3 class="text-2xl md:text-3xl font-bold text-white">Scuole superiori</h3>
@@ -247,7 +248,7 @@ const sendEmail = async () => {
 					</div>
 
 					<!-- Step 2 -->
-					<div class="relative mb-24 md:mb-32 flex flex-col md:flex-row items-center justify-between">
+					<div class="relative mb-24 md:mb-32 lg:mb-12 flex flex-col md:flex-row items-center justify-between">
 						<!-- Data -->
 						<div class="w-full md:w-5/12 md:pr-8 order-1 text-right">
 							<h2 class="text-3xl md:text-4xl font-bold text-yellow-500">2020-2024</h2>
