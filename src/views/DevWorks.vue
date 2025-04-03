@@ -1,9 +1,10 @@
 <script setup>
 import { ref } from 'vue';
 import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
 
-import { useProjectStoreDev } from '@/stores/devStore';
-const projectStore = useProjectStoreDev();
+import { useProjectStoreDev } from '@/stores/devStore'
+const devStore = useProjectStoreDev() // ← Usa lo stesso nome dell'export
 </script>
 
 <template>
@@ -13,7 +14,6 @@ const projectStore = useProjectStoreDev();
 			<div class="text-lg">
 				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come Developer</h1>
 			</div>
-			
 
 			<div class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center">
 				<!-- Card Dev e Card Grafico -->
@@ -22,14 +22,14 @@ const projectStore = useProjectStoreDev();
 				<!--  -->
 				<div class="grid grid-cols-12 gap-20">
 					<!-- Loop attraverso i progetti -->
-					<div v-for="project in projectStore.projects" :key="project.id" class="col-span-4 flex flex-col">
+					<div v-for="project in devStore.projects" :key="project.id" class="col-span-4 flex flex-col">
 						<!-- Card Progetto -->
 						<div
 							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col">
 							<!-- Sezione Immagine -->
 							<div
 								:class="[8, 9].includes(project.id) ? 'flex items-center justify-center' : ``"
-								class="flex-shrink-0 rounded-t-lg bg-black"> 
+								class="flex-shrink-0 rounded-t-lg bg-black">
 								<!-- Prima c'era overflow-hidden -->
 								<!-- Prima avevo aggiunto anche h-[405px] -->
 								<a class="h-100 flex" href="#">
@@ -81,15 +81,31 @@ const projectStore = useProjectStoreDev();
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+				<div class="w-full text-xs mt-48 mb-80 flex justify-center flex-col">
+					<h1 class="text-black mb-4 w-full text-center">Controlla anche i miei lavori da grafico</h1>
+					<router-link to="/graphic" class="inline-flex flex flex-col place-items-center">
+						<div class="w-96 border bg-[#181818] rounded-md shadow-lg h-[318px]">
+							<!-- Header -->
 
-		<!-- Pallino 
-        -->
-		<div class="flex flex-col justify-center place-items-center">
-			<div class="top-10 h-18 w-1 bg-yellow-500 translate-y-[1px]"></div>
-			<div class="w-10 h-10 bg-green-500 rounded-full -translate-y-[60px]"></div>
-		</div>
+							<div class="flex justify-between items-center bg-black px-4 py-2 text-sm font-semibold rounded-md">
+								<div class="flex gap-2 text-[#E5E7EB]">
+									<span class="w-3 h-3 bg-red-500 rounded-full"></span>
+									<span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+									<span class="w-3 h-3 bg-green-500 rounded-full"></span>
+								</div>
+							</div>
+							<div class="p-0 flex items-center justify-center h-[290px]">
+								<img
+									class="max-h-full object-contain p-8 transition-transform duration-300 hover:scale-110 ease-[cubic-bezier(0,0,0.618,1)]"
+									src="/monogramma.svg"
+									alt="monogramma graphic design" />
+							</div>
+						</div>
+					</router-link>
+				</div>
+			</div>
+			<Footer />
+		</section>
 	</div>
 </template>
 

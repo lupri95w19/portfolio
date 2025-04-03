@@ -1,5 +1,6 @@
 <script setup>
 import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue'
 
 import { ref, computed } from 'vue';
 import axios from 'axios';
@@ -437,7 +438,9 @@ const sendEmail = async () => {
 				</div>
 			</div>
 		</section>
+		<Footer />
 	</div>
+	
 </template>
 
 <style scoped>
