@@ -3,8 +3,8 @@ import { ref } from 'vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 
-import { useProjectStore } from '@/stores/graphicStore'
-const graphicStore = useProjectStore()
+import { useProjectStore } from '@/stores/graphicStore' // importi lo store
+const graphicStore = useProjectStore() // ← Usa lo stesso nome dell'export, presente nello store
 
 
 </script>

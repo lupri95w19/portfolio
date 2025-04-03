@@ -56,6 +56,7 @@ const sendEmail = async () => {
 		router.push(path);
 	};
 };
+
 </script>
 
 <template>

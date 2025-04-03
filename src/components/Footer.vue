@@ -40,13 +40,15 @@ watch(
 						<a
 							href="https://www.linkedin.com/in/luca-privitera-a1545a31b/"
 							class="text-2xl hover:text-[#FFB347] transition-colors text-center"
-							aria-label="LinkedIn">
+							aria-label="LinkedIn"
+                            target="_blank">
 							<i class="fab fa-linkedin-in"></i>
 						</a>
 						<a
 							href="https://github.com/lupri95w19"
 							class="text-2xl hover:text-[#FFB347] transition-colors"
-							aria-label="GitHub">
+							aria-label="GitHub"
+                            target="_blank">
 							<i class="fab fa-github"></i>
 						</a>
 					</div>
