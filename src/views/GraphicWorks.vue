@@ -5,8 +5,6 @@ import Footer from '../components/Footer.vue';
 
 import { useProjectStore } from '@/stores/graphicStore' // importi lo store
 const graphicStore = useProjectStore() // ← Usa lo stesso nome dell'export, presente nello store
-
-
 </script>
 
 <template>
@@ -38,7 +36,7 @@ const graphicStore = useProjectStore() // ← Usa lo stesso nome dell'export, pr
 									<img
 										:class="[8, 9].includes(project.id) ? 'object-contain' : 'object-cover rounded-t-lg'"
 										class="w-full object-center"
-										:src="project.image"
+										v-lazy="project.image"
 										:alt="project.title" />
 								</a>
 							</div>

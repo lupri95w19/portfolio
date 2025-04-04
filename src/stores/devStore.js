@@ -23,7 +23,7 @@ export const useProjectStoreDev = defineStore('projectStore', {
 			},
 			{
 				id: 3,
-				image: '/infografica.png',
+				image: '/dev/infografica.png',
 				title: 'Boolflix',
 				subtitle: 'Boolean',
 				paragraph1: 'Il progetto prevedeva di realizzare una replica della web-app di Netflix.',
@@ -62,7 +62,7 @@ export const useProjectStoreDev = defineStore('projectStore', {
 			},
 			{
 				id: 7,
-				image: '/Guida_Lol_Redone.png',
+				image: '/dev/scr.png',
 				title: 'Ez+ LoL',
 				subtitle: 'Rifacimento con stack moderno',
 				paragraph1: 'Rearchitettura completa del frontend con tecnologie performanti.',

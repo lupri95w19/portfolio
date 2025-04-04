@@ -36,7 +36,7 @@ const devStore = useProjectStoreDev() // ← Usa lo stesso nome dell'export, pre
 									<img
 										:class="[8, 9].includes(project.id) ? 'object-contain' : 'object-cover rounded-t-lg'"
 										class="w-full object-center"
-										:src="project.image"
+										v-lazy="project.image"
 										:alt="project.title" />
 								</a>
 							</div>
