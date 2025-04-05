@@ -129,6 +129,7 @@ const graphicStore = useProjectStore(); // ← Usa lo stesso nome dell'export, p
 img[lazy='loading'] {
 	filter: blur(16px);
 	opacity: 1;
+	object-fit: cover;
 }
 
 img[lazy='error']::before {

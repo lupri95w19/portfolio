@@ -1,10 +1,49 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 
 import { useProjectStoreDev } from '@/stores/devStore'; // importi lo store
 const devStore = useProjectStoreDev(); // ← Usa lo stesso nome dell'export, presente nello store
+
+const currentPage = ref(1); // Pagina corrente
+const projectsPerPage = 6; // Numero di progetti per pagina
+
+// Calcola i progetti da mostrare in base alla pagina corrente
+const paginatedProjects = computed(() => {
+	const start = (currentPage.value - 1) * projectsPerPage;
+	return devStore.projects.slice(start, start + projectsPerPage);
+});
+
+// Calcola il numero totale di pagine
+const totalPages = computed(() => {
+	return Math.ceil(devStore.projects.length / projectsPerPage);
+});
+
+// Funzioni per cambiare pagina
+const goToPage = (page) => {
+	if (page >= 1 && page <= totalPages.value) {
+		currentPage.value = page;
+	}
+};
+
+const nextPage = () => {
+	if (currentPage.value < totalPages.value) {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+		setTimeout(() => {
+			currentPage.value++;
+		}, 500);
+	}
+};
+
+const prevPage = () => {
+	if (currentPage.value > 1) {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+		setTimeout(() => {
+			currentPage.value--;
+		}, 500);
+	}
+};
 </script>
 
 <template>
@@ -22,10 +61,15 @@ const devStore = useProjectStoreDev(); // ← Usa lo stesso nome dell'export, pr
 				<!--  -->
 				<div class="grid grid-cols-12 gap-20">
 					<!-- Loop attraverso i progetti -->
-					<div v-for="project in devStore.projects" :key="project.id" class="col-span-4 flex flex-col">
+					<div
+						v-for="project in paginatedProjects"
+						:key="project.id"
+						:class="[project.classCustCol]"
+						class="col-span-4 flex flex-col place-items-center">
 						<!-- Card Progetto -->
 						<div
-							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col">
+							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col"
+							:class="project.classCustColSec">
 							<!-- Sezione Immagine -->
 							<div
 								:class="[8, 9].includes(project.id) ? 'flex items-center justify-center' : ``"
@@ -35,10 +79,11 @@ const devStore = useProjectStoreDev(); // ← Usa lo stesso nome dell'export, pr
 								<a class="h-100 flex overflow-hidden" href="#">
 									<img
 										:class="
-											('transition-opacity duration-500',
-											[8, 9].includes(project.id) ? 'object-contain' : 'object-cover rounded-t-lg')
+											(('transition-opacity duration-500',
+											[6, 7].includes(project.id) ? 'object-cover' : 'object-contain rounded-t-lg'),
+											project.classCust ? project.classCust : '')
 										"
-										class="w-full object-center"
+										class="w-full object-center rounded-t-lg"
 										v-lazy="{
 											src: project.image,
 											error: project.imgpre + `<p class='text-red-500'>ciao</p>`,
@@ -93,6 +138,29 @@ const devStore = useProjectStoreDev(); // ← Usa lo stesso nome dell'export, pr
 							</div>
 						</div>
 					</div>
+				</div>
+
+				<div class="w-full text-xs mt-10 flex justify-center items-center">
+					<!-- Bottone Precedente -->
+					<button
+						@click="prevPage"
+						:disabled="currentPage === 1"
+						class="px-4 py-2 text-white rounded-md btn custom-bg customButton"
+						type="button">
+						Precedente
+					</button>
+
+					<!-- Numero di Pagina -->
+					<h2 class="mx-4 text-lg">Pagina {{ currentPage }} di {{ totalPages }}</h2>
+
+					<!-- Bottone Successivo -->
+					<button
+						@click="nextPage"
+						:disabled="currentPage === totalPages"
+						class="px-4 py-2 bg-[#181818] text-white rounded-md customButton"
+						type="button">
+						Successivo
+					</button>
 				</div>
 				<div class="w-full text-xs mt-48 mb-80 flex justify-center flex-col">
 					<h1 class="text-black mb-4 w-full text-center">Controlla anche i miei lavori da grafico</h1>
@@ -151,5 +219,17 @@ img[lazy='loaded'] {
 	to {
 		opacity: 1;
 	}
+}
+
+.fixGridOn1 {
+	width: 286px;
+}
+
+button.customButton {
+	background-color: #181818; /* Applica il colore desiderato */
+	transition: 0.1s ease-in-out;
+}
+button.customButton:hover {
+	color: #f18987;
 }
 </style>
