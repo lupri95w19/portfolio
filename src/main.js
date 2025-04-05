@@ -26,7 +26,7 @@ import { useProjectStore } from '@/stores/graphicStore'; // importi lo store
 const useProjectStoreFin = useProjectStore();
 
 const loadingImage = useProjectStoreFin.loadingImagePath; // Accedi allo stato
-const errorImage = useProjectStoreFin.errorImagePath;
+const errorImage = useProjectStoreFin.imgpre;
 
 //Serve per il lazy load images
 app.use(VueLazyloadNext, {
@@ -45,7 +45,7 @@ import { useProjectStoreDev } from '@/stores/devStore'; // importi lo store
 const useWebStoreFin = useProjectStoreDev();
 
 const loadingImageWeb = useWebStoreFin.loadingImagePath; // Accedi allo stato
-const errorImageWeb = useWebStoreFin.errorImagePath;
+const errorImageWeb = useWebStoreFin.imgpre;
 
 app.use(VueLazyloadNext, {
 	preLoad: 1.3,

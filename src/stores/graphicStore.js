@@ -5,6 +5,7 @@ export const useProjectStore = defineStore('graphicProjects', {
 		projects: [
 			{
 				id: 1,
+				imgpre: '/graphic/tesi.jpg',
 				image: '/graphic/tesi.png',
 				title: 'Ground Zeroes',
 				subtitle: 'Tesi',
@@ -16,6 +17,7 @@ export const useProjectStore = defineStore('graphicProjects', {
 			},
 			{
 				id: 2,
+				imgpre: '/graphic/magazineEGE.jpg',
 				image: '/graphic/magazineEGE.png',
 				title: 'O.T.R.',
 				subtitle: 'Elementi di grafica editoriale',
@@ -25,6 +27,7 @@ export const useProjectStore = defineStore('graphicProjects', {
 			},
 			{
 				id: 3,
+				imgpre: '/graphic/infografica.jpg',
 				image: '/graphic/infografica.png',
 				title: 'Infografiche',
 				subtitle: 'Graphic Design 3',
@@ -34,6 +37,7 @@ export const useProjectStore = defineStore('graphicProjects', {
 			},
 			{
 				id: 4,
+				imgpre: '/graphic/manuale.jpg',
 				image: '/graphic/manuale.png',
 				title: 'Manuale identità visiva',
 				subtitle: 'Graphic Design 2',
@@ -44,6 +48,7 @@ export const useProjectStore = defineStore('graphicProjects', {
 			},
 			{
 				id: 5,
+				imagpre: '/graphic/monogramma.jpg',
 				image: '/graphic/monogramma.svg',
 				title: 'Monogramma personale',
 				subtitle: 'Graphic Design',
@@ -53,6 +58,7 @@ export const useProjectStore = defineStore('graphicProjects', {
 			},
 			{
 				id: 6,
+				imgpre: '/graphic/Guida_Lol.jpg',
 				image: '/graphic/Guida_Lol.png',
 				title: 'Ez+ LoL',
 				subtitle: 'Web Design',
@@ -64,6 +70,7 @@ export const useProjectStore = defineStore('graphicProjects', {
 			},
 			{
 				id: 7,
+				imgpre: '/graphic/Guida_Lol_Redone.jpg',
 				image: '/graphic/Guida_Lol_Redone.png',
 				title: 'Ez+ LoL',
 				subtitle: 'Rifacimento con stack moderno',
@@ -74,6 +81,7 @@ export const useProjectStore = defineStore('graphicProjects', {
 			},
 			{
 				id: 8,
+				imgpre: '/graphic/calendario.jpg',
 				image: '/graphic/calendario.png',
 				title: 'Calendario 2023',
 				subtitle: 'Computer Graphic',
@@ -97,6 +105,7 @@ export const useProjectStore = defineStore('graphicProjects', {
 			// Aggiungi altri progetti qui
 			{
 				id: 9,
+				imgpre: '/graphic/zapp.jpg',
 				image: '/graphic/zapp.png',
 				title: 'Vari',
 				subtitle: 'Computer Vision',

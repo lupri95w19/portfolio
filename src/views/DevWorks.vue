@@ -3,8 +3,8 @@ import { ref } from 'vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 
-import { useProjectStoreDev } from '@/stores/devStore' // importi lo store
-const devStore = useProjectStoreDev() // ← Usa lo stesso nome dell'export, presente nello store
+import { useProjectStoreDev } from '@/stores/devStore'; // importi lo store
+const devStore = useProjectStoreDev(); // ← Usa lo stesso nome dell'export, presente nello store
 </script>
 
 <template>
@@ -32,15 +32,28 @@ const devStore = useProjectStoreDev() // ← Usa lo stesso nome dell'export, pre
 								class="flex-shrink-0 rounded-t-lg bg-black">
 								<!-- Prima c'era overflow-hidden -->
 								<!-- Prima avevo aggiunto anche h-[405px] -->
-								<a class="h-100 flex" href="#">
+								<a class="h-100 flex overflow-hidden" href="#">
 									<img
-										:class="[8, 9].includes(project.id) ? 'object-contain' : 'object-cover rounded-t-lg'"
+										:class="
+											('transition-opacity duration-500',
+											[8, 9].includes(project.id) ? 'object-contain' : 'object-cover rounded-t-lg')
+										"
 										class="w-full object-center"
-										v-lazy="project.image"
+										v-lazy="{
+											src: project.image,
+											error: project.imgpre + `<p class='text-red-500'>ciao</p>`,
+											loading: project.imgpre,
+										}"
 										:alt="project.title" />
+									<!-- 
+										Quando un'immagine HTML fallisce il caricamento:
+
+										L'elemento <img> emette un evento error
+										L'evento contiene il target (l'elemento immagine stesso)
+										Modificando .src si forza un cambio dell'immagine -->
 								</a>
 							</div>
-
+							<!-- v-lazy="project.image" -->
 							<!-- Sezione Contenuto -->
 							<div class="p-5 flex-grow flex flex-col h-[480px]">
 								<div class="h-[100px]">
@@ -112,5 +125,31 @@ const devStore = useProjectStoreDev() // ← Usa lo stesso nome dell'export, pre
 <style scoped>
 #header {
 	box-shadow: 0px 3.2px 8px 8px rgba(0, 0, 0, 0.05);
+}
+img[lazy='loading'] {
+	filter: blur(16px);
+	opacity: 1;
+}
+
+img[lazy='error']::before {
+	content: 'Error image not found';
+	text-align: center;
+	color: red;
+	opacity: 1;
+}
+
+img[lazy='loaded'] {
+	filter: none !important;
+	opacity: 1;
+	animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0.5;
+	}
+	to {
+		opacity: 1;
+	}
 }
 </style>

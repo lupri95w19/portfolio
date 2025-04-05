@@ -5,6 +5,8 @@ export const useProjectStoreDev = defineStore('projectStore', {
 		projects: [
 			{
 				id: 1,
+				imgpre: '/dev/zapp.jpg',
+
 				image: '/tesi.png',
 				title: 'Games Tracker',
 				subtitle: 'Codice per divertimento',
@@ -23,8 +25,9 @@ export const useProjectStoreDev = defineStore('projectStore', {
 			},
 			{
 				id: 3,
-				image: '/dev/infografica.png',
+				imgpre: '/dev/infografica.png',
 				title: 'Boolflix',
+				image: '/dev/lucas.jpg',
 				subtitle: 'Boolean',
 				paragraph1: 'Il progetto prevedeva di realizzare una replica della web-app di Netflix.',
 				paragraph2: `Nella home sono presenti le liste dei Film e SerieTv più popolari. Nella SearchBar è possibile cercare Film e SerieTv. Cliccando sull'opera desiderata, si aprirà una modale.`,
