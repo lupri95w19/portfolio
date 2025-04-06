@@ -60,7 +60,7 @@ const sendEmail = async () => {
 
 <template>
 	<div class="w-screen bg-[#0A1128] snap-y">
-		<section class="h-[93.5vh] bg-[#0A1128] relative flex flex-col justify-center snap-mandatory">
+		<section class="h-[93.5vh] bg-[#0A1128] relative flex flex-col justify-center snap-mandatory overflow-hidden">
 			<div class="max-w-screen-lg container m-auto flex">
 				<div>
 					<div class="grid grid-cols-12 mb-4 gap-4">
@@ -68,7 +68,7 @@ const sendEmail = async () => {
 						<div class="col-span-8"></div>
 					</div>
 
-					<div class="grid grid-cols-12 gap-4">
+					<div class="grid grid-cols-12 gap-4" v-motion-fade-visible>
 						<!-- Telefono -->
 
 						<!-- Questo forse va bene per i laptop
@@ -149,8 +149,17 @@ const sendEmail = async () => {
 		<!-- Sezione Su di me -->
 		<section
 			id="about"
-			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-[#E5E7EB] snap-mandatory">
-			<div class="max-w-screen-lg container m-auto">
+			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-[#E5E7EB] snap-mandatory"
+			v-motion
+			:initial="{ opacity: 1, x: '0vw' }"
+			:enter="{ opacity: 1, x: '0vw' }"
+			:transition="{ type: 'tween', duration: 3, delay: 0, ease: 'linear' }">
+			<div
+				class="max-w-screen-lg container m-auto"
+				v-motion
+				:initial="{ opacity: 1, x: '60vw' }"
+				:visible="{ opacity: 1, x: '0vw' }"
+				:transition="{ type: 'tween', duration: 3, delay: 0, ease: 'linear' }">
 				<div class="grid grid-cols-12 gap-8 h-[600px] text-black relative">
 					<!-- Prima aveva 700px ma su mac dava problemi -->
 					<div class="col-span-5 h-full relative">
@@ -212,8 +221,27 @@ const sendEmail = async () => {
 		</section>
 
 		<!-- Sezione carriera -->
-		<section id="career" class="min-h-[100svh] py-16 bg-[#0A1128] flex items-center snap-mandatory">
-			<div class="max-w-screen-lg mx-auto px-4 w-full">
+		<section
+			id="career"
+			class="min-h-[100svh] py-16 bg-[#0A1128] flex items-center snap-mandatory"
+			prefers-reduced-motion="reduce">
+			<div
+				class="max-w-screen-lg mx-auto px-4 w-full"
+				v-motion
+				:initial="{ opacity: 1, x: '-60vw' }"
+				:visible="{
+					opacity: 1,
+					x: '0vw',
+					transition: {
+						type: 'spring',
+						stiffness: 486,
+						damping: 57,
+						mass: 0.5,
+						duration: 1.3,
+						ease: 'easeInOutQuad',
+					},
+				}"
+				:transition="{ type: 'spring', duration: 3, delay: 3, ease: 'linear' }">
 				<!-- Titolo -->
 				<h1 class="text-center text-4xl md:text-5xl mb-16 md:mb-24 text-white">La mia carriera</h1>
 
@@ -378,9 +406,8 @@ const sendEmail = async () => {
 		<!-- Sezione contattami -->
 		<section
 			id="contact"
-			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-15% to-[#FFD447] to-90%"
-			v-motion-slide-visible-once-right>
-			<div class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] flex flex-col justify-center">
+			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-15% to-[#FFD447] to-90%">
+			<div class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] flex flex-col justify-center" v-motion-slide-left>
 				<div class="flex justify-center">
 					<div class="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96 relative">
 						<h2 class="text-3xl font-semibold text-center mb-6 text-gray-800">Contattami</h2>
@@ -450,6 +477,12 @@ const sendEmail = async () => {
 </template>
 
 <style scoped>
+.target {
+	width: 100px;
+	height: 100px;
+	background-color: #00ff00;
+	border-radius: 10px;
+}
 /* Animazione per far lampeggiare da verde normale a verde intenso */
 @keyframes blinking {
 	0%,

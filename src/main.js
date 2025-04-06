@@ -13,6 +13,9 @@ import '@fontsource/jetbrains-mono';
 // Questa parte serve per il lazy load images: https://github.com/hilongjw/vue-lazyload/tree/next
 import VueLazyloadNext from 'vue-lazyload-next';
 
+// Questo serve per le animazioni
+import { MotionPlugin } from '@vueuse/motion';
+
 const app = createApp(App);
 // Crea l'istanza di Pinia
 const pinia = createPinia();
@@ -29,17 +32,22 @@ const loadingImage = useProjectStoreFin.loadingImagePath; // Accedi allo stato
 const errorImage = useProjectStoreFin.imgpre;
 
 //Serve per il lazy load images
-app.use(VueLazyloadNext, {
-	preLoad: 1.3,
-	loading: loadingImage,
-	error: errorImage,
-	attempt: 1,
-	observer: true,
-	observerOptions: {
-		rootMargin: '400px',
-		threshold: 0.1,
+/*app.use(
+	VueLazyloadNext,
+	{
+		preLoad: 1.3,
+		loading: loadingImage,
+		error: errorImage,
+		attempt: 1,
+		observer: true,
+		observerOptions: {
+			rootMargin: '400px',
+			threshold: 0.1,
+		},
 	},
-});
+	MotionPlugin
+);
+*/
 
 import { useProjectStoreDev } from '@/stores/devStore'; // importi lo store
 const useWebStoreFin = useProjectStoreDev();
@@ -58,6 +66,8 @@ app.use(VueLazyloadNext, {
 		threshold: 0.1,
 	},
 });
+
+app.use(MotionPlugin);
 
 /// IN QUALCHE MODO FUNZIONA SIA DA DEV CHE DA GRAPHIC USANDO V-LAZY NON TOCCARE PER NESSUN MOTIVO
 
