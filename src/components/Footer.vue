@@ -17,7 +17,7 @@ watch(
 <template>
 	<footer
 		:class="[currentRoute === '/graphic' ? 'bg-[#191716]' : 'bg-[#0A1128]', 'transition-colors duration-500']"
-		class="w-full py-12 z-10 border-t border-[#ffffff10]">
+		class="w-full h-[322px] py-12 z-10 border-t border-[#ffffff10]">
 		<div class="max-w-screen-lg mx-auto px-4">
 			<!-- Contenuto principale -->
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -41,14 +41,14 @@ watch(
 							href="https://www.linkedin.com/in/luca-privitera-a1545a31b/"
 							class="text-2xl hover:text-[#FFB347] transition-colors text-center"
 							aria-label="LinkedIn"
-                            target="_blank">
+							target="_blank">
 							<i class="fab fa-linkedin-in"></i>
 						</a>
 						<a
 							href="https://github.com/lupri95w19"
 							class="text-2xl hover:text-[#FFB347] transition-colors"
 							aria-label="GitHub"
-                            target="_blank">
+							target="_blank">
 							<i class="fab fa-github"></i>
 						</a>
 					</div>
