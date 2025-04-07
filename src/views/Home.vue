@@ -68,7 +68,7 @@ const sendEmail = async () => {
 						<div class="col-span-8"></div>
 					</div>
 
-					<div class="grid grid-cols-12 gap-4" v-motion-fade-visible>
+					<div class="grid grid-cols-12 gap-4" v-motion-fade-visible-once>
 						<!-- Telefono -->
 
 						<!-- Questo forse va bene per i laptop
@@ -76,7 +76,23 @@ const sendEmail = async () => {
 						class="relative w-[300px] h-[600px] bg-black rounded-[40px] p-6 shadow-xl border-4 border-gray-700 col-span-4"> -->
 
 						<div
-							class="relative w-[300px] h-[600px] bg-black rounded-[40px] p-6 shadow-xl border-4 border-gray-700 col-span-4 place-self-center">
+							class="relative w-[300px] h-[600px] bg-black rounded-[40px] p-6 shadow-xl border-4 border-gray-700 col-span-4 place-self-center z-5"
+							v-motion
+							:initial="{ opacity: 1, y: '-30vw' }"
+							:visible-once="{
+								opacity: 1,
+								y: '0vw',
+								transition: {
+									type: 'spring',
+									stiffness: 486,
+									damping: 57,
+									mass: 5,
+									// 0.8 prima
+									duration: 0.7,
+									ease: 'easeInOutQuad',
+								},
+							}"
+							:transition="{ type: 'spring', duration: 3, delay: 3, ease: 'linear' }">
 							<!-- Speaker & Camera -->
 							<div class="absolute top-3 left-1/2 -translate-x-1/2 w-[96px] h-[22px] bg-gray-700 rounded-full"></div>
 
@@ -98,7 +114,24 @@ const sendEmail = async () => {
 						</div>
 
 						<!-- Terminale -->
-						<div class="p-0 rounded-lg col-span-8 w-full rounded-t-lg h-[550px]">
+						<div
+							class="p-0 rounded-lg col-span-8 w-full rounded-t-lg h-[550px]"
+							v-motion
+							:initial="{ opacity: 0, x: '30vw' }"
+							:visible-once="{
+								opacity: 1,
+								x: '0vw',
+								transition: {
+									type: 'spring',
+									stiffness: 486,
+									damping: 57,
+									mass: 6,
+									// 0.8 prima
+									duration: 1.3,
+									ease: 'easeInOutQuad',
+									delay: 300,
+								},
+							}">
 							<div class="flex items-end">
 								<div class="hidden_blinking_ball opacity-0 scale-50"></div>
 								<h3 class="text-xl">Attualmente</h3>
@@ -152,28 +185,81 @@ const sendEmail = async () => {
 			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-[#E5E7EB] snap-mandatory"
 			v-motion
 			:initial="{ opacity: 1, x: '0vw' }"
-			:enter="{ opacity: 1, x: '0vw' }"
-			:transition="{ type: 'tween', duration: 3, delay: 0, ease: 'linear' }">
+			:enter="{ opacity: 1, x: '0vw' }">
 			<div
 				class="max-w-screen-lg container m-auto"
 				v-motion
 				:initial="{ opacity: 1, x: '60vw' }"
-				:visible="{ opacity: 1, x: '0vw' }"
-				:transition="{ type: 'tween', duration: 3, delay: 0, ease: 'linear' }">
+				:visible-once="{
+					opacity: 1,
+					x: '0vw',
+					transition: {
+						type: 'spring',
+						stiffness: 486,
+						damping: 57,
+						mass: 2,
+						// 0.8
+						duration: 4.3,
+						ease: 'easeInOutQuad',
+					},
+				}">
 				<div class="grid grid-cols-12 gap-8 h-[600px] text-black relative">
 					<!-- Prima aveva 700px ma su mac dava problemi -->
 					<div class="col-span-5 h-full relative">
 						<img
 							src="/lucae.jpg"
 							class="w-full h-full object-cover rounded rounded-[30px]"
-							alt="Luca at the graduation" />
-						<div class="absolute -left-23 lg:-left-28 top-50 flex flex-col items-center rotate-320">
+							alt="Luca at the graduation"
+							v-motion
+							:initial="{ opacity: 0, x: '-30vw' }"
+							:visible-once="{
+								opacity: 1,
+								x: '0vw',
+								transition: {
+									type: 'spring',
+									stiffness: 380,
+									damping: 35,
+									mass: 0.7,
+									restDelta: 0.001,
+									delay: 800,
+								},
+							}" />
+						<div
+							class="absolute -left-23 lg:-left-28 top-50 flex flex-col items-center rotate-320"
+							v-motion
+							:initial="{ opacity: 0, }"
+							:visible-once="{
+								opacity: 1,
+								transition: {
+									type: 'spring',
+									stiffness: 380,
+									damping: 35,
+									mass: 0.7,
+									restDelta: 0.001,
+									delay: 1200,
+								},
+							}">
 							<p>Questo sono io</p>
 							<i class="fa-solid fa-arrow-turn-down scale-x-[-1] rotate-280"></i>
 						</div>
 					</div>
 
-					<div class="col-span-7 text-lg relative">
+					<div
+						class="col-span-7 text-lg relative"
+						v-motion
+						:initial="{ opacity: 0 }"
+						:visible-once="{
+							opacity: 1,
+							x: '0vw',
+							transition: {
+								type: 'spring',
+								stiffness: 380,
+								damping: 35,
+								mass: 0.7,
+								restDelta: 0.001,
+								delay: 300,
+							},
+						}">
 						<h1>Su di me</h1>
 						<p class="text-xl">Sono un web developer e anche un grafico.</p>
 						<p class="text-xl mb-6">
@@ -228,20 +314,18 @@ const sendEmail = async () => {
 			<div
 				class="max-w-screen-lg mx-auto px-4 w-full"
 				v-motion
-				:initial="{ opacity: 1, x: '-60vw' }"
-				:visible="{
+				:initial="{ opacity: 1, x: '50vw' }"
+				:visible-once="{
 					opacity: 1,
 					x: '0vw',
 					transition: {
 						type: 'spring',
-						stiffness: 486,
-						damping: 57,
-						mass: 0.5,
-						duration: 1.3,
-						ease: 'easeInOutQuad',
+						stiffness: 380,
+						damping: 35,
+						mass: 0.7,
+						restDelta: 0.001,
 					},
-				}"
-				:transition="{ type: 'spring', duration: 3, delay: 3, ease: 'linear' }">
+				}">
 				<!-- Titolo -->
 				<h1 class="text-center text-4xl md:text-5xl mb-16 md:mb-24 text-white">La mia carriera</h1>
 
@@ -344,7 +428,22 @@ const sendEmail = async () => {
 				<!-- Card Dev e Card Grafico -->
 				<div class="grid grid-cols-12 gap-20 place-items-center">
 					<!-- Web Dev -->
-					<div class="col-span-6">
+					<div
+						class="col-span-6"
+						v-motion
+						:initial="{ opacity: 0, x: '-30vw' }"
+						:visible-once="{
+							opacity: 1,
+							x: '0vw',
+							transition: {
+								type: 'spring',
+								stiffness: 380,
+								damping: 35,
+								mass: 0.7,
+								restDelta: 0.001,
+								delay: 300,
+							},
+						}">
 						<router-link to="/dev" class="">
 							<a class="inline-block mb-8" href="#">
 								<h2 class="inline text-black text-4xl font-jetbrains-mono relative group">
@@ -375,7 +474,22 @@ const sendEmail = async () => {
 					</div>
 
 					<!-- Graphic Design -->
-					<div class="col-span-6">
+					<div
+						class="col-span-6"
+						v-motion
+						:initial="{ opacity: 0, x: '30vw' }"
+						:visible-once="{
+							opacity: 1,
+							x: '0vw',
+							transition: {
+								type: 'spring',
+								stiffness: 380,
+								damping: 35,
+								mass: 0.7,
+								restDelta: 0.001,
+								delay: 800,
+							},
+						}">
 						<router-link to="/graphic" class="inline-block mb-8">
 							<h2 class="inline text-black text-4xl font-inter">graphic design</h2>
 						</router-link>
