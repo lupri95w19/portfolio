@@ -18,7 +18,9 @@ watch(
 	<footer
 		:class="[currentRoute === '/graphic' ? 'bg-[#191716]' : 'bg-[#0A1128]', 'transition-colors duration-500']"
 		class="w-full h-[322px] py-12 z-10 border-t border-[#ffffff10]">
-		<div class="max-w-screen-lg mx-auto px-4">
+		<div
+			class="max-w-screen-lg mx-auto px-4"
+			:class="[currentRoute === '/graphic' ? 'bg-[#191716]' : 'bg-[#0A1128]', 'transition-colors duration-500']">
 			<!-- Contenuto principale -->
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<!-- Sezione materiali -->
@@ -55,24 +57,24 @@ watch(
 				</div>
 
 				<!-- Sezione navigazione -->
-				<div class="flex flex-col items-center md:items-end">
+				<div class="flex flex-col items-center text-center">
 					<h3 class="text-xl font-jetbrains-mono text-[#FFD447] mb-4">Navigazione</h3>
-					<nav class="flex flex-col items-center md:items-end space-y-2">
+					<nav class="flex flex-col items-center space-y-2 text-center">
 						<router-link
 							to="/"
-							class="hover:text-[#FFB347] transition-colors"
+							class="hover:text-[#FFB347] transition-colors text-center"
 							:class="{ 'text-[#FF8C00]': currentRoute === '/' }">
 							Home
 						</router-link>
 						<router-link
 							to="/dev"
-							class="hover:text-[#FFB347] transition-colors"
+							class="hover:text-[#FFB347] transition-colors text-center"
 							:class="{ 'text-[#FF8C00]': currentRoute === '/dev' }">
 							Sviluppo
 						</router-link>
 						<router-link
 							to="/graphic"
-							class="hover:text-[#FFB347] transition-colors"
+							class="hover:text-[#FFB347] transition-colors text-center"
 							:class="{ 'text-[#FF8C00]': currentRoute === '/graphic' }">
 							Grafica
 						</router-link>

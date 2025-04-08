@@ -14,15 +14,17 @@
 
 <!-- Mi permette di scrollare interamente le sezioni -->
 <style>
-	html,
 	body {
-		scroll-snap-type: y mandatory;
-		scroll-behavior: smooth;
-	}
-	body{
 		overflow-x: hidden;
 	}
 	/* #contact{
 		height: calc(100svh + 322px);
 	} */
+	@media only screen and (min-width: 1024px) {
+		html,
+		body {
+			scroll-snap-type: y mandatory;
+			scroll-behavior: smooth;
+		}
+	}
 </style>

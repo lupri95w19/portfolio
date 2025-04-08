@@ -60,9 +60,9 @@ const sendEmail = async () => {
 
 <template>
 	<div class="w-screen bg-[#0A1128] snap-y">
-		<section class="h-[93.5vh] bg-[#0A1128] relative flex flex-col justify-center snap-mandatory overflow-hidden">
-			<div class="max-w-screen-lg container m-auto flex">
-				<div>
+		<section class="lg:h-[93.5vh] h-auto bg-[#0A1128] relative flex flex-col justify-center snap-mandatory overflow-hidden">
+			<div class="max-w-screen-lg container m-auto flex justify-center">
+				<div class="container mx-auto px-16 lg:py-0 md:py-32">
 					<div class="grid grid-cols-12 mb-4 gap-4">
 						<div class="col-span-4"></div>
 						<div class="col-span-8"></div>
@@ -76,7 +76,7 @@ const sendEmail = async () => {
 						class="relative w-[300px] h-[600px] bg-black rounded-[40px] p-6 shadow-xl border-4 border-gray-700 col-span-4"> -->
 
 						<div
-							class="relative w-[300px] h-[600px] bg-black rounded-[40px] p-6 shadow-xl border-4 border-gray-700 col-span-4 place-self-center z-5"
+							class="relative w-[300px] h-[600px] bg-black rounded-[40px] p-6 shadow-xl border-4 border-gray-700 lg:col-span-4 md:col-span-12 sm:col-span-12 col-span-12 place-self-center z-5"
 							v-motion
 							:initial="{ opacity: 1, y: '-30vw' }"
 							:visible-once="{
@@ -115,7 +115,7 @@ const sendEmail = async () => {
 
 						<!-- Terminale -->
 						<div
-							class="p-0 rounded-lg col-span-8 w-full rounded-t-lg h-[550px]"
+							class="lg:col-span-8 md:col-span-12 sm:col-span-12 col-span-12 p-0 rounded-lg w-full rounded-t-lg h-[550px] lg:mt-0 md:mt-16 mt-32"
 							v-motion
 							:initial="{ opacity: 0, x: '30vw' }"
 							:visible-once="{
@@ -129,21 +129,21 @@ const sendEmail = async () => {
 									// 0.8 prima
 									duration: 1.3,
 									ease: 'easeInOutQuad',
-									delay: 300,
+									delay: 800,
 								},
 							}">
-							<div class="flex items-end">
-								<div class="hidden_blinking_ball opacity-0 scale-50"></div>
+							<div class="flex sm:items-end">
+								<div class="sm:w-[15px] sm:h-[15px] block scale-50"></div>
 								<h3 class="text-xl">Attualmente</h3>
 							</div>
 
-							<div class="flex items-end mb-4">
+							<div class="flex items-center mb-4">
 								<div class="blinking-ball scale-50"></div>
 								<h2 class="text-3xl">In cerca di lavoro</h2>
 							</div>
 
 							<div
-								class="bg-[#2D2D2D] text-white font-mono p-0 rounded-lg col-span-8 w-full shadow-lg border border-gray-700 rounded-t-lg bg-[#181818] h-full">
+								class="bg-[#2D2D2D] text-white font-mono p-0 rounded-lg col-span-8 w-full shadow-lg border border-gray-700 rounded-t-lg bg-[#181818] sm:h-full w-[300px]">
 								<!-- Barra superiore -->
 								<div class="flex items-center space-x-2 p-4 bg-black rounded-t-lg">
 									<div class="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -165,7 +165,7 @@ const sendEmail = async () => {
 										</li>
 									</ul>
 
-									<p class="mt-8 absolute bottom-0">
+									<p class="mt-16 block sm:absolute bottom-0">
 										Se vuoi saperne di più scrolla pure sotto
 										<i class="fa-solid fa-turn-down"></i>
 										😉
@@ -187,7 +187,7 @@ const sendEmail = async () => {
 			:initial="{ opacity: 1, x: '0vw' }"
 			:enter="{ opacity: 1, x: '0vw' }">
 			<div
-				class="max-w-screen-lg container m-auto"
+				class="max-w-screen-lg container m-auto py-36"
 				v-motion
 				:initial="{ opacity: 1, x: '60vw' }"
 				:visible-once="{
@@ -203,15 +203,52 @@ const sendEmail = async () => {
 						ease: 'easeInOutQuad',
 					},
 				}">
-				<div class="grid grid-cols-12 gap-8 h-[600px] text-black relative">
-					<!-- Prima aveva 700px ma su mac dava problemi -->
-					<div class="col-span-5 h-full relative">
-						<img
-							src="/lucae.jpg"
-							class="w-full h-full object-cover rounded rounded-[30px]"
-							alt="Luca at the graduation"
+				<div class="container mx-auto md:px-32 lg:px-16 sm:px-4">
+					<div class="grid grid-cols-12 gap-8 lg:h-[700px] xl:h-[600px] text-black relative">
+						<!-- Prima aveva 700px ma su mac dava problemi -->
+						<div class="lg:col-span-5 md:col-span-12 sm:col-span-12 h-full relative">
+							<img
+								src="/lucae.jpg"
+								class="w-full h-full object-cover rounded rounded-[30px]"
+								alt="Luca at the graduation"
+								v-motion
+								:initial="{ opacity: 0, x: '-30vw' }"
+								:visible-once="{
+									opacity: 1,
+									x: '0vw',
+									transition: {
+										type: 'spring',
+										stiffness: 380,
+										damping: 35,
+										mass: 0.7,
+										restDelta: 0.001,
+										delay: 800,
+									},
+								}" />
+							<div
+								class="absolute xl:-left-23 lg:-left-15 md:left-25 sm:left-35 top-50 flex flex-col items-center rotate-320"
+								v-motion
+								:initial="{ opacity: 0 }"
+								:visible-once="{
+									opacity: 1,
+									transition: {
+										type: 'spring',
+										stiffness: 380,
+										damping: 35,
+										mass: 0.7,
+										restDelta: 0.001,
+										delay: 1200,
+									},
+								}">
+								<p>Questo sono io</p>
+								<i class="fa-solid fa-arrow-turn-down scale-x-[-1] rotate-280"></i>
+							</div>
+						</div>
+
+						<div
+							class="lg:col-span-7 md:col-span-12 sm:col-span-12 text-lg relative xl:h-[600px]"
 							v-motion
-							:initial="{ opacity: 0, x: '-30vw' }"
+							:initial="{ opacity: 0 }"
 							:visible-once="{
 								opacity: 1,
 								x: '0vw',
@@ -221,84 +258,47 @@ const sendEmail = async () => {
 									damping: 35,
 									mass: 0.7,
 									restDelta: 0.001,
-									delay: 800,
-								},
-							}" />
-						<div
-							class="absolute -left-23 lg:-left-28 top-50 flex flex-col items-center rotate-320"
-							v-motion
-							:initial="{ opacity: 0, }"
-							:visible-once="{
-								opacity: 1,
-								transition: {
-									type: 'spring',
-									stiffness: 380,
-									damping: 35,
-									mass: 0.7,
-									restDelta: 0.001,
-									delay: 1200,
+									delay: 300,
 								},
 							}">
-							<p>Questo sono io</p>
-							<i class="fa-solid fa-arrow-turn-down scale-x-[-1] rotate-280"></i>
-						</div>
-					</div>
+							<h1>Su di me</h1>
+							<p class="text-xl">Sono un web developer e anche un grafico.</p>
+							<p class="text-xl mb-6">
+								Sono nato a Catania e sin da piccolo ho sempre avuto un grande interesse per la tecnologia. Con gli anni
+								la cosa poi si è sempre più evoluta, infatti già a 10 anni mi dilettavo con Photoshop, programmi di
+								elaborazione 3D e di rendering. Negli anni poi ho iniziato a programmare alle scuole superiori.
+							</p>
+							<p class="text-xl">
+								Col tempo ho continuato a portare avanti le mie passioni per la programmazione, Photoshop e per il
+								video-editing... l'elaborazione 3D è molto più sopita rispetto alle altre, ma ogni tanto sfoggio la mia
+								creatività pure col 3D.
+							</p>
 
-					<div
-						class="col-span-7 text-lg relative"
-						v-motion
-						:initial="{ opacity: 0 }"
-						:visible-once="{
-							opacity: 1,
-							x: '0vw',
-							transition: {
-								type: 'spring',
-								stiffness: 380,
-								damping: 35,
-								mass: 0.7,
-								restDelta: 0.001,
-								delay: 300,
-							},
-						}">
-						<h1>Su di me</h1>
-						<p class="text-xl">Sono un web developer e anche un grafico.</p>
-						<p class="text-xl mb-6">
-							Sono nato a Catania e sin da piccolo ho sempre avuto un grande interesse per la tecnologia. Con gli anni
-							la cosa poi è andata sempre a diventare più grande, infatti già a 10 anni mi dilettavo con Photoshop
-							<span><i class="cib-adobe-photoshop"></i></span>
-							, programmi di elaborazione 3D e di rendering. Negli anni poi ho iniziato a programmare alle scuole
-							superiori.
-						</p>
-						<p class="text-xl">
-							Col tempo ho continuato a portare avanti le mie passioni per la programmazione, Photoshop e per il
-							video-editing... l'elaborazione 3D è molto più sopita rispetto alle altre, ma ogni tanto sfoggio la mia
-							creatività pure col 3D 😉.
-						</p>
+							<div class="grid grid-cols-12 justify-between lg:mt-4 xl:mt-0 md:mt-16">
+								<!-- Spero che questo max-height non diventi un problema nel futuro -->
+								<div class="col-span-6">
+									<h2 class="text-3xl">Soft skills</h2>
+									<ul class="list-disc pl-6">
+										<li>Adattarsi ai cambiamenti</li>
+										<li>Lavorare in team</li>
+										<li>Ascoltare</li>
+										<li>Proporre nuove idee</li>
+										<li>Aiutare gli altri</li>
+										<li>Rimanere aggiornato</li>
+									</ul>
+								</div>
 
-						<div class="flex justify-between h-full max-h-[50%]">
-							<!-- Spero che questo max-height non diventi un problema nel futuro -->
-							<div class="absolute bottom-0 left-0">
-								<h2 class="text-3xl">Soft skills</h2>
-								<ul class="list-disc pl-6">
-									<li>Adattarsi ai cambiamenti</li>
-									<li>Lavorare in team</li>
-									<li>Ascoltare</li>
-									<li>Proporre nuove idee</li>
-									<li>Aiutare gli altri</li>
-									<li>Rimanere aggiornato</li>
-								</ul>
-							</div>
-
-							<div class="absolute bottom-0 right-0">
-								<h2 class="text-3xl">Tecnologie che utilizzo</h2>
-								<ul class="list-disc pl-6">
-									<li>Front-end</li>
-									<li>Back-end</li>
-									<li>Photoshop</li>
-									<li>Illustrator</li>
-									<li>InDesign</li>
-									<li>Video-editing</li>
-								</ul>
+								<div class="col-span-6">
+									<h2 class="text-3xl">Hard skills</h2>
+									<ul class="list-disc pl-6">
+										<li>Front-end</li>
+										<li>Back-end</li>
+										<li>Photoshop</li>
+										<li>Illustrator</li>
+										<li>InDesign</li>
+										<li>Video-editing</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -311,105 +311,107 @@ const sendEmail = async () => {
 			id="career"
 			class="min-h-[100svh] py-16 bg-[#0A1128] flex items-center snap-mandatory"
 			prefers-reduced-motion="reduce">
-			<div
-				class="max-w-screen-lg mx-auto px-4 w-full"
-				v-motion
-				:initial="{ opacity: 1, x: '50vw' }"
-				:visible-once="{
-					opacity: 1,
-					x: '0vw',
-					transition: {
-						type: 'spring',
-						stiffness: 380,
-						damping: 35,
-						mass: 0.7,
-						restDelta: 0.001,
-					},
-				}">
-				<!-- Titolo -->
-				<h1 class="text-center text-4xl md:text-5xl mb-16 md:mb-24 text-white">La mia carriera</h1>
+			<div class="container mx-auto md:px-32 lg:px-16 sm:px-4">
+				<div
+					class="max-w-screen-lg mx-auto w-full"
+					v-motion
+					:initial="{ opacity: 1, x: '50vw' }"
+					:visible-once="{
+						opacity: 1,
+						x: '0vw',
+						transition: {
+							type: 'spring',
+							stiffness: 380,
+							damping: 35,
+							mass: 0.7,
+							restDelta: 0.001,
+						},
+					}">
+					<!-- Titolo -->
+					<h1 class="text-center text-4xl md:text-5xl mb-16 md:mb-24 text-white">La mia carriera</h1>
 
-				<!-- Timeline -->
-				<div class="relative">
-					<!-- Linea centrale -->
-					<div class="absolute left-1/2 top-0 h-full w-1 md:w-1.5 bg-yellow-500 transform -translate-x-1/2 z-0"></div>
+					<!-- Timeline -->
+					<div class="relative">
+						<!-- Linea centrale -->
+						<div class="absolute left-1/2 top-0 h-full w-1 md:w-1.5 bg-yellow-500 transform -translate-x-1/2 z-0"></div>
 
-					<!-- Step 1 -->
-					<div class="relative mb-24 md:mb-32 lg:mb-12 flex flex-col md:flex-row items-center justify-between">
-						<!-- Contenuto sinistro -->
-						<div class="w-full md:w-5/12 mb-8 md:mb-0 md:pr-8 text-right order-1">
-							<h3 class="text-2xl md:text-3xl font-bold text-white">Scuole superiori</h3>
-							<p class="text-gray-300 mt-2 text-lg">
-								Ho studiato informatica alle superiori, acquisendo le basi della programmazione e della tecnologia
-							</p>
+						<!-- Step 1 -->
+						<div class="relative mb-24 md:mb-32 lg:mb-12 flex flex-col md:flex-row items-center justify-between">
+							<!-- Contenuto sinistro -->
+							<div class="w-full md:w-5/12 mb-8 md:mb-0 md:pr-8 text-right order-1">
+								<h3 class="text-2xl md:text-3xl font-bold text-white">Scuole superiori</h3>
+								<p class="text-gray-300 mt-2 text-lg">
+									Ho studiato informatica alle superiori, acquisendo le basi della programmazione e della tecnologia
+								</p>
+							</div>
+
+							<!-- Punto centrale -->
+							<a
+								href="https://iis-gemmellaro.edu.it/"
+								class="relative w-12 h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2"
+								aria-label="Vai a dettagli scuole superiori 2013-2019"
+								target="_blank">
+								<div
+									class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-125 transition-transform duration-300"></div>
+							</a>
+
+							<!-- Data -->
+							<div class="w-full md:w-5/12 md:pl-8 order-3 md:order-3 text-left md:text-right">
+								<h2 class="text-3xl md:text-4xl font-bold text-yellow-500 text-left">2013-2019</h2>
+							</div>
 						</div>
 
-						<!-- Punto centrale -->
-						<a
-							href="https://iis-gemmellaro.edu.it/"
-							class="relative w-12 h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2"
-							aria-label="Vai a dettagli scuole superiori 2013-2019"
-							target="_blank">
-							<div
-								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-125 transition-transform duration-300"></div>
-						</a>
+						<!-- Step 2 -->
+						<div class="relative mb-24 md:mb-32 lg:mb-12 flex flex-col md:flex-row items-center justify-between">
+							<!-- Data -->
+							<div class="w-full md:w-5/12 md:pr-8 order-1 text-right">
+								<h2 class="text-3xl md:text-4xl font-bold text-yellow-500">2020-2024</h2>
+							</div>
 
-						<!-- Data -->
-						<div class="w-full md:w-5/12 md:pl-8 order-3 md:order-3 text-left md:text-right">
-							<h2 class="text-3xl md:text-4xl font-bold text-yellow-500 text-left">2013-2019</h2>
-						</div>
-					</div>
+							<!-- Punto centrale -->
+							<a
+								href="https://www.abacatania.it/"
+								class="relative w-12 h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2"
+								aria-label="Vai a dettagli scuole superiori 2013-2019"
+								target="_blank">
+								<div
+									class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-125 transition-transform duration-300"></div>
+							</a>
 
-					<!-- Step 2 -->
-					<div class="relative mb-24 md:mb-32 lg:mb-12 flex flex-col md:flex-row items-center justify-between">
-						<!-- Data -->
-						<div class="w-full md:w-5/12 md:pr-8 order-1 text-right">
-							<h2 class="text-3xl md:text-4xl font-bold text-yellow-500">2020-2024</h2>
-						</div>
-
-						<!-- Punto centrale -->
-						<a
-							href="https://www.abacatania.it/"
-							class="relative w-12 h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2"
-							aria-label="Vai a dettagli scuole superiori 2013-2019"
-							target="_blank">
-							<div
-								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-125 transition-transform duration-300"></div>
-						</a>
-
-						<!-- Contenuto destro -->
-						<div class="w-full md:w-5/12 mt-8 md:mt-0 md:pl-8 order-3">
-							<h3 class="text-2xl md:text-3xl font-bold text-white">Accademia di Belle Arti</h3>
-							<p class="text-gray-300 mt-2 text-lg">
-								Ho studiato Design della Comunicazione Visiva, acquisendo nozioni importanti nel campo del Graphic
-								Design
-							</p>
-						</div>
-					</div>
-
-					<!-- Step 3 -->
-					<div class="relative flex flex-col md:flex-row items-center justify-between">
-						<!-- Contenuto sinistro -->
-						<div class="w-full md:w-5/12 mb-8 md:mb-0 md:pr-8 text-right order-1">
-							<h3 class="text-2xl md:text-3xl font-bold text-white">Master</h3>
-							<p class="text-gray-300 mt-2 text-lg">
-								Corso di 700 ore, dove ho appreso le nozioni fondamentali della programmazione front e back-end
-							</p>
+							<!-- Contenuto destro -->
+							<div class="w-full md:w-5/12 mt-8 md:mt-0 md:pl-8 order-3">
+								<h3 class="text-2xl md:text-3xl font-bold text-white">Accademia di Belle Arti</h3>
+								<p class="text-gray-300 mt-2 text-lg">
+									Ho studiato Design della Comunicazione Visiva, acquisendo nozioni importanti nel campo del Graphic
+									Design
+								</p>
+							</div>
 						</div>
 
-						<!-- Punto centrale -->
-						<a
-							href="https://boolean.careers/"
-							class="relative w-12 h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2"
-							aria-label="Vai a dettagli scuole superiori 2013-2019"
-							target="_blank">
-							<div
-								class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-125 transition-transform duration-300"></div>
-						</a>
+						<!-- Step 3 -->
+						<div class="relative flex flex-col md:flex-row items-center justify-between">
+							<!-- Contenuto sinistro -->
+							<div class="w-full md:w-5/12 mb-8 md:mb-0 md:pr-8 text-right order-1">
+								<h3 class="text-2xl md:text-3xl font-bold text-white">Master</h3>
+								<p class="text-gray-300 mt-2 text-lg">
+									Corso di 700 ore, dove ho appreso le nozioni fondamentali della programmazione front e back-end
+								</p>
+							</div>
 
-						<!-- Data -->
-						<div class="w-full md:w-5/12 md:pl-8 order-3 text-left">
-							<h2 class="text-3xl md:text-4xl font-bold text-yellow-500">2024</h2>
+							<!-- Punto centrale -->
+							<a
+								href="https://boolean.careers/"
+								class="relative w-12 h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2"
+								aria-label="Vai a dettagli scuole superiori 2013-2019"
+								target="_blank">
+								<div
+									class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-125 transition-transform duration-300"></div>
+							</a>
+
+							<!-- Data -->
+							<div class="w-full md:w-5/12 md:pl-8 order-3 text-left">
+								<h2 class="text-3xl md:text-4xl font-bold text-yellow-500">2024</h2>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -421,15 +423,15 @@ const sendEmail = async () => {
 			id="works"
 			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-[#E5E7EB]">
 			<div class="text-lg">
-				<h1 class="mt-32 text-center text-black">I miei lavori</h1>
+				<h1 class="mt-32 lg:pb-0 md:pb-32 sm:pb-32 text-center text-black">I miei lavori</h1>
 			</div>
 
-			<div class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center">
+			<div class="max-w-screen-lg container m-auto md:px-32 lg:px-16 text-black flex flex-col justify-center place-items-center md:pb-32">
 				<!-- Card Dev e Card Grafico -->
-				<div class="grid grid-cols-12 gap-20 place-items-center">
+				<div class="grid grid-cols-12 lg:gap-20 md:gap-0 place-items-center">
 					<!-- Web Dev -->
 					<div
-						class="col-span-6"
+						class="lg:col-span-6 md:col-span-12 sm:col-span-12"
 						v-motion
 						:initial="{ opacity: 0, x: '-30vw' }"
 						:visible-once="{
@@ -444,7 +446,9 @@ const sendEmail = async () => {
 								delay: 300,
 							},
 						}">
-						<router-link to="/dev" class="">
+
+						
+						<router-link to="/dev" class="inline-block lg:mb-0 :md-mb-8 w-full lg:text-left md:text-center sm:text-center">
 							<a class="inline-block mb-8" href="#">
 								<h2 class="inline text-black text-4xl font-jetbrains-mono relative group">
 									Web Development
@@ -475,7 +479,7 @@ const sendEmail = async () => {
 
 					<!-- Graphic Design -->
 					<div
-						class="col-span-6"
+						class="lg:col-span-6 md:col-span-12 sm:col-span-12 lg:mt-0 md:mt-16 sm:mt-16 md:mb-0 sm:mb-32"
 						v-motion
 						:initial="{ opacity: 0, x: '30vw' }"
 						:visible-once="{
@@ -490,7 +494,7 @@ const sendEmail = async () => {
 								delay: 800,
 							},
 						}">
-						<router-link to="/graphic" class="inline-block mb-8">
+						<router-link to="/graphic" class="inline-block mb-8 w-full lg:text-left md:text-center sm:text-center">
 							<h2 class="inline text-black text-4xl font-inter">graphic design</h2>
 						</router-link>
 						<router-link to="/graphic" class="">
@@ -652,4 +656,10 @@ section {
 	scroll-snap-stop: always;
 	scroll-behavior: smooth;
 }
+
+@media only screen and (max-width: 1024px) {
+		#about, #works {
+			height: unset !important;
+		}
+	}
 </style>
