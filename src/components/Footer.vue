@@ -83,7 +83,7 @@ watch(
 			</div>
 
 			<!-- Copyright -->
-			<div class="mt-12 pt-6 border-t border-[#ffffff10] text-center">
+			<div class="mt-12 pt-6 pb-6 border-t border-[#ffffff10] text-center">
 				<p class="text-sm text-[#ffffff80]">&copy; {{ currentYear }} Luca Privitera. Tutti i diritti riservati.</p>
 			</div>
 		</div>

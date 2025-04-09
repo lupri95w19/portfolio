@@ -54,28 +54,24 @@ const prevPage = () => {
 				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come Developer</h1>
 			</div>
 
-			<div class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center">
+			<div
+				class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center px-4 sm:px-32 md:px-24 lg:px-8">
 				<!-- Card Dev e Card Grafico -->
-				<!--  -->
-				<!--  -->
-				<!--  -->
-				<div class="grid grid-cols-12 gap-20">
+				<div class="grid grid-cols-12 md:gap-10">
 					<!-- Loop attraverso i progetti -->
 					<div
 						v-for="project in paginatedProjects"
 						:key="project.id"
 						:class="[project.classCustCol]"
-						class="col-span-4 flex flex-col place-items-center">
+						class="flex flex-col place-items-center
+						col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-4 md:mb-0 mb-24">
 						<!-- Card Progetto -->
 						<div
-							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col"
-							:class="project.classCustColSec">
+							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col w-full">
 							<!-- Sezione Immagine -->
 							<div
 								:class="[8, 9].includes(project.id) ? 'flex items-center justify-center' : ``"
 								class="flex-shrink-0 rounded-t-lg bg-black">
-								<!-- Prima c'era overflow-hidden -->
-								<!-- Prima avevo aggiunto anche h-[405px] -->
 								<a class="h-100 flex overflow-hidden" href="#">
 									<img
 										:class="
@@ -83,41 +79,31 @@ const prevPage = () => {
 											[6, 7].includes(project.id) ? 'object-cover' : 'object-contain rounded-t-lg'),
 											project.classCust ? project.classCust : '')
 										"
-										class="w-full object-center rounded-t-lg"
+										class="w-full object-contain object-center lg:object-center rounded-t-lg"
 										v-lazy="{
 											src: project.image,
 											error: project.imgpre + `<p class='text-red-500'>ciao</p>`,
 											loading: project.imgpre,
 										}"
 										:alt="project.title" />
-									<!-- 
-										Quando un'immagine HTML fallisce il caricamento:
-
-										L'elemento <img> emette un evento error
-										L'evento contiene il target (l'elemento immagine stesso)
-										Modificando .src si forza un cambio dell'immagine -->
 								</a>
 							</div>
-							<!-- v-lazy="project.image" -->
+
 							<!-- Sezione Contenuto -->
-							<div class="p-5 flex-grow flex flex-col h-[480px]">
-								<div class="h-[100px]">
+							<div class="p-5 flex-grow flex flex-col h-[676px] sm:h-[476px] md:h-[572px] lg:h-[676px]">
+								<div class="h-[120px]">
 									<a href="#">
-										<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+										<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white h-[64px]">
 											{{ project.title }}
 										</h2>
-										<h3 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+										<h3 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white h-[56px]">
 											{{ project.subtitle }}
 										</h3>
 									</a>
 								</div>
 
-								<p class="mb-2 font-normal text-gray-700 dark:text-gray-400">
-									{{ project.paragraph1 }}
-								</p>
-								<p class="mb-4 font-normal text-gray-700 dark:text-gray-400">
-									{{ project.paragraph2 }}
-								</p>
+								<p class="mb-2 mt-2 font-normal text-gray-700 dark:text-gray-400">{{ project.paragraph1 }}</p>
+								<p class="mb-4 font-normal text-gray-700 dark:text-gray-400">{{ project.paragraph2 }}</p>
 
 								<!-- Bottone -->
 								<a
@@ -125,7 +111,8 @@ const prevPage = () => {
 									class="mt-auto inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 									Progetto completo
 								</a>
-								<div class="h-[88px]">
+
+								<div class="h-[136px]">
 									<div class="flex flex-wrap gap-2 mt-4 pb-8">
 										<span
 											v-for="(tag, index) in project.tags"
@@ -140,6 +127,7 @@ const prevPage = () => {
 					</div>
 				</div>
 
+				<!-- Paginazione -->
 				<div class="w-full text-xs mt-10 flex justify-center items-center">
 					<!-- Bottone Precedente -->
 					<button
@@ -151,7 +139,7 @@ const prevPage = () => {
 					</button>
 
 					<!-- Numero di Pagina -->
-					<h2 class="mx-4 text-lg">Pagina {{ currentPage }} di {{ totalPages }}</h2>
+					<h2 class="mx-2 sm:mx-4 text-lg text-center">Pagina {{ currentPage }} di {{ totalPages }}</h2>
 
 					<!-- Bottone Successivo -->
 					<button
@@ -162,24 +150,24 @@ const prevPage = () => {
 						Successivo
 					</button>
 				</div>
-				<div class="w-full text-xs mt-48 mb-80 flex justify-center flex-col">
-					<h1 class="text-black mb-4 w-full text-center">Controlla anche i miei lavori da grafico</h1>
-					<router-link to="/graphic" class="inline-flex flex flex-col place-items-center">
-						<div class="w-96 border bg-[#181818] rounded-md shadow-lg h-[318px]">
-							<!-- Header -->
 
-							<div class="flex justify-between items-center bg-black px-4 py-2 text-sm font-semibold rounded-md">
+				<div class="w-full sm:w-96 text-xs mt-48 mb-80 flex justify-center flex-col">
+					<h1 class="text-black mb-4 w-full text-center">Controlla anche i miei lavori da grafico</h1>
+					<router-link to="/graphic" class="inline-flex flex flex-col place-items-center sm:px-0 px-4">
+						<div class="w-full border bg-[#303031] rounded-md shadow-lg h-[318px]">
+							<!-- Header -->
+							<div class="flex justify-end items-center bg-[#161616] px-4 py-2 text-sm font-semibold rounded-md">
 								<div class="flex gap-2 text-[#E5E7EB]">
-									<span class="w-3 h-3 bg-red-500 rounded-full"></span>
-									<span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
-									<span class="w-3 h-3 bg-green-500 rounded-full"></span>
-								</div>
+										<span class="w-3 h-3 bg-red-500 rounded-full"></span>
+										<span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+										<span class="w-3 h-3 bg-green-500 rounded-full"></span>
+									</div>
 							</div>
-							<div class="p-0 flex items-center justify-center h-[290px]">
+							<div class="p-0 flex items-center justify-center h-[282px]">
 								<img
-									class="max-h-full object-contain p-8 transition-transform duration-300 hover:scale-110 ease-[cubic-bezier(0,0,0.618,1)]"
+									class="max-h-full object-contain p-8 transition-all duration-500 ease-in-out hover:animate-bob"
 									src="/monogramma.svg"
-									alt="monogramma graphic design" />
+									alt="icona codice" />
 							</div>
 						</div>
 					</router-link>

@@ -23,7 +23,7 @@ export const useProjectStoreDev = defineStore('projectStore', {
 				paragraph1: 'Il progetto prevedeva di realizzare una replica della web-app di Whatsapp.',
 				paragraph2: `Funzionalità chiave: ordinamento cronologico delle chat, ricerca avanzata e risposte automatiche.`,
 				tags: ['HTML', `CSS`, `JavaScript`, 'Bootstrap'],
-				classCust: 'scale-150 object-contain',
+				classCust: 'scale-175 object-contain',
 			},
 			{
 				id: 3,

@@ -60,9 +60,10 @@ const sendEmail = async () => {
 
 <template>
 	<div class="w-screen bg-[#0A1128] snap-y">
-		<section class="lg:h-[93.5vh] h-auto bg-[#0A1128] relative flex flex-col justify-center snap-mandatory overflow-hidden">
+		<section
+			class="lg:h-[93.5vh] h-auto bg-[#0A1128] relative flex flex-col justify-center snap-mandatory overflow-hidden">
 			<div class="max-w-screen-lg container m-auto flex justify-center">
-				<div class="container mx-auto px-16 lg:py-0 md:py-32">
+				<div class="container mx-auto md:px-16 px-4 lg:py-0 md:py-32">
 					<div class="grid grid-cols-12 mb-4 gap-4">
 						<div class="col-span-4"></div>
 						<div class="col-span-8"></div>
@@ -115,7 +116,7 @@ const sendEmail = async () => {
 
 						<!-- Terminale -->
 						<div
-							class="lg:col-span-8 md:col-span-12 sm:col-span-12 col-span-12 p-0 rounded-lg w-full rounded-t-lg h-[550px] lg:mt-0 md:mt-16 mt-32"
+							class="lg:col-span-8 md:col-span-12 sm:col-span-12 col-span-12 p-0 rounded-lg w-full rounded-t-lg h-[550px] lg:mt-0 md:mt-16 mt-16"
 							v-motion
 							:initial="{ opacity: 0, x: '30vw' }"
 							:visible-once="{
@@ -152,11 +153,12 @@ const sendEmail = async () => {
 								</div>
 
 								<!-- Testo terminale -->
-								<div class="text-lg leading-relaxed p-4 overflow-y-auto h-[calc(100%-80px)] relative">
+								<div
+									class="text-lg leading-relaxed p-4 overflow-y-auto h-[calc(100%-20px)] sm:h-[calc(100%-80px)] relative">
 									<p>Ciao! Io sono Luca</p>
 									<p>In breve posso definirmi così:</p>
 									<!-- Lista -->
-									<ul class="ms-8 text-white">
+									<ul class="sm:ms-8 ms-4 text-white">
 										<li>✅ Web Developer</li>
 										<li>✅ FE Lover</li>
 										<li>
@@ -165,7 +167,7 @@ const sendEmail = async () => {
 										</li>
 									</ul>
 
-									<p class="mt-16 block sm:absolute bottom-0">
+									<p class="sm:mt-16 mt-32 block sm:absolute sm:bottom-0">
 										Se vuoi saperne di più scrolla pure sotto
 										<i class="fa-solid fa-turn-down"></i>
 										😉
@@ -203,10 +205,10 @@ const sendEmail = async () => {
 						ease: 'easeInOutQuad',
 					},
 				}">
-				<div class="container mx-auto md:px-32 lg:px-16 sm:px-4">
-					<div class="grid grid-cols-12 gap-8 lg:h-[700px] xl:h-[600px] text-black relative">
+				<div class="container mx-auto md:px-32 lg:px-16 sm:px-4 px-4">
+					<div class="grid grid-cols-12 sm:gap-8 lg:h-[700px] xl:h-[600px] text-black relative">
 						<!-- Prima aveva 700px ma su mac dava problemi -->
-						<div class="lg:col-span-5 md:col-span-12 sm:col-span-12 h-full relative">
+						<div class="lg:col-span-5 md:col-span-12 sm:col-span-12 col-span-12 h-full relative">
 							<img
 								src="/lucae.jpg"
 								class="w-full h-full object-cover rounded rounded-[30px]"
@@ -226,7 +228,7 @@ const sendEmail = async () => {
 									},
 								}" />
 							<div
-								class="absolute xl:-left-23 lg:-left-15 md:left-25 sm:left-35 top-50 flex flex-col items-center rotate-320"
+								class="sm:absolute xl:-left-23 lg:-left-15 md:left-25 sm:left-35 sm:top-50 top-30 sm:flex flex-col hidden items-center rotate-320"
 								v-motion
 								:initial="{ opacity: 0 }"
 								:visible-once="{
@@ -246,7 +248,7 @@ const sendEmail = async () => {
 						</div>
 
 						<div
-							class="lg:col-span-7 md:col-span-12 sm:col-span-12 text-lg relative xl:h-[600px]"
+							class="lg:col-span-7 md:col-span-12 sm:col-span-12 col-span-12 text-lg relative xl:h-[600px]"
 							v-motion
 							:initial="{ opacity: 0 }"
 							:visible-once="{
@@ -261,9 +263,9 @@ const sendEmail = async () => {
 									delay: 300,
 								},
 							}">
-							<h1>Su di me</h1>
+							<h1 class="mt-8 sm:mt-0 md:mb-0 mb-4">Su di me</h1>
 							<p class="text-xl">Sono un web developer e anche un grafico.</p>
-							<p class="text-xl mb-6">
+							<p class="text-xl mb-3">
 								Sono nato a Catania e sin da piccolo ho sempre avuto un grande interesse per la tecnologia. Con gli anni
 								la cosa poi si è sempre più evoluta, infatti già a 10 anni mi dilettavo con Photoshop, programmi di
 								elaborazione 3D e di rendering. Negli anni poi ho iniziato a programmare alle scuole superiori.
@@ -274,11 +276,11 @@ const sendEmail = async () => {
 								creatività pure col 3D.
 							</p>
 
-							<div class="grid grid-cols-12 justify-between lg:mt-4 xl:mt-0 md:mt-16">
+							<div class="grid grid-cols-12 justify-between lg:mt-4 xl:mt-4 md:mt-16 mt-24">
 								<!-- Spero che questo max-height non diventi un problema nel futuro -->
-								<div class="col-span-6">
-									<h2 class="text-3xl">Soft skills</h2>
-									<ul class="list-disc pl-6">
+								<div class="sm:col-span-6 col-span-12 sm:mt-0 mt-12">
+									<h2 class="text-3xl text-center sm:text-left">Soft skills</h2>
+									<ul class="list-disc pl-6 mt-2 sm:mt-0">
 										<li>Adattarsi ai cambiamenti</li>
 										<li>Lavorare in team</li>
 										<li>Ascoltare</li>
@@ -288,9 +290,9 @@ const sendEmail = async () => {
 									</ul>
 								</div>
 
-								<div class="col-span-6">
-									<h2 class="text-3xl">Hard skills</h2>
-									<ul class="list-disc pl-6">
+								<div class="sm:col-span-6 col-span-12 sm:mt-0 mt-12">
+									<h2 class="text-3xl text-center sm:text-left">Hard skills</h2>
+									<ul class="list-disc pl-6 mt-2 sm:mt-0">
 										<li>Front-end</li>
 										<li>Back-end</li>
 										<li>Photoshop</li>
@@ -309,9 +311,9 @@ const sendEmail = async () => {
 		<!-- Sezione carriera -->
 		<section
 			id="career"
-			class="min-h-[100svh] py-16 bg-[#0A1128] flex items-center snap-mandatory"
+			class="min-h-[100svh] py-12 sm:py-16 bg-[#0A1128] flex items-center snap-mandatory"
 			prefers-reduced-motion="reduce">
-			<div class="container mx-auto md:px-32 lg:px-16 sm:px-4">
+			<div class="container mx-auto px-4 sm:px-4 md:px-32 lg:px-16">
 				<div
 					class="max-w-screen-lg mx-auto w-full"
 					v-motion
@@ -328,19 +330,25 @@ const sendEmail = async () => {
 						},
 					}">
 					<!-- Titolo -->
-					<h1 class="text-center text-4xl md:text-5xl mb-16 md:mb-24 text-white">La mia carriera</h1>
+					<h1 class="text-center text-3xl sm:text-4xl md:text-5xl mb-12 sm:mb-16 md:mb-24 text-white">
+						La mia carriera
+					</h1>
 
 					<!-- Timeline -->
 					<div class="relative">
 						<!-- Linea centrale -->
-						<div class="absolute left-1/2 top-0 h-full w-1 md:w-1.5 bg-yellow-500 transform -translate-x-1/2 z-0"></div>
+						<div
+							class="absolute left-1/2 top-0 h-full w-0.5 sm:w-1 md:w-1.5 bg-yellow-500 transform -translate-x-1/2 z-0"></div>
 
 						<!-- Step 1 -->
-						<div class="relative mb-24 md:mb-32 lg:mb-12 flex flex-col md:flex-row items-center justify-between">
+						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
 							<!-- Contenuto sinistro -->
-							<div class="w-full md:w-5/12 mb-8 md:mb-0 md:pr-8 text-right order-1">
-								<h3 class="text-2xl md:text-3xl font-bold text-white">Scuole superiori</h3>
-								<p class="text-gray-300 mt-2 text-lg">
+							<div
+								class="w-full md:w-5/12 mb-6 md:mb-0 md:pr-8 text-right order-1 sm:block flex flex-col flex-end items-end">
+								<h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left md:text-right w-full">
+									Scuole superiori
+								</h3>
+								<p class="text-sm sm:text-base text-gray-300 mt-2 md:w-full md:px-0 sm:pl-0 text-left md:text-right">
 									Ho studiato informatica alle superiori, acquisendo le basi della programmazione e della tecnologia
 								</p>
 							</div>
@@ -348,40 +356,42 @@ const sendEmail = async () => {
 							<!-- Punto centrale -->
 							<a
 								href="https://iis-gemmellaro.edu.it/"
-								class="relative w-12 h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2"
+								class="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2 md:mx-0 mx-4"
 								aria-label="Vai a dettagli scuole superiori 2013-2019"
 								target="_blank">
 								<div
-									class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-125 transition-transform duration-300"></div>
+									class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-110 sm:group-hover:scale-125 transition-transform duration-300"></div>
 							</a>
 
 							<!-- Data -->
 							<div class="w-full md:w-5/12 md:pl-8 order-3 md:order-3 text-left md:text-right">
-								<h2 class="text-3xl md:text-4xl font-bold text-yellow-500 text-left">2013-2019</h2>
+								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500 md:text-left text-center">
+									2013-2019
+								</h2>
 							</div>
 						</div>
 
 						<!-- Step 2 -->
-						<div class="relative mb-24 md:mb-32 lg:mb-12 flex flex-col md:flex-row items-center justify-between">
+						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
 							<!-- Data -->
-							<div class="w-full md:w-5/12 md:pr-8 order-1 text-right">
-								<h2 class="text-3xl md:text-4xl font-bold text-yellow-500">2020-2024</h2>
+							<div class="w-full md:w-5/12 md:pr-8 order-1 md:text-right text-center">
+								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500">2020-2024</h2>
 							</div>
 
 							<!-- Punto centrale -->
 							<a
 								href="https://www.abacatania.it/"
-								class="relative w-12 h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2"
+								class="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2 md:mx-0 mx-4"
 								aria-label="Vai a dettagli scuole superiori 2013-2019"
 								target="_blank">
 								<div
-									class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-125 transition-transform duration-300"></div>
+									class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-110 sm:group-hover:scale-125 transition-transform duration-300"></div>
 							</a>
 
 							<!-- Contenuto destro -->
-							<div class="w-full md:w-5/12 mt-8 md:mt-0 md:pl-8 order-3">
-								<h3 class="text-2xl md:text-3xl font-bold text-white">Accademia di Belle Arti</h3>
-								<p class="text-gray-300 mt-2 text-lg">
+							<div class="w-full md:w-5/12 mt-6 md:mt-0 md:pl-8 order-3">
+								<h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">Accademia di Belle Arti</h3>
+								<p class="text-sm sm:text-base text-gray-300 mt-2">
 									Ho studiato Design della Comunicazione Visiva, acquisendo nozioni importanti nel campo del Graphic
 									Design
 								</p>
@@ -389,11 +399,11 @@ const sendEmail = async () => {
 						</div>
 
 						<!-- Step 3 -->
-						<div class="relative flex flex-col md:flex-row items-center justify-between">
+						<div class="relative flex md:flex-row items-center justify-between">
 							<!-- Contenuto sinistro -->
-							<div class="w-full md:w-5/12 mb-8 md:mb-0 md:pr-8 text-right order-1">
-								<h3 class="text-2xl md:text-3xl font-bold text-white">Master</h3>
-								<p class="text-gray-300 mt-2 text-lg">
+							<div class="w-full md:w-5/12 mb-6 md:mb-0 md:pr-8 text-right order-1">
+								<h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left">Academy</h3>
+								<p class="text-sm sm:text-base text-gray-300 mt-2 text-left">
 									Corso di 700 ore, dove ho appreso le nozioni fondamentali della programmazione front e back-end
 								</p>
 							</div>
@@ -401,16 +411,16 @@ const sendEmail = async () => {
 							<!-- Punto centrale -->
 							<a
 								href="https://boolean.careers/"
-								class="relative w-12 h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2"
+								class="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2 md:mx-0 mx-4"
 								aria-label="Vai a dettagli scuole superiori 2013-2019"
 								target="_blank">
 								<div
-									class="w-10 h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-125 transition-transform duration-300"></div>
+									class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-110 sm:group-hover:scale-125 transition-transform duration-300"></div>
 							</a>
 
 							<!-- Data -->
-							<div class="w-full md:w-5/12 md:pl-8 order-3 text-left">
-								<h2 class="text-3xl md:text-4xl font-bold text-yellow-500">2024</h2>
+							<div class="w-full md:w-5/12 md:pl-8 order-3 md:text-left text-center">
+								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500">2024</h2>
 							</div>
 						</div>
 					</div>
@@ -423,15 +433,16 @@ const sendEmail = async () => {
 			id="works"
 			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-[#E5E7EB]">
 			<div class="text-lg">
-				<h1 class="mt-32 lg:pb-0 md:pb-32 sm:pb-32 text-center text-black">I miei lavori</h1>
+				<h1 class="mt-32 lg:pb-0 md:pb-32 sm:pb-32 pb-48 text-center text-black">I miei lavori</h1>
 			</div>
 
-			<div class="max-w-screen-lg container m-auto md:px-32 lg:px-16 text-black flex flex-col justify-center place-items-center md:pb-32">
+			<div
+				class="max-w-screen-lg container m-auto md:px-32 lg:px-16 text-black flex flex-col justify-center place-items-center md:pb-32 px-4">
 				<!-- Card Dev e Card Grafico -->
 				<div class="grid grid-cols-12 lg:gap-20 md:gap-0 place-items-center">
 					<!-- Web Dev -->
 					<div
-						class="lg:col-span-6 md:col-span-12 sm:col-span-12"
+						class="lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12 flex justify-end"
 						v-motion
 						:initial="{ opacity: 0, x: '-30vw' }"
 						:visible-once="{
@@ -446,18 +457,19 @@ const sendEmail = async () => {
 								delay: 300,
 							},
 						}">
-
-						
-						<router-link to="/dev" class="inline-block lg:mb-0 :md-mb-8 w-full lg:text-left md:text-center sm:text-center">
+						<router-link
+							to="/dev"
+							class="inline-block lg:mb-0 :md-mb-8 w-full lg:text-left md:text-center sm:text-center">
 							<a class="inline-block mb-8" href="#">
-								<h2 class="inline text-black text-4xl font-jetbrains-mono relative group">
+								<h2
+									class="sm:inline inline-block md:text-left text-center text-black text-4xl font-jetbrains-mono relative group">
 									Web Development
 									<span
 										class="cursor absolute right-0 top-0 h-full w-[5px] bg-black opacity-0 group-hover:opacity-100 animate-blink"></span>
 								</h2>
 							</a>
 							<a href="#">
-								<div class="w-96 border bg-[#303031] rounded-md shadow-lg h-[318px]">
+								<div class="sm:w-96 w-full border bg-[#303031] rounded-md shadow-lg h-[318px]">
 									<!-- Header -->
 									<div class="flex justify-end items-center bg-[#161616] px-4 py-2 text-sm font-semibold rounded-md">
 										<div class="flex gap-2 text-[#E5E7EB] place-items-center">
@@ -479,7 +491,7 @@ const sendEmail = async () => {
 
 					<!-- Graphic Design -->
 					<div
-						class="lg:col-span-6 md:col-span-12 sm:col-span-12 lg:mt-0 md:mt-16 sm:mt-16 md:mb-0 sm:mb-32"
+						class="lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12 lg:mt-0 md:mt-16 sm:mt-16 mt-16 md:mb-0 sm:mb-32 mb-32 w-full sm:w-auto"
 						v-motion
 						:initial="{ opacity: 0, x: '30vw' }"
 						:visible-once="{
@@ -495,10 +507,12 @@ const sendEmail = async () => {
 							},
 						}">
 						<router-link to="/graphic" class="inline-block mb-8 w-full lg:text-left md:text-center sm:text-center">
-							<h2 class="inline text-black text-4xl font-inter">graphic design</h2>
+							<h2 class="sm:inline inline-block md:text-left text-center w-full text-black text-4xl font-inter">
+								graphic design
+							</h2>
 						</router-link>
 						<router-link to="/graphic" class="">
-							<div class="w-96 border bg-[#181818] rounded-md shadow-lg h-[318px]">
+							<div class="sm:w-96 w-full border bg-[#181818] rounded-md shadow-lg h-[318px]">
 								<!-- Header -->
 
 								<div class="flex justify-between items-center bg-black px-4 py-2 text-sm font-semibold rounded-md">
@@ -508,7 +522,7 @@ const sendEmail = async () => {
 										<span class="w-3 h-3 bg-green-500 rounded-full"></span>
 									</div>
 								</div>
-								<div class="p-0 flex items-center justify-center h-[290px]">
+								<div class="p-0 flex items-center justify-center h-[282px]">
 									<img
 										class="max-h-full object-contain p-8 transition-transform duration-300 hover:scale-110 ease-[cubic-bezier(0,0,0.618,1)]"
 										src="/monogramma.svg"
@@ -525,7 +539,9 @@ const sendEmail = async () => {
 		<section
 			id="contact"
 			class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] [-webkit-fill-available] flex flex-col justify-center bg-gradient-to-r from-[#FF8C00] via-[#FFB347] via-15% to-[#FFD447] to-90%">
-			<div class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] flex flex-col justify-center" v-motion-slide-left>
+			<div
+				class="min-h-[100vh] min-h-[100svh] min-h-[100dvh] flex flex-col justify-center md:px-16 px-4"
+				v-motion-slide-left>
 				<div class="flex justify-center">
 					<div class="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96 relative">
 						<h2 class="text-3xl font-semibold text-center mb-6 text-gray-800">Contattami</h2>
@@ -658,8 +674,9 @@ section {
 }
 
 @media only screen and (max-width: 1024px) {
-		#about, #works {
-			height: unset !important;
-		}
+	#about,
+	#works {
+		height: unset !important;
 	}
+}
 </style>

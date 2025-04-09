@@ -30,23 +30,23 @@ const scrollToSection = (sectionId) => {
 </script>
 
 <template>
-  <div class="flex justify-center sticky top-10 left-0 z-40 py-4">
+  <div class="flex justify-center sticky top-0 left-0 md:top-10 md:left-0 z-40 py-4 sm:px-0 px-4">
     <div id="header" class="bg-[#0a0908] rounded-full py-4 px-8 sticky top-0 right-0 inline-flex">
       <div class="flex gap-4">
-        <div v-if="currentRoute !== '/'">
-          <a href="/" target="_self">Home</a>
+        <div class="m-auto" v-if="currentRoute !== '/'">
+          <a class="" href="/" target="_self">Home</a>
         </div>
-        <div v-if="currentRoute == '/'">
-          <a @click="navigateToSection('about')">About</a>
+        <div class="m-auto" v-if="currentRoute == '/'">
+          <a class="" @click="navigateToSection('about')">About</a>
         </div>
-        <div v-if="currentRoute == '/'">
-          <a @click="navigateToSection('career')">La mia carriera</a>
+        <div class="m-auto" v-if="currentRoute == '/'">
+          <a class="" @click="navigateToSection('career')">La mia carriera</a>
         </div>
-        <div v-if="currentRoute == '/'">
-          <a @click="navigateToSection('works')">I miei lavori</a>
+        <div class="m-auto" v-if="currentRoute == '/'">
+          <a class="" @click="navigateToSection('works')">I miei lavori</a>
         </div>
-        <div v-if="currentRoute == '/'">
-          <a @click="navigateToSection('contact')">Contattami</a>
+        <div class="m-auto" v-if="currentRoute == '/'">
+          <a class="" @click="navigateToSection('contact')">Contattami</a>
         </div>
       </div>
     </div>
