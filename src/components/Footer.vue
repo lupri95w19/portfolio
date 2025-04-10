@@ -27,7 +27,7 @@ watch(
 				<div class="flex flex-col items-center">
 					<h3 class="text-xl font-jetbrains-mono text-[#FFD447] mb-3">Materiali</h3>
 					<a
-						href="/path/to/cv.pdf"
+						href="/LucaAgatinoPriviteraCV.pdf"
 						download
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors">
 						<i class="fas fa-file-download"></i>

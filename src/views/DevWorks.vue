@@ -50,7 +50,7 @@ const prevPage = () => {
 	<div class="w-screen">
 		<section id="works" class="flex flex-col justify-center bg-[#E5E7EB]">
 			<Header />
-			<div class="text-lg">
+			<div class="text-lg px-4 sm:px-32 md:px-24 lg:px-8">
 				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come Developer</h1>
 			</div>
 
@@ -153,7 +153,7 @@ const prevPage = () => {
 
 				<div class="w-full sm:w-96 text-xs mt-48 mb-80 flex justify-center flex-col">
 					<h1 class="text-black mb-4 w-full text-center">Controlla anche i miei lavori da grafico</h1>
-					<router-link to="/graphic" class="inline-flex flex flex-col place-items-center sm:px-0 px-4">
+					<router-link to="/graphic" class="inline-flex flex flex-col place-items-center sm:px-0 px-8">
 						<div class="w-full border bg-[#303031] rounded-md shadow-lg h-[318px]">
 							<!-- Header -->
 							<div class="flex justify-end items-center bg-[#161616] px-4 py-2 text-sm font-semibold rounded-md">
