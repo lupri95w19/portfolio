@@ -64,7 +64,7 @@ const prevPage = () => {
 						:key="project.id"
 						:class="[project.classCustCol]"
 						class="flex flex-col place-items-center
-						col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-4 md:mb-0 mb-24">
+						col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-4 md:mb-0 mb-24 hover:scale-105 transition ease-in-out hover:shadow-2xl">
 						<!-- Card Progetto -->
 						<div
 							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col w-full">
@@ -72,11 +72,11 @@ const prevPage = () => {
 							<div
 								:class="[8, 9].includes(project.id) ? 'flex items-center justify-center' : ``"
 								class="flex-shrink-0 rounded-t-lg bg-black">
-								<a class="h-100 flex overflow-hidden" href="#">
+								<a class="h-100 flex overflow-hidden rounded-t-lg" href="#">
 									<img
 										:class="
 											(('transition-opacity duration-500',
-											[6, 7].includes(project.id) ? 'object-cover' : 'object-contain rounded-t-lg'),
+											[6, 7].includes(project.id) ? 'object-cover object-top' : 'object-contain rounded-t-lg'),
 											project.classCust ? project.classCust : '')
 										"
 										class="w-full object-contain object-center lg:object-center rounded-t-lg"
@@ -90,7 +90,7 @@ const prevPage = () => {
 							</div>
 
 							<!-- Sezione Contenuto -->
-							<div class="p-5 flex-grow flex flex-col h-[676px] sm:h-[476px] md:h-[572px] lg:h-[676px]">
+							<div class="p-5 flex-grow flex flex-col h-[676px] sm:h-[476px] md:h-[660px] lg:h-[676px]">
 								<div class="h-[120px]">
 									<a href="#">
 										<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white h-[64px]">

@@ -83,7 +83,7 @@ const prevPage = () => {
 							</div>
 
 							<!-- Sezione Contenuto -->
-							<div class="p-5 flex-grow flex flex-col h-[676px] sm:h-[476px] md:h-[572px] lg:h-[676px]">
+							<div class="p-5 flex-grow flex flex-col h-[676px] sm:h-[476px] md:h-[660px] lg:h-[676px]">
 								<div class="h-[120px]">
 									<a href="#">
 										<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white h-[64px]">

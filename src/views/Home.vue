@@ -240,6 +240,7 @@ const sendEmail = async () => {
 										mass: 0.7,
 										restDelta: 0.001,
 										delay: 1200,
+										duration: 4.3,
 									},
 								}">
 								<p>Questo sono io</p>

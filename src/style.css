@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 :root {
 	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -12,6 +12,24 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.montserrat {
+	font-family: 'Montserrat', sans-serif;
+	font-optical-sizing: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+span,
+a,
+label,
+input,
+button {
+	font-family: 'Inter', sans-serif;
 }
 
 a {
@@ -77,11 +95,11 @@ button:focus-visible {
 }
 
 .font-inter {
-	font-family: "Inter", sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 .font-jetbrains-mono {
-	font-family: "JetBrains Mono", monospace;
+	font-family: 'JetBrains Mono', monospace;
 }
 
 /* Animazione del codice */
