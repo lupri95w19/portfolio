@@ -61,28 +61,54 @@ const sendEmail = async () => {
 const completedTexts = ref([]);
 const currentTyping = ref('');
 
-const typeArray = ['fun', 'awesome', 'a journey', 'life'];
-const typingSpeed = 100;
-const newTextDelay = 2000;
+// const typeArray = ['Web Developer', 'FE Lover', 'Graphic Designer', 'Photoshop Enjoyer', 'PC Gamer <i class="fa-brands fa-steam"></i>'];
+const typeArray = [
+	{ text: 'Web Developer' },
+	{ text: 'FE Lover' },
+	{ text: 'Graphic Designer' },
+	{ text: 'Photoshop Enjoyer' },
+	{ text: 'PC Gamer', icon: 'fa-brands fa-steam' },
+];
+const typingSpeed = 25;
+const newTextDelay = 500;
 
 let typeArrayIndex = 0;
 let charIndex = 0;
 
+// function typeText() {
+// 	const word = typeArray[typeArrayIndex];
+
+// 	if (charIndex < word.length) {
+// 		currentTyping.value += word.charAt(charIndex);
+// 		charIndex++;
+// 		setTimeout(typeText, typingSpeed);
+// 	} else {
+// 		// Quando ha finito la parola, la sposta nella lista completa
+// 		completedTexts.value.push(currentTyping.value);
+// 		currentTyping.value = '';
+// 		charIndex = 0;
+// 		typeArrayIndex++;
+
+// 		// Se ci sono altre parole, continua
+// 		if (typeArrayIndex < typeArray.length) {
+// 			setTimeout(typeText, newTextDelay);
+// 		}
+// 	}
+// }
 function typeText() {
-	const word = typeArray[typeArrayIndex];
+	const item = typeArray[typeArrayIndex];
+	const word = item.text;
 
 	if (charIndex < word.length) {
 		currentTyping.value += word.charAt(charIndex);
 		charIndex++;
 		setTimeout(typeText, typingSpeed);
 	} else {
-		// Quando ha finito la parola, la sposta nella lista completa
-		completedTexts.value.push(currentTyping.value);
+		completedTexts.value.push({ ...item, text: currentTyping.value });
 		currentTyping.value = '';
 		charIndex = 0;
 		typeArrayIndex++;
 
-		// Se ci sono altre parole, continua
 		if (typeArrayIndex < typeArray.length) {
 			setTimeout(typeText, newTextDelay);
 		}
@@ -90,14 +116,14 @@ function typeText() {
 }
 
 onMounted(() => {
-	setTimeout(typeText, newTextDelay);
+	setTimeout(typeText, 2500);
 });
 </script>
 
 <template>
-	<div class="w-screen bg-[#0A1128] snap-y">
+	<div class="w-screen bg-[#0A1128] snap-y ">
 		<section
-			class="lg:h-[93.5vh] h-auto bg-[#0A1128] relative flex flex-col justify-center snap-mandatory overflow-hidden">
+			class="lg:h-[93.5vh] h-auto bg-[#0A1128] relative flex flex-col justify-center overflow-x-hidden snap-mandatory ">
 			<div class="max-w-screen-lg container m-auto flex justify-center">
 				<div class="container mx-auto md:px-16 px-4 lg:py-0 md:py-32">
 					<div class="grid grid-cols-12 mb-4 gap-4">
@@ -180,7 +206,8 @@ onMounted(() => {
 							</div>
 
 							<div
-								class="bg-[#2D2D2D] text-white font-mono p-0 rounded-lg col-span-8 w-full shadow-lg border border-gray-700 rounded-t-lg bg-[#181818] sm:h-full w-[300px]">
+								class="bg-[#2D2D2D] text-white font-mono p-0 rounded-lg col-span-8 w-full shadow-lg border border-gray-700 rounded-t-lg bg-[#181818] w-[300px] lg:h-[550px]">
+								<!-- prima aveva sm:h-full-->
 								<!-- Barra superiore -->
 								<div class="flex items-center space-x-2 p-4 bg-black rounded-t-lg">
 									<div class="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -190,28 +217,40 @@ onMounted(() => {
 
 								<!-- Testo terminale -->
 								<div
-									class="text-lg leading-relaxed p-4 overflow-y-auto h-[calc(100%-20px)] sm:h-[calc(100%-80px)] relative">
-									<p>Ciao! Io sono Luca</p>
-									<p>In breve posso definirmi così:</p>
+									class="text-lg leading-relaxed p-4 overflow-y-auto lg:h-[calc(100%-20px)] sm:h-[calc(100%-80px)] relative flex flex-col justify-between">
+									<div>
+										<p>Ciao! Io sono Luca</p>
+										<p>In breve posso definirmi così:</p>
 
-									<ul class="mt-4"></ul>
-									<!-- Lista -->
-									<ul class="sm:ms-8 ms-4 text-white">
+										<!-- Lista -->
+										<ul class="sm:ms-8 ms-4 text-white transition ease-in-out h-[148px]">
+											<!-- Vecchia lista
 										<li>✅ Web Developer</li>
 										<li>✅ FE Lover</li>
 										<li>
 											✅ PC Gamer
 											<i class="fa-brands fa-steam"></i>
-										</li>
+										</li>-->
 
-										<!-- Lista completata -->
-										<li v-for="(item, index) in completedTexts" :key="index">✅{{ item }}</li>
+											<!-- Lista completata nuova-->
+											<!-- <li v-for="(item, index) in completedTexts" :key="index">✅ {{ item }}</li> -->
+											<li v-for="(item, index) in completedTexts" :key="index">
+												✅ {{ item.text }}
+												<i v-if="item.icon" :class="item.icon"></i>
+											</li>
 
-										<!-- Quello che sta scrivendo in tempo reale -->
-										<li v-if="currentTyping">✅{{ currentTyping }}</li>
-									</ul>
+											<!-- Quello che sta scrivendo in tempo reale -->
+											<li
+												v-if="currentTyping"
+												v-motion
+												:initial="{ opacity: 0, x: '0vw' }"
+												:enter="{ opacity: 1, x: '0vw' }">
+												✅ {{ currentTyping }}
+											</li>
+										</ul>
+									</div>
 
-									<p class="sm:mt-16 mt-32 block sm:absolute sm:bottom-0">
+									<p class="sm:mt-16 mt-32 lg:mb-12 block lg:bottom-0 sm:bottom-0">
 										Se vuoi saperne di più scrolla pure sotto
 										<i class="fa-solid fa-turn-down"></i>
 										😉
@@ -261,7 +300,7 @@ onMounted(() => {
 						<!-- Prima aveva 700px ma su mac dava problemi -->
 						<div class="lg:col-span-5 md:col-span-12 sm:col-span-12 col-span-12 h-full relative">
 							<img
-								src="/lucae.jpg"
+								src="/lucae2.jpg"
 								class="w-full h-full object-cover rounded rounded-[30px]"
 								alt="Luca at the graduation"
 								v-motion
@@ -278,7 +317,8 @@ onMounted(() => {
 										delay: 800,
 									},
 								}" />
-							<div
+							<!-- Per ora rimosso 
+							 <div
 								class="sm:absolute xl:-left-23 lg:-left-15 md:left-25 sm:left-35 sm:top-50 top-30 sm:flex flex-col hidden items-center rotate-320"
 								v-motion
 								:initial="{ opacity: 0 }"
@@ -296,7 +336,7 @@ onMounted(() => {
 								}">
 								<p>Questo sono io</p>
 								<i class="fa-solid fa-arrow-turn-down scale-x-[-1] rotate-280"></i>
-							</div>
+							</div> -->
 						</div>
 
 						<div
@@ -397,10 +437,12 @@ onMounted(() => {
 							<!-- Contenuto sinistro -->
 							<div
 								class="w-full md:w-5/12 mb-6 md:mb-0 md:pr-8 text-right order-1 sm:block flex flex-col flex-end items-end">
-								<h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left md:text-right w-full">
-									Scuole superiori
+								<h3
+									class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left md:text-right lg:text-left w-full">
+									Scuola superiori
 								</h3>
-								<p class="text-sm sm:text-base text-gray-300 mt-2 md:w-full md:px-0 sm:pl-0 text-left md:text-right">
+								<p
+									class="text-sm sm:text-base text-gray-300 mt-2 md:w-full md:px-0 sm:pl-0 text-left md:text-right lg:text-left">
 									Ho studiato informatica alle superiori, acquisendo le basi della programmazione e della tecnologia
 								</p>
 							</div>
@@ -454,7 +496,7 @@ onMounted(() => {
 						<div class="relative flex md:flex-row items-center justify-between">
 							<!-- Contenuto sinistro -->
 							<div class="w-full md:w-5/12 mb-6 md:mb-0 md:pr-8 text-right order-1">
-								<h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left">Academy</h3>
+								<h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left">Master</h3>
 								<p class="text-sm sm:text-base text-gray-300 mt-2 text-left">
 									Corso di 700 ore, dove ho appreso le nozioni fondamentali della programmazione front e back-end
 								</p>

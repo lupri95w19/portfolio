@@ -58,7 +58,7 @@ const prevPage = () => {
 				<!-- Card Dev e Card Grafico -->
 				<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 					<!-- Loop attraverso i progetti -->
-					<div v-for="project in paginatedProjects" :key="project.id" class="flex flex-col place-items-center hover:scale-105 transition ease-in-out hover:shadow-2xl">
+					<div v-for="project in paginatedProjects" :key="project.id" class="flex flex-col place-items-center md:hover:scale-105 transition ease-in-out hover:shadow-2xl">
 						<!-- Card Progetto -->
 						<div
 							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col w-full ">
