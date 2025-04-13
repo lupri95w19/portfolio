@@ -16,6 +16,9 @@ import VueLazyloadNext from 'vue-lazyload-next';
 // Questo serve per le animazioni
 import { MotionPlugin } from '@vueuse/motion';
 
+// Typewriter
+import VueWriter from 'vue-writer';
+
 const app = createApp(App);
 // Crea l'istanza di Pinia
 const pinia = createPinia();
@@ -70,5 +73,7 @@ app.use(VueLazyloadNext, {
 app.use(MotionPlugin);
 
 /// IN QUALCHE MODO FUNZIONA SIA DA DEV CHE DA GRAPHIC USANDO V-LAZY NON TOCCARE PER NESSUN MOTIVO
+
+app.use(VueWriter);
 
 app.mount('#app');

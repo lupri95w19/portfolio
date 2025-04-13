@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Graphic from '../views/GraphicWorks.vue';
 import Dev from '../views/DevWorks.vue';
+
 // import Aboutfrom '../views/About.vue'
 
 const routes = [

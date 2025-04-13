@@ -56,6 +56,42 @@ const sendEmail = async () => {
 		router.push(path);
 	};
 };
+// const arr = ref(['Hello', 'From', 'Vue Writer']);
+
+const completedTexts = ref([]);
+const currentTyping = ref('');
+
+const typeArray = ['fun', 'awesome', 'a journey', 'life'];
+const typingSpeed = 100;
+const newTextDelay = 2000;
+
+let typeArrayIndex = 0;
+let charIndex = 0;
+
+function typeText() {
+	const word = typeArray[typeArrayIndex];
+
+	if (charIndex < word.length) {
+		currentTyping.value += word.charAt(charIndex);
+		charIndex++;
+		setTimeout(typeText, typingSpeed);
+	} else {
+		// Quando ha finito la parola, la sposta nella lista completa
+		completedTexts.value.push(currentTyping.value);
+		currentTyping.value = '';
+		charIndex = 0;
+		typeArrayIndex++;
+
+		// Se ci sono altre parole, continua
+		if (typeArrayIndex < typeArray.length) {
+			setTimeout(typeText, newTextDelay);
+		}
+	}
+}
+
+onMounted(() => {
+	setTimeout(typeText, newTextDelay);
+});
 </script>
 
 <template>
@@ -157,6 +193,8 @@ const sendEmail = async () => {
 									class="text-lg leading-relaxed p-4 overflow-y-auto h-[calc(100%-20px)] sm:h-[calc(100%-80px)] relative">
 									<p>Ciao! Io sono Luca</p>
 									<p>In breve posso definirmi così:</p>
+
+									<ul class="mt-4"></ul>
 									<!-- Lista -->
 									<ul class="sm:ms-8 ms-4 text-white">
 										<li>✅ Web Developer</li>
@@ -165,6 +203,12 @@ const sendEmail = async () => {
 											✅ PC Gamer
 											<i class="fa-brands fa-steam"></i>
 										</li>
+
+										<!-- Lista completata -->
+										<li v-for="(item, index) in completedTexts" :key="index">✅{{ item }}</li>
+
+										<!-- Quello che sta scrivendo in tempo reale -->
+										<li v-if="currentTyping">✅{{ currentTyping }}</li>
 									</ul>
 
 									<p class="sm:mt-16 mt-32 block sm:absolute sm:bottom-0">
@@ -172,6 +216,13 @@ const sendEmail = async () => {
 										<i class="fa-solid fa-turn-down"></i>
 										😉
 									</p>
+
+									<!-- <vue-writer
+										:array="['adding']"
+										:delay="1000"
+										:intervals="0"
+										:start="2000"
+										:iterations="'0'"></vue-writer> -->
 								</div>
 							</div>
 						</div>
@@ -678,6 +729,34 @@ section {
 	#about,
 	#works {
 		height: unset !important;
+	}
+}
+
+.typed-text {
+	color: #d2b94b;
+}
+
+.cursor {
+	display: inline-block;
+	margin-left: 3px;
+	width: 4px;
+	background-color: #fff;
+	animation: cursorBlink 1s infinite;
+}
+
+.cursor.typing {
+	animation: none;
+}
+
+@keyframes cursorBlink {
+	49% {
+		background-color: #fff;
+	}
+	50% {
+		background-color: transparent;
+	}
+	99% {
+		background-color: transparent;
 	}
 }
 </style>
