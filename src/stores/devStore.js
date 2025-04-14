@@ -38,22 +38,27 @@ export const useProjectStoreDev = defineStore('projectStore', {
 			},
 			{
 				id: 4,
-				image: '/manuale.png',
+				image: '/dev/docVue.png',
+				imgpre: '/dev/docVue.jpg',
 				title: 'BDoctors (FE)',
 				subtitle: 'Boolean',
 				paragraph1: 'Il progetto prevedeva di realizzare un sito web gestionale per strutture mediche private.',
 				paragraph2:
 					'In home sono presenti i medici, prima quelli sponsorizzati e dopo quelli non sponsorizzati. è possibile filtrare i medici per specializzazione',
 				tags: ['Vite', 'Vue', 'CSS', `Bootstrap`],
+				classCust: 'scale-200',
 			},
 			{
 				id: 5,
-				image: '/monogramma_1.svg',
+				image: '/dev/docLaravel.png',
+				imgpre: '/dev/docLaravel.jpg',
+
 				title: 'BDoctors (BE)',
 				subtitle: 'Boolean',
 				paragraph1: `Il sistema richiede l'autenticazione del medico.`,
 				paragraph2: `Ciascun medico può accedere a un'area personale dove controllare i messaggi e le recensioni, oppure può anche scegliere di pagare una sponsorizzazione.`,
 				tags: ['Vite', `Laravel`, `MySQL`, `Bootstrap`],
+				classCust: 'scale-200',
 			},
 			{
 				id: 6,
