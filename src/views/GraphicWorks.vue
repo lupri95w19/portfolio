@@ -1,8 +1,56 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 
+// Fix pdf
+const isMobile = ref(false);
+
+const checkMobile = () => {
+	isMobile.value = true;
+};
+
+onMounted(() => {
+	checkMobile();
+	window.addEventListener('resize', checkMobile);
+});
+
+onBeforeUnmount(() => {
+	window.removeEventListener('resize', checkMobile);
+});
+
+// Modale
+import Modal from '../components/Modal.vue';
+
+const modalOpen = ref(false);
+const selectedProject = ref(null);
+
+const openModal = (project) => {
+	selectedProject.value = project;
+	modalOpen.value = true;
+};
+
+const closeModal = () => {
+	modalOpen.value = false;
+	selectedProject.value = null;
+};
+
+const currentImage = ref(0);
+
+const nextImage = () => {
+	if (selectedProject.value) {
+		currentImage.value = (currentImage.value + 1) % selectedProject.value.images.length;
+	}
+};
+
+const prevImage = () => {
+	if (selectedProject.value) {
+		currentImage.value =
+			(currentImage.value - 1 + selectedProject.value.images.length) % selectedProject.value.images.length;
+	}
+};
+
+// Store
 import { useProjectStore } from '@/stores/graphicStore'; // importi lo store
 const graphicStore = useProjectStore(); // ← Usa lo stesso nome dell'export, presente nello store
 
@@ -54,25 +102,27 @@ const prevPage = () => {
 				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come graphic designer</h1>
 			</div>
 
-			<div class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center px-4 sm:px-32 md:px-24 lg:px-8">
+			<div
+				class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center px-4 sm:px-32 md:px-24 lg:px-8">
 				<!-- Card Dev e Card Grafico -->
 				<div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 					<!-- Loop attraverso i progetti -->
-					<div v-for="project in paginatedProjects" :key="project.id" class="flex flex-col place-items-center md:hover:scale-105 transition ease-in-out hover:shadow-2xl">
+					<div
+						v-for="project in paginatedProjects"
+						:key="project.id"
+						class="flex flex-col place-items-center md:hover:scale-105 transition ease-in-out hover:shadow-2xl">
 						<!-- Card Progetto -->
 						<div
-							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col w-full ">
+							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col w-full">
 							<!-- Sezione Immagine -->
 							<div
 								:class="[8, 9].includes(project.id) ? 'flex items-center justify-center' : ``"
 								class="flex-shrink-0 rounded-t-lg bg-black">
-								<a class="h-100 flex overflow-hidden" href="#">
+								<a class="h-100 flex overflow-hidden cursor-pointer">
 									<img
-										:class="
-											('transition-opacity duration-500',
-											[8, 9].includes(project.id) ? 'object-contain' : 'object-cover rounded-t-lg')
-										"
-										class="w-full object-top lg:object-center rounded-t-lg"
+										@click="openModal(project)"
+										:class="[project.specialClass]"
+										class="w-full lg:object-center rounded-t-lg"
 										v-lazy="{
 											src: project.image,
 											error: project.imgpre + `<p class='text-red-500'>ciao</p>`,
@@ -99,11 +149,13 @@ const prevPage = () => {
 								<p class="mb-4 font-normal text-gray-700 dark:text-gray-400">{{ project.paragraph2 }}</p>
 
 								<!-- Bottone -->
-								<a
-									href="#"
-									class="mt-auto inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+								<button
+									id="complete"
+									@click="openModal(project)"
+									type="button"
+									class="mt-auto inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-[#C06E52] rounded-lg focus:ring-4 focus:outline-none">
 									Progetto completo
-								</a>
+								</button>
 
 								<div class="h-[136px]">
 									<div class="flex flex-wrap gap-2 mt-4 pb-8">
@@ -118,6 +170,66 @@ const prevPage = () => {
 							</div>
 						</div>
 					</div>
+
+					<!-- Modale -->
+					<Modal :show="modalOpen" @close="closeModal">
+						<template v-if="selectedProject">
+							<div class="relative w-full">
+								<!-- Immagine corrente -->
+								<!-- Se è un'immagine -->
+								<div class="flex justify-center">
+									<img
+										v-if="selectedProject.images[currentImage].type === 'image'"
+										:src="selectedProject.images[currentImage].src"
+										class="md:h-[700px] object-contain transition-all duration-300 mx-16 border"
+										alt="Media" />
+
+									<!-- Se è un PDF -->
+									<iframe
+										v-if="selectedProject.images[currentImage].type === 'pdf' && !isMobile"
+										:src="selectedProject.images[currentImage].src"
+										class="md:h-[700px] object-contain transition-all duration-300 mx-16 border"
+										frameborder="0"></iframe>
+
+									<!-- Link su mobile -->
+									<a
+										v-else-if="selectedProject.images[currentImage].type === 'pdf' && isMobile"
+										:href="selectedProject.images[currentImage].src"
+										target="_blank"
+										class="md:h-[700px] object-contain transition-all duration-300 mx-16 text-center text-red-500">
+										Apri il PDF
+									</a>
+								</div>
+
+								<!-- Indicatori -->
+								<div class="flex justify-center mt-4 space-x-2">
+									<div
+										v-for="(img, index) in selectedProject.images"
+										:key="index"
+										@click="currentImage = index"
+										class="w-3 h-3 rounded-full cursor-pointer transition-colors"
+										:class="currentImage === index ? 'bg-blue-500' : 'bg-gray-300'"></div>
+								</div>
+
+								<!-- Frecce -->
+								<button
+									@click="prevImage"
+									class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-r">
+									‹
+								</button>
+								<button
+									@click="nextImage"
+									class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-l">
+									›
+								</button>
+							</div>
+							<h2 class="text-2xl font-bold mb-2">{{ selectedProject.title }}</h2>
+							<h3 class="text-lg mb-4">{{ selectedProject.subtitle }}</h3>
+							<p class="mb-2">{{ selectedProject.paragraph1 }}</p>
+							<p class="mb-4">{{ selectedProject.paragraph2 }}</p>
+							<!-- Puoi mettere anche immagine, tag, ecc. -->
+						</template>
+					</Modal>
 				</div>
 
 				<!-- Paginazione -->
@@ -202,5 +314,9 @@ img[lazy='loaded'] {
 	to {
 		opacity: 1;
 	}
+}
+
+#complete {
+	background: #c06e52;
 }
 </style>
