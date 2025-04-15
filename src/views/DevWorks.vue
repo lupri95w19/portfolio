@@ -184,14 +184,14 @@ const prevPage = () => {
 									<img
 										v-if="selectedProject.images[currentImage].type === 'image'"
 										:src="selectedProject.images[currentImage].src"
-										class="md:h-[700px] object-contain transition-all duration-300 mx-16 border"
+										class="md:h-[700px] h-[50vh] object-contain transition-all duration-300 mx-16 px-4"
 										alt="Media" />
 
 									<!-- Se è un PDF -->
 									<iframe
 										v-if="selectedProject.images[currentImage].type === 'pdf' && !isMobile"
 										:src="selectedProject.images[currentImage].src"
-										class="md:h-[700px] object-contain transition-all duration-300 mx-16 border"
+										class="md:h-[700px] object-contain transition-all duration-300 mx-16 px-4"
 										frameborder="0"></iframe>
 
 									<!-- Link su mobile -->
@@ -199,7 +199,7 @@ const prevPage = () => {
 										v-else-if="selectedProject.images[currentImage].type === 'pdf' && isMobile"
 										:href="selectedProject.images[currentImage].src"
 										target="_blank"
-										class="md:h-[700px] object-contain transition-all duration-300 mx-16 text-center text-red-500 flex items-center">
+										class="md:h-[700px] object-contain transition-all duration-300 mx-16 text-center text-red-500 flex items-center px-4">
 										<span>
 											Apri il PDF
 											<i class="fa-solid fa-file-pdf"></i>
@@ -208,7 +208,7 @@ const prevPage = () => {
 								</div>
 
 								<!-- Indicatori -->
-								<div class="flex justify-center mt-4 space-x-2">
+								<div class="flex justify-center mt-4 space-x-2 mt-0 pt-4  bg-[#191919]" style="margin-top: 0px !important;">
 									<div
 										v-for="(img, index) in selectedProject.images"
 										:key="index"
@@ -229,11 +229,13 @@ const prevPage = () => {
 									›
 								</button>
 							</div>
-							<h2 class="text-2xl font-bold mb-2">{{ selectedProject.title }}</h2>
-							<h3 class="text-lg mb-4">{{ selectedProject.subtitle }}</h3>
-							<p class="mb-2">{{ selectedProject.paragraph1 }}</p>
-							<p class="mb-4">{{ selectedProject.paragraph2 }}</p>
-							<!-- Puoi mettere anche immagine, tag, ecc. -->
+							<div class="text-white bg-[#191919] px-4 pt-4 pb-4">
+								<h2 class="text-2xl font-bold pb-2">{{ selectedProject.title }}</h2>
+								<h3 class="text-lg pb-4">{{ selectedProject.subtitle }}</h3>
+								<p class="pb-2">{{ selectedProject.paragraph1 }}</p>
+								<p class="pb-4">{{ selectedProject.paragraph2 }}</p>
+								<!-- Puoi mettere anche immagine, tag, ecc. -->
+							</div>
 						</template>
 					</Modal>
 				</div>

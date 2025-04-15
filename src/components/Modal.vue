@@ -1,10 +1,10 @@
 <template>
     <div
       v-if="show"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,0.9)]"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,0.8)]"
       @click.self="close"
     >
-      <div class="bg-white rounded-lg p-2 md:p-6 w-[70vw] relative">
+      <div class="bg-[#7A7978] rounded-lg m-2 md:m-6 w-[70vw] relative">
         <!-- prima w-full -->
         <button
           class="absolute top-3 right-3 text-white hover:text-red-400 z-40"

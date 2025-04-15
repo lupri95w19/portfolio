@@ -568,7 +568,7 @@ onMounted(() => {
 									<div class="flex justify-end items-center bg-[#161616] px-4 py-2 text-sm font-semibold rounded-md">
 										<div class="flex gap-2 text-[#E5E7EB] place-items-center">
 											<div>&#x2212;</div>
-											<div>&#x25FB;</div>
+											<div><i class="fa-regular fa-square text-xs"></i></div>
 											<div>&#x2715;</div>
 										</div>
 									</div>
