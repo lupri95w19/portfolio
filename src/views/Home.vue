@@ -804,4 +804,13 @@ section {
 section{
 		overflow-x: hidden;
 	 }
+
+	 @media only screen and (min-width: 1024px) {
+		html,
+		body {
+			scroll-snap-type: y mandatory;
+			scroll-behavior: smooth;
+			scroll-padding: 0px 0px 150px 0;
+		}
+	}
 </style>
