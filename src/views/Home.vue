@@ -36,8 +36,8 @@ const sendEmail = async () => {
 
 	try {
 		status.value = 'Invio in corso...';
-		const response = await axios.post('http://localhost:3000/send-email', data, {
-			timeout: 10000, // Aumenta il timeout
+		const response = await axios.post('/.netlify/functions/send-email', data, {
+			timeout: 10000,
 		});
 		status.value = response.data.message;
 	} catch (error) {
@@ -121,9 +121,9 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="w-screen bg-[#0A1128] snap-y ">
+	<div class="w-screen bg-[#0A1128] snap-y">
 		<section
-			class="lg:h-[93.5vh] h-auto bg-[#0A1128] relative flex flex-col justify-center overflow-x-hidden snap-mandatory ">
+			class="lg:h-[93.5vh] h-auto bg-[#0A1128] relative flex flex-col justify-center overflow-x-hidden snap-mandatory">
 			<div class="max-w-screen-lg container m-auto flex justify-center">
 				<div class="container mx-auto md:px-16 px-4 lg:py-0 md:py-32">
 					<div class="grid grid-cols-12 mb-4 gap-4">

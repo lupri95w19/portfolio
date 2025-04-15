@@ -27,3 +27,5 @@ dist-ssr
 
 # Aggiunte
 .env
+# Local Netlify folder
+.netlify
