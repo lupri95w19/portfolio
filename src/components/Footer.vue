@@ -17,7 +17,8 @@ watch(
 <template>
 	<footer
 		:class="[currentRoute === '/graphic' ? 'bg-[#191716]' : 'bg-[#0A1128]', 'transition-colors duration-500']"
-		class="w-full h-[322px] py-12 z-10 border-t border-[#ffffff10]">
+		class="w-full py-12 z-10 border-t border-[#ffffff10]">
+		<!-- h-[322px] -->
 		<div
 			class="max-w-screen-lg mx-auto px-4"
 			:class="[currentRoute === '/graphic' ? 'bg-[#191716]' : 'bg-[#0A1128]', 'transition-colors duration-500']">
