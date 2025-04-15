@@ -98,11 +98,10 @@ const prevPage = () => {
 <template>
 	<div class="w-screen">
 		<section id="works" class="flex flex-col justify-center bg-[#E5E7EB]">
-			<Header />
 			<div class="text-lg px-4 sm:px-32 md:px-24 lg:px-8">
 				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come graphic designer</h1>
 			</div>
-
+			<Header />
 			<div
 				class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center px-4 sm:px-32 md:px-24 lg:px-8">
 				<!-- Card Dev e Card Grafico -->

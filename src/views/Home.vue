@@ -801,4 +801,7 @@ section {
 		background-color: transparent;
 	}
 }
+section{
+		overflow-x: hidden;
+	 }
 </style>
