@@ -32,6 +32,7 @@ const openModal = (project) => {
 
 const closeModal = () => {
 	modalOpen.value = false;
+	currentImage.value = 0;
 	selectedProject.value = null;
 };
 
