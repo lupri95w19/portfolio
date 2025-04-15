@@ -196,8 +196,11 @@ const prevPage = () => {
 										v-else-if="selectedProject.images[currentImage].type === 'pdf' && isMobile"
 										:href="selectedProject.images[currentImage].src"
 										target="_blank"
-										class="md:h-[700px] object-contain transition-all duration-300 mx-16 text-center text-red-500">
-										Apri il PDF
+										class="md:h-[700px] object-contain transition-all duration-300 mx-16 text-center text-red-500 flex items-center">
+										<span>
+											Apri il PDF
+											<i class="fa-solid fa-file-pdf"></i>
+										</span>
 									</a>
 								</div>
 

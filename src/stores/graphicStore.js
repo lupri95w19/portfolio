@@ -10,10 +10,10 @@ export const useProjectStore = defineStore('graphicProjects', {
 				images: ['/graphic/tesi.png', '/graphic/tesi.png', '/graphic/tesi.png'],
 				images: [
 					{ type: 'image', src: '/graphic/tesi.png' },
-					{ type: 'pdf', src: '/graphic/manuale.pdf' },
 					{ type: 'image', src: '/graphic/cover.jpg' },
 					{ type: 'image', src: '/graphic/SamCoverGZ.png' },
 					{ type: 'image', src: '/graphic/SteelBook.png' },
+					{ type: 'pdf', src: '/graphic/manuale.pdf' },
 				],
 				title: 'Ground Zeroes',
 				subtitle: 'Tesi',
