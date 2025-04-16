@@ -205,14 +205,16 @@ const prevPage = () => {
 								<div class="relative flex justify-center items-center overflow-hidden">
 									<!-- Sfondo sfocato con pseudo-elemento -->
 									<div
-										class="absolute inset-0 z-0 bg-center bg-cover blur-[8px] scale-110 opacity-30 z-0"
-										:style="`background-image: url(${selectedProject.images[currentImage].src})`"></div>
+										class="absolute inset-0 z-0 bg-center bg-cover blur-[8px] scale-100 opacity-30 z-0 rounded-4xl"
+										:style="`background-image: url(${selectedProject.images[currentImage].src}) border-radius:'40px`
+										"></div>
 
 									<!-- Sfondo sfocato -->
 									<div
 										v-if="selectedProject.images[currentImage].type === 'image'"
-										class="absolute inset-0 bg-cover bg-center blur-[8px] opacity-30 z-0 transition-all duration-300 rounded-lg w-[95%] md:w-full scale-100 m-0 p-0"
-										:style="{ backgroundImage: `url(${selectedProject.images[currentImage].src})` }"></div>
+										class="absolute inset-0 bg-cover bg-center blur-[8px] opacity-30 z-0 transition-all duration-300 w-[95%] md:w-full scale-100 m-0 p-0 rounded-4xl"
+										:style="{ backgroundImage: `url(${selectedProject.images[currentImage].src})` }
+										"></div>
 									<!-- Immagine nitida in primo piano -->
 									<img
 										v-if="selectedProject.images[currentImage].type === 'image'"
