@@ -4,7 +4,7 @@
       class="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,0.8)]"
       @click.self="close"
     >
-      <div class="bg-[#7A7978] rounded-lg m-2 md:m-6 w-[70vw] relative">
+      <div class="bg-[#7A7978] rounded-lg m-5 md:m-6 sm:w-[70vw] relative w-[100vw]">
         <!-- prima w-full -->
         <button
           class="absolute top-3 right-3 text-white hover:text-red-400 z-40"

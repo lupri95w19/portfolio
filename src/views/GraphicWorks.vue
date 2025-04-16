@@ -115,7 +115,7 @@ const prevPage = () => {
 						<div
 							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col w-full">
 							<!-- Sezione Immagine -->
-							<div
+							<!-- <div
 								:class="[8, 9].includes(project.id) ? 'flex items-center justify-center' : ``"
 								class="flex-shrink-0 rounded-t-lg bg-black">
 								<a class="h-100 flex overflow-hidden cursor-pointer">
@@ -128,21 +128,43 @@ const prevPage = () => {
 											error: project.imgpre + `<p class='text-red-500'>ciao</p>`,
 											loading: project.imgpre,
 										}"
+										:alt="project.title" 
+										:style="`background-image: url(${project.image});
+										background-size: cover;
+										backdrop-filter: blur(1000px);`"/>
+								</a>
+							</div> -->
+							<div
+								:class="[8, 9].includes(project.id) ? 'flex items-center justify-center' : ``"
+								class="flex-shrink-0 rounded-t-lg bg-black">
+								<a class="h-100 flex relative overflow-hidden rounded-t-lg cursor-pointer">
+									<img
+										@click="openModal(project)"
+										:class="[project.specialClass]"
+										class="w-full lg:object-center rounded-t-lg z-4"
+										v-lazy="{
+											src: project.image,
+											error: project.imgpre + `<p class='text-red-500'>ciao</p>`,
+											loading: project.imgpre,
+										}"
 										:alt="project.title" />
+
+									<!-- Background sfocato -->
+									<div
+										class="overflow-hidden rounded-t-lg absolute inset-0 bg-center bg-cover blur-[50px] scale-110 z-0"
+										:style="`background-image: url(${project.image});`"></div>
 								</a>
 							</div>
 
 							<!-- Sezione Contenuto -->
 							<div class="p-5 flex-grow flex flex-col h-[676px] sm:h-[476px] md:h-[660px] lg:h-[676px]">
 								<div class="h-[120px]">
-									<a href="#">
-										<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white h-[64px]">
-											{{ project.title }}
-										</h2>
-										<h3 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white h-[56px]">
-											{{ project.subtitle }}
-										</h3>
-									</a>
+									<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white h-[64px]">
+										{{ project.title }}
+									</h2>
+									<h3 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white h-[56px]">
+										{{ project.subtitle }}
+									</h3>
 								</div>
 
 								<p class="mb-2 mt-2 font-normal text-gray-700 dark:text-gray-400">{{ project.paragraph1 }}</p>
@@ -177,36 +199,46 @@ const prevPage = () => {
 							<div class="relative w-full">
 								<!-- Immagine corrente -->
 								<!-- Se è un'immagine -->
-								<div class="flex justify-center">
-									<img
+								<div class="relative flex justify-center overflow-hidden">
+									<!-- Sfondo sfocato -->
+									<div
 										v-if="selectedProject.images[currentImage].type === 'image'"
-										:src="selectedProject.images[currentImage].src"
-										class="md:h-[700px] h-[50vh] object-contain transition-all duration-300 mx-16 px-4"
-										alt="Media" />
+										class="absolute inset-0 bg-cover bg-center blur-[8px] opacity-30 z-0 transition-all duration-300 rounded-lg w-[95%] md:w-full scale-100 m-0 p-0"
+										:style="{ backgroundImage: `url(${selectedProject.images[currentImage].src})` }"></div>
 
-									<!-- Se è un PDF -->
-									<iframe
-										v-if="selectedProject.images[currentImage].type === 'pdf' && !isMobile"
-										:src="selectedProject.images[currentImage].src"
-										class="md:h-[700px] object-contain transition-all duration-300 mx-16 px-4"
-										frameborder="0"></iframe>
+									<!-- Contenuto principale -->
+									<div class="relative z-10 flex justify-center w-full">
+										<!-- Immagine -->
+										<img
+											v-if="selectedProject.images[currentImage].type === 'image'"
+											:src="selectedProject.images[currentImage].src"
+											class="md:h-[700px] h-[35vh] object-contain transition-all duration-300 mx-16 px-4"
+											alt="Media" />
 
-									<!-- Link su mobile -->
-									<a
-										v-else-if="selectedProject.images[currentImage].type === 'pdf' && isMobile"
-										:href="selectedProject.images[currentImage].src"
-										target="_blank"
-										class="md:h-[700px] object-contain transition-all duration-300 mx-16 text-center text-red-500 flex items-center px-4">
-										<span>
-											Apri il PDF
-											<i class="fa-solid fa-file-pdf"></i>
-										</span>
-									</a>
+										<!-- PDF (desktop) -->
+										<iframe
+											v-if="selectedProject.images[currentImage].type === 'pdf' && !isMobile"
+											:src="selectedProject.images[currentImage].src"
+											class="md:h-[700px] h-[35vh] object-contain transition-all duration-300 mx-16 px-4"
+											frameborder="0"></iframe>
+
+										<!-- PDF (mobile) -->
+										<a
+											v-else-if="selectedProject.images[currentImage].type === 'pdf' && isMobile"
+											:href="selectedProject.images[currentImage].src"
+											target="_blank"
+											class="md:h-[700px] h-[35vh] object-contain transition-all duration-300 mx-16 text-center text-red-500 flex items-center px-4">
+											<span>
+												Apri il PDF
+												<i class="fa-solid fa-file-pdf"></i>
+											</span>
+										</a>
+									</div>
 								</div>
 
 								<!-- Indicatori -->
 								<div
-									class="flex justify-center mt-4 space-x-2 mt-0 pt-4 bg-[#191919]"
+									class="flex justify-center mt-4 space-x-2 mt-0 pt-4 z-100 bg-[#191919]"
 									style="margin-top: 0px !important">
 									<div
 										v-for="(img, index) in selectedProject.images"
@@ -219,12 +251,12 @@ const prevPage = () => {
 								<!-- Frecce -->
 								<button
 									@click="prevImage"
-									class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-r">
+									class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-r z-100">
 									‹
 								</button>
 								<button
 									@click="nextImage"
-									class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-l">
+									class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-l z-100">
 									›
 								</button>
 							</div>
