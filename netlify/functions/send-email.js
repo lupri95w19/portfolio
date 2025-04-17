@@ -48,7 +48,7 @@ export async function handler(event) {
     <p>Grazie per avermi contattato. Ho ricevuto il tuo messaggio e ti risponderò al più presto.</p>
     <p>Nel frattempo, se vuoi dare un’occhiata ai miei progetti, ecco il mio portfolio:</p>
     <p>
-      👉 <a href="https://lupri95w19.github.io/portfolio" target="_blank" style="color: #1e90ff; text-decoration: none;">
+      👉 <a href="https://lucaprivitera.netlify.app/" target="_blank" style="color: #1e90ff; text-decoration: none;">
         lupri95w19.github.io/portfolio
       </a>
     </p>
