@@ -37,20 +37,7 @@ app.post('/send-email', async (req, res) => {
 			from: `"Luca Privitera" <${process.env.EMAIL_USERNAME}>`,
 			to: process.env.EMAIL_USERNAME,
 			subject: `[Portfolio] Nuovo messaggio da ${userEmail}: ${subject}`,
-			// html: `<p>Da: ${userEmail}</p><p>Messaggio: ${message}</p>`,
-			html: `
-  <div style="font-family: Arial, sans-serif; font-size: 15px; color: #333;">
-    <p>Ciao!</p>
-    <p>Grazie per avermi contattato. Ho ricevuto il tuo messaggio e ti risponderò al più presto.</p>
-    <p>Nel frattempo, se vuoi dare un’occhiata ai miei progetti, ecco il mio portfolio:</p>
-    <p>
-      👉 <a href="https://lupri95w19.github.io/portfolio" target="_blank" style="color: #1e90ff; text-decoration: none;">
-        lupri95w19.github.io/portfolio
-      </a>
-    </p>
-    <p>A presto,<br><strong>Luca Privitera</strong></p>
-  </div>
-`,
+			html: `<p>Da: ${userEmail}</p><p>Messaggio: ${message}</p>`,
 		});
 
 		// 2. Conferma all'utente
