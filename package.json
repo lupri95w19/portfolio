@@ -1,50 +1,52 @@
 {
-  "name": "mio-progetto",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@fontsource/inter": "^5.2.5",
-    "@fontsource/jetbrains-mono": "^5.2.5",
-    "@fortawesome/fontawesome-free": "^6.7.2",
-    "@tailwindcss/vite": "^4.0.16",
-    "@vueuse/components": "^13.0.0",
-    "@vueuse/core": "^13.0.0",
-    "@vueuse/motion": "^3.0.3",
-    "axios": "^1.8.4",
-    "dotenv": "^16.4.7",
-    "nodemailer": "^6.10.0",
-    "pinia": "^3.0.1",
-    "vue": "^3.5.13",
-    "vue-lazyload": "^3.0.0",
-    "vue-lazyload-next": "^0.0.2",
-    "vue-router": "^4.5.0",
-    "vue-scroll-snap": "^0.1.11",
-    "vue-writer": "^2.0.2"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.1",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.3",
-    "tailwindcss": "^4.0.16",
-    "vite": "^6.2.0"
-  },
-  "description": "This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
-  "main": "vite.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lupri95w19/portfolio.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lupri95w19/portfolio/issues"
-  },
-  "homepage": "https://github.com/lupri95w19/portfolio#readme"
+	"name": "mio-progetto",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"deploy": "gh-pages -d dist"
+	},
+	"dependencies": {
+		"@fontsource/inter": "^5.2.5",
+		"@fontsource/jetbrains-mono": "^5.2.5",
+		"@fortawesome/fontawesome-free": "^6.7.2",
+		"@tailwindcss/vite": "^4.0.16",
+		"@vueuse/components": "^13.0.0",
+		"@vueuse/core": "^13.0.0",
+		"@vueuse/motion": "^3.0.3",
+		"axios": "^1.8.4",
+		"dotenv": "^16.4.7",
+		"nodemailer": "^6.10.0",
+		"pinia": "^3.0.1",
+		"vue": "^3.5.13",
+		"vue-lazyload": "^3.0.0",
+		"vue-lazyload-next": "^0.0.2",
+		"vue-router": "^4.5.0",
+		"vue-scroll-snap": "^0.1.11",
+		"vue-writer": "^2.0.2"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^5.2.1",
+		"autoprefixer": "^10.4.21",
+		"gh-pages": "^6.3.0",
+		"postcss": "^8.5.3",
+		"tailwindcss": "^4.0.16",
+		"vite": "^6.2.0"
+	},
+	"description": "This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
+	"main": "vite.config.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lupri95w19/portfolio.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/lupri95w19/portfolio/issues"
+	},
+	"homepage": "https://github.com/lupri95w19/portfolio#readme"
 }

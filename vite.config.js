@@ -11,4 +11,5 @@ export default defineConfig({
 			'@stores': '/src/stores',
 		},
 	},
+	base: '/portfolio/',
 });
