@@ -203,7 +203,7 @@ const prevPage = () => {
 									<!-- Sfondo sfocato -->
 									<div
 										v-if="selectedProject.images[currentImage].type === 'image'"
-										class="absolute inset-0 bg-cover bg-center blur-[8px] opacity-30 z-0 transition-all duration-300 w-[95%] md:w-full scale-100 m-0 p-0 rounded-4xl"
+										class="absolute inset-0 bg-cover bg-center blur-[8px] opacity-30 z-0 transition-all duration-300 rounded-lg w-[95%] md:w-full scale-100 m-0 p-0"
 										:style="{ backgroundImage: `url(${selectedProject.images[currentImage].src})` }"></div>
 
 									<!-- Contenuto principale -->
