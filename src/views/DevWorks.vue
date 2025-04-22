@@ -313,7 +313,7 @@ const prevPage = () => {
 							</div>
 							<div class="p-0 flex items-center justify-center h-[282px]">
 								<img
-									class="max-h-full object-contain p-8 transition-all duration-500 ease-in-out hover:animate-bob"
+									class="max-h-full object-contain p-8 transition-all duration-500 ease-in-out hover:scale-110 ease-[cubic-bezier(0,0,0.618,1)]"
 									src="/monogramma.svg"
 									alt="icona codice" />
 							</div>
