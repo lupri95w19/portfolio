@@ -225,7 +225,7 @@ export const useProjectStore = defineStore('graphicProjects', {
 				imgpre: '/graphic/halloween.jpg',
 				image: '/graphic/halloween1.jpg',
 				images: [{ type: 'image', src: '/graphic/halloween1.jpg' }],
-				title: 'Disegno vettoriale',
+				title: 'Lavoro misto',
 				subtitle: 'Just for fun',
 				paragraph1: 'Disegno basato su una scena del film Halloween del 1978',
 				paragraph2: ``,
