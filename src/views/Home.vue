@@ -197,12 +197,12 @@ onMounted(() => {
 							}">
 							<div class="flex sm:items-end">
 								<div class="sm:w-[15px] sm:h-[15px] block scale-50"></div>
-								<h3 class="text-xl">Attualmente</h3>
+								<h3 class="text-xl">Attualmente software developer e grafico presso:</h3>
 							</div>
 
 							<div class="flex items-center mb-4">
 								<div class="blinking-ball scale-50"></div>
-								<h2 class="text-3xl">In cerca di lavoro</h2>
+								<h2 class="text-3xl">Play Code SRLS</h2>
 							</div>
 
 							<div
