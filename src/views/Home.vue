@@ -430,7 +430,7 @@ onMounted(() => {
 					<div class="relative">
 						<!-- Linea centrale -->
 						<div
-							class="absolute left-1/2 top-0 h-full w-0.5 sm:w-1 md:w-1.5 bg-yellow-500 transform -translate-x-1/2 z-0"></div>
+							class="absolute left-1/2 top-0 h-full w-0.5 sm:w-1 md:w-1.5 bg-custom-bar transform -translate-x-1/2 z-0"></div>
 
 						<!-- Step 1 -->
 						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
@@ -515,6 +515,32 @@ onMounted(() => {
 							<!-- Data -->
 							<div class="w-full md:w-5/12 md:pl-8 order-3 md:text-left text-center">
 								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500">2024</h2>
+							</div>
+						</div>
+
+						<!-- Step 2 -->
+						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
+							<!-- Data -->
+							<div class="w-full md:w-5/12 md:pr-8 order-1 md:text-right text-center">
+								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-melon">Dal 2025</h2>
+							</div>
+
+							<!-- Punto centrale -->
+							<a
+								href="https://www.abacatania.it/"
+								class="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2 md:mx-0 mx-4"
+								aria-label="Vai a dettagli scuole superiori 2013-2019"
+								target="_blank">
+								<div
+									class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-[#FAB3A9] via-[#FDD0C5] to-[#FFE9E4] rounded-full transform group-hover:scale-110 sm:group-hover:scale-125 transition-transform duration-300"></div>
+							</a>
+
+							<!-- Contenuto destro -->
+							<div class="w-full md:w-5/12 mt-6 md:mt-0 md:pl-8 order-3">
+								<h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">Play Code SRLS</h3>
+								<p class="text-sm sm:text-base text-gray-300 mt-2">
+									Sviluppo software integrando competenze di front-end e back-end development, e realizzo artefatti comunicativi come graphic designer
+								</p>
 							</div>
 						</div>
 					</div>
@@ -801,16 +827,16 @@ section {
 		background-color: transparent;
 	}
 }
-section{
-		overflow-x: hidden;
-	 }
+section {
+	overflow-x: hidden;
+}
 
-	 @media only screen and (min-width: 1024px) {
-		html,
-		body {
-			scroll-snap-type: y mandatory;
-			scroll-behavior: smooth;
-			scroll-padding: 0px 0px 150px 0;
-		}
+@media only screen and (min-width: 1024px) {
+	html,
+	body {
+		scroll-snap-type: y mandatory;
+		scroll-behavior: smooth;
+		scroll-padding: 0px 0px 150px 0;
 	}
+}
 </style>

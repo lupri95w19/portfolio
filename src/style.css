@@ -155,3 +155,11 @@ button:focus-visible {
 .group span {
 	opacity: 0;
 }
+
+.text-melon {
+	color: #fab3a9;
+}
+
+.bg-custom-bar {
+	background: linear-gradient(to bottom, rgba(234, 179, 8, 0.9), /* yellow-500 al 90% */ #fdbcb4 /* melon */);
+}
