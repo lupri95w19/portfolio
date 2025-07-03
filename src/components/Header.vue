@@ -34,7 +34,7 @@ const scrollToSection = (sectionId) => {
     <div id="header" class="bg-[#0a0908] rounded-full py-4 px-8 sticky top-0 right-0 inline-flex">
       <div class="flex gap-4">
         <div class="m-auto" v-if="currentRoute !== '/'">
-          <a class="" href="/" target="_self">Home</a>
+          <RouterLink to="/" @click.prevent="navigateToSection('home')">Home</RouterLink>
         </div>
         <div class="m-auto" v-if="currentRoute == '/'">
           <a class="" @click="navigateToSection('about')">About</a>
