@@ -31,7 +31,7 @@ const scrollToSection = (sectionId) => {
 
 <template>
   <div class="flex justify-center sticky top-0 left-0 md:top-10 md:left-0 z-40 py-4 sm:px-0 px-4">
-    <div id="header" class="bg-[#0a0908] rounded-full py-4 px-8 sticky top-0 right-0 inline-flex">
+    <div id="header" class="bg-[#0a0908] rounded-full py-4 md:px-8 px-[20px] sticky top-0 right-0 inline-flex">
       <div class="flex gap-4">
         <div class="m-auto" v-if="currentRoute !== '/'">
           <RouterLink to="/" @click.prevent="navigateToSection('home')">Home</RouterLink>

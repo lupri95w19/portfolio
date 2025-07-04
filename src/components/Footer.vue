@@ -1,10 +1,29 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const currentRoute = ref(router.currentRoute.value.path);
 const currentYear = ref(new Date().getFullYear());
+const isMobile = ref(false);
+const selectedPdf = ref(null);
+
+const checkMobile = () => {
+	isMobile.value = window.innerWidth < 768;
+};
+
+onMounted(() => {
+	checkMobile();
+	window.addEventListener('resize', checkMobile);
+});
+
+const showPdf = (pdfUrl, title) => {
+	selectedPdf.value = { url: pdfUrl, title };
+};
+
+const closePdf = () => {
+	selectedPdf.value = null;
+};
 
 watch(
 	() => router.currentRoute.value.path,
@@ -26,13 +45,63 @@ watch(
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<!-- Sezione materiali -->
 				<div class="flex flex-col items-center">
-					<h3 class="text-xl font-jetbrains-mono text-[#FFD447] mb-3">Materiali</h3>
+					<h3 class="text-xl font-jetbrains-mono text-[#FFD447] mb-6">Materiali</h3>
+					
+					<!-- PDF Desktop -->
 					<a
-						href="/LucaAgatinoPriviteraCV.pdf"
-						download
-						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors">
+						v-if="!isMobile"
+						@click="showPdf('/LucaAgatinoPriviteraCV.pdf', 'CV di Luca Privitera')"
+						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6 cursor-pointer">
 						<i class="fas fa-file-download"></i>
-						<span>Scarica il mio CV</span>
+						<span>Mio CV</span>
+					</a>
+					
+					<!-- PDF Mobile -->
+					<a
+						v-else
+						href="/LucaAgatinoPriviteraCV.pdf"
+						target="_blank"
+						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6">
+						<i class="fas fa-file-download"></i>
+						<span>Mio CV</span>
+					</a>
+
+					<!-- PDF Desktop -->
+					<a
+						v-if="!isMobile"
+						@click="showPdf('/AttestatoCodingWeek.pdf', 'Attestato Coding Week')"
+						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6 cursor-pointer">
+						<i class="fas fa-file-download"></i>
+						<span>Attestato Coding Week</span>
+					</a>
+					
+					<!-- PDF Mobile -->
+					<a
+						v-else
+						href="/AttestatoCodingWeek.pdf"
+						target="_blank"
+						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6">
+						<i class="fas fa-file-download"></i>
+						<span>Attestato Coding Week</span>
+					</a>
+
+					<!-- PDF Desktop -->
+					<a
+						v-if="!isMobile"
+						@click="showPdf('/AttestatoCorso.pdf', 'Attestato Master')"
+						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6 cursor-pointer">
+						<i class="fas fa-file-download m"></i>
+						<span>Attestato Master</span>
+					</a>
+					
+					<!-- PDF Mobile -->
+					<a
+						v-else
+						href="/AttestatoCorso.pdf"
+						target="_blank"
+						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6">
+						<i class="fas fa-file-download m"></i>
+						<span>Attestato Master</span>
 					</a>
 				</div>
 
@@ -86,6 +155,30 @@ watch(
 			<!-- Copyright -->
 			<div class="mt-12 pt-6 pb-6 border-t border-[#ffffff10] text-center">
 				<p class="text-sm text-[#ffffff80]">&copy; {{ currentYear }} Luca Privitera. Tutti i diritti riservati.</p>
+			</div>
+		</div>
+
+		<!-- Modale PDF -->
+		<div
+			v-if="selectedPdf"
+			class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+			@click="closePdf">
+			<div class="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-hidden" @click.stop>
+				<div class="flex justify-between items-center p-4 border-b">
+					<h3 class="text-xl font-bold text-black">{{ selectedPdf.title }}</h3>
+					<button
+						@click="closePdf"
+						class="text-gray-500 hover:text-gray-700 text-2xl"
+						aria-label="Chiudi">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+				<div class="p-4">
+					<iframe
+						:src="selectedPdf.url"
+						class="w-full h-[70vh]"
+						frameborder="0"></iframe>
+				</div>
 			</div>
 		</div>
 	</footer>

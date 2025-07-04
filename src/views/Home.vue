@@ -124,7 +124,7 @@ onMounted(() => {
 	<div class="w-screen bg-[#0A1128] snap-y">
 		<section
 			class="lg:h-[93.5vh] h-auto bg-[#0A1128] relative flex flex-col justify-center overflow-x-hidden snap-mandatory">
-			<div class="max-w-screen-lg container m-auto flex justify-center h-[200vh]">
+			<div class="max-w-screen-lg container m-auto flex justify-center h-[110vh] md:h-unset items-start lg:items-center">
 				<div class="container mx-auto md:px-16 px-4 lg:py-0 md:py-32">
 					<div class="grid grid-cols-12 mb-4 gap-4">
 						<div class="col-span-4"></div>
