@@ -60,7 +60,7 @@ const projectsPerPage = 6; // Numero di progetti per pagina
 // Calcola i progetti da mostrare in base alla pagina corrente
 const paginatedProjects = computed(() => {
 	const start = (currentPage.value - 1) * projectsPerPage;
-	return devStore.projects.slice(start, start + projectsPerPage);
+	return [...devStore.projects].reverse().slice(start, start + projectsPerPage);
 });
 
 // Calcola il numero totale di pagine
