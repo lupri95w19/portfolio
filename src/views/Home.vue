@@ -440,7 +440,7 @@ onMounted(() => {
 								class="w-full md:w-5/12 mb-6 md:mb-0 md:pr-8 text-right order-1 sm:block flex flex-col flex-end items-end">
 								<h3
 									class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left md:text-right lg:text-left w-full">
-									Scuola superiori
+									Scuole superiori
 								</h3>
 								<p
 									class="text-sm sm:text-base text-gray-300 mt-2 md:w-full md:px-0 sm:pl-0 text-left md:text-right lg:text-left">
