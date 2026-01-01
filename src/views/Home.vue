@@ -197,12 +197,12 @@ onMounted(() => {
 							}">
 							<div class="flex sm:items-end">
 								<div class="sm:w-[15px] sm:h-[15px] block scale-50"></div>
-								<h3 class="text-xl">Attualmente software developer e grafico presso:</h3>
+								<h3 class="text-xl">Attualmente:</h3>
 							</div>
 
 							<div class="flex items-center mb-4">
 								<div class="blinking-ball scale-50"></div>
-								<h2 class="text-3xl">Play Code SRLS</h2>
+								<h2 class="text-3xl">Alla ricerca di nuove esperienze!</h2>
 							</div>
 
 							<div
@@ -522,7 +522,7 @@ onMounted(() => {
 						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
 							<!-- Data -->
 							<div class="w-full md:w-5/12 md:pr-8 order-1 md:text-right text-center">
-								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-melon">Dal 2025</h2>
+								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-melon">2025</h2>
 							</div>
 
 							<!-- Punto centrale -->
