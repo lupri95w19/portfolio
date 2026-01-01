@@ -161,5 +161,9 @@ button:focus-visible {
 }
 
 .bg-custom-bar {
-	background: linear-gradient(to bottom, rgba(234, 179, 8, 0.9), /* yellow-500 al 90% */ #fdbcb4 /* melon */);
+	background-color:oklch(79.5% 0.184 86.047); /* yellow-500 */
+	/* da mettere col lavoro trovato 
+	background: linear-gradient(to bottom, rgba(234, 179, 8, 0.9), // yellow-500 al 90% // #fdbcb4 // melon //);
+	*/
+	
 }

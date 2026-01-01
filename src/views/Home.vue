@@ -431,6 +431,7 @@ onMounted(() => {
 						<!-- Linea centrale -->
 						<div
 							class="absolute left-1/2 top-0 h-full w-0.5 sm:w-1 md:w-1.5 bg-custom-bar transform -translate-x-1/2 z-0"></div>
+							<!-- a lavoro trovato cambiare dal css -->
 
 						<!-- Step 1 -->
 						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
@@ -522,17 +523,19 @@ onMounted(() => {
 						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
 							<!-- Data -->
 							<div class="w-full md:w-5/12 md:pr-8 order-1 md:text-right text-center">
-								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-melon">2025</h2>
+								<h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">2025</h3>
+								<!-- text-melon per attuale lavoro -->
 							</div>
 
 							<!-- Punto centrale -->
 							<a
-								href="https://www.abacatania.it/"
+								href=""
 								class="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2 md:mx-0 mx-4"
-								aria-label="Vai a dettagli scuole superiori 2013-2019"
+								aria-label=""
 								target="_blank">
 								<div
-									class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-[#FAB3A9] via-[#FDD0C5] to-[#FFE9E4] rounded-full transform group-hover:scale-110 sm:group-hover:scale-125 transition-transform duration-300"></div>
+									class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-110 sm:group-hover:scale-125 transition-transform duration-300"></div>
+									<!-- bg-gradient-to-r from-[#FAB3A9] via-[#FDD0C5] to-[#FFE9E4] per lavoro attuale -->
 							</a>
 
 							<!-- Contenuto destro -->
