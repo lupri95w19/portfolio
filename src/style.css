@@ -167,3 +167,9 @@ button:focus-visible {
 	*/
 	
 }
+
+.fa-steam::before{
+	width: 25px;
+	display: block;
+	text-align: center;
+}

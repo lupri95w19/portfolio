@@ -63,11 +63,12 @@ const currentTyping = ref('');
 
 // const typeArray = ['Web Developer', 'FE Lover', 'Graphic Designer', 'Photoshop Enjoyer', 'PC Gamer <i class="fa-brands fa-steam"></i>'];
 const typeArray = [
-	{ text: 'Web Developer' },
-	{ text: 'FE Lover' },
-	{ text: 'Graphic Designer' },
-	{ text: 'Photoshop Enjoyer' },
+	{ text: '💻 Web Developer', },
+	{ text: '💻 FE Lover' },
+	{ text: '✏️ Graphic Designer' },
+	{ text: '📸 Photoshop Enjoyer' },
 	{ text: 'PC Gamer', icon: 'fa-brands fa-steam' },
+	{ text: '🎨 Miniature painter'},
 ];
 const typingSpeed = 25;
 const newTextDelay = 500;
@@ -235,8 +236,8 @@ onMounted(() => {
 											<!-- Lista completata nuova-->
 											<!-- <li v-for="(item, index) in completedTexts" :key="index">✅ {{ item }}</li> -->
 											<li v-for="(item, index) in completedTexts" :key="index">
-												✅ {{ item.text }}
-												<i v-if="item.icon" :class="item.icon"></i>
+												<i v-if="item.icon" :class="item.icon"></i> {{ item.text }}
+												
 											</li>
 
 											<!-- Quello che sta scrivendo in tempo reale -->
@@ -245,7 +246,7 @@ onMounted(() => {
 												v-motion
 												:initial="{ opacity: 0, x: '0vw' }"
 												:enter="{ opacity: 1, x: '0vw' }">
-												✅ {{ currentTyping }}
+												{{ currentTyping }}
 											</li>
 										</ul>
 									</div>
@@ -523,7 +524,7 @@ onMounted(() => {
 						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
 							<!-- Data -->
 							<div class="w-full md:w-5/12 md:pr-8 order-1 md:text-right text-center">
-								<h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white">2025</h3>
+								<h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500 ">2025</h3>
 								<!-- text-melon per attuale lavoro -->
 							</div>
 
