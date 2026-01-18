@@ -108,7 +108,7 @@ watch(
 				<!-- Sezione social -->
 				<div class="flex flex-col items-center">
 					<h3 class="text-xl font-jetbrains-mono text-[#FFD447] mb-4">Social</h3>
-					<div class="flex gap-4">
+					<div class="flex gap-4 text-center">
 						<a
 							href="https://www.linkedin.com/in/luca-privitera-a1545a31b/"
 							class="text-2xl hover:text-[#FFB347] transition-colors text-center"

@@ -68,7 +68,7 @@ const typeArray = [
 	{ text: '✏️ Graphic Designer' },
 	{ text: '📸 Photoshop Enjoyer' },
 	{ text: 'PC Gamer', icon: 'fa-brands fa-steam' },
-	{ text: '🎨 Miniature painter'},
+	{ text: '🎨 Miniature Painter'},
 ];
 const typingSpeed = 25;
 const newTextDelay = 500;
