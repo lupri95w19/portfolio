@@ -167,8 +167,8 @@ const prevPage = () => {
 									</h3>
 								</div>
 
-								<p class="mb-2 mt-2 font-normal text-gray-700 dark:text-gray-400">{{ project.paragraph1 }}</p>
-								<p class="mb-4 font-normal text-gray-700 dark:text-gray-400">{{ project.paragraph2 }}</p>
+								<p class="mb-2 mt-2 font-normal text-[#D4D8DD]">{{ project.paragraph1 }}</p>
+								<p class="mb-4 font-normal text-[#D4D8DD]">{{ project.paragraph2 }}</p>
 
 								<!-- Bottone -->
 								<button

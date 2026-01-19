@@ -96,7 +96,7 @@ const prevPage = () => {
 
 <template>
 	<div class="w-screen">
-		<section id="works" class="flex flex-col justify-center bg-[#E5E7EB]">
+		<section id="works" class="flex flex-col justify-center bg-[#CFFFB3]">
 			<div class="text-lg px-4 sm:px-32 md:px-24 lg:px-8">
 				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come Developer</h1>
 			</div>
@@ -171,8 +171,8 @@ const prevPage = () => {
 									</h3>
 								</div>
 
-								<p class="mb-2 mt-2 font-normal text-gray-700 dark:text-gray-400">{{ project.paragraph1 }}</p>
-								<p class="mb-4 font-normal text-gray-700 dark:text-gray-400">{{ project.paragraph2 }}</p>
+								<p class="mb-2 mt-2 font-normal text-[#D4D8DD]">{{ project.paragraph1 }}</p>
+								<p class="mb-4 font-normal text-[#D4D8DD]">{{ project.paragraph2 }}</p>
 
 								<!-- Bottone -->
 								<button
