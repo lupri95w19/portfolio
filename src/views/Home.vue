@@ -543,7 +543,7 @@ onMounted(() => {
 							<div class="w-full md:w-5/12 mt-6 md:mt-0 md:pl-8 order-3">
 								<h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">Play Code SRLS</h3>
 								<p class="text-sm sm:text-base text-gray-300 mt-2">
-									Sviluppo software integrando competenze di front-end e back-end development, e realizzo artefatti comunicativi come graphic designer
+									Sviluppavo software integrando competenze di front-end e back-end, e inoltre realizzavo artefatti comunicativi come graphic designer
 								</p>
 							</div>
 						</div>

@@ -302,7 +302,7 @@ const prevPage = () => {
 				<div class="w-full sm:w-96 text-xs mt-48 mb-80 flex justify-center flex-col">
 					<h1 class="text-black mb-4 w-full text-center">Controlla anche i miei lavori da grafico</h1>
 					<router-link to="/graphic" class="inline-flex flex flex-col place-items-center sm:px-0 px-8">
-						<div class="w-full border bg-[#303031] rounded-md shadow-lg h-[318px]">
+						<div class="w-full border bg-[#181818] rounded-md shadow-lg h-[318px]">
 							<!-- Header -->
 							<div class="flex justify-end items-center bg-[#161616] px-4 py-2 text-sm font-semibold rounded-md">
 								<div class="flex gap-2 text-[#E5E7EB]">

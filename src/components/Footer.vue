@@ -63,7 +63,7 @@ watch(
 						target="_blank"
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6">
 						<i class="fas fa-file-download"></i>
-						<span>Mio CV</span>
+						<span class="text-center">Mio CV</span>
 					</a>
 
 					<!-- PDF Desktop -->
@@ -72,7 +72,7 @@ watch(
 						@click="showPdf('/AttestatoCodingWeek.pdf', 'Attestato Coding Week')"
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6 cursor-pointer">
 						<i class="fas fa-file-download"></i>
-						<span>Attestato Coding Week</span>
+						<span class="text-center">Attestato Coding Week</span>
 					</a>
 					
 					<!-- PDF Mobile -->
@@ -82,7 +82,7 @@ watch(
 						target="_blank"
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6">
 						<i class="fas fa-file-download"></i>
-						<span>Attestato Coding Week</span>
+						<span class="text-center">Attestato Coding Week</span>
 					</a>
 
 					<!-- PDF Desktop -->
@@ -91,7 +91,7 @@ watch(
 						@click="showPdf('/AttestatoCorso.pdf', 'Attestato Master')"
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6 cursor-pointer">
 						<i class="fas fa-file-download m"></i>
-						<span>Attestato Master</span>
+						<span class="text-center">Attestato Master</span>
 					</a>
 					
 					<!-- PDF Mobile -->
@@ -101,7 +101,7 @@ watch(
 						target="_blank"
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6">
 						<i class="fas fa-file-download m"></i>
-						<span>Attestato Master</span>
+						<span class="text-center">Attestato Master</span>
 					</a>
 				</div>
 

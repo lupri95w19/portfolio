@@ -97,7 +97,7 @@ const prevPage = () => {
 
 <template>
 	<div class="w-screen">
-		<section id="works" class="flex flex-col justify-center bg-[#E5E7EB]">
+		<section id="works" class="flex flex-col justify-center bg-[#D5A021]">
 			<div class="text-lg px-4 sm:px-32 md:px-24 lg:px-8">
 				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come graphic designer</h1>
 			</div>
