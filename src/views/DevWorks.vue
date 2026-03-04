@@ -113,7 +113,7 @@ const prevPage = () => {
 						class="flex flex-col place-items-center col-span-12 sm:col-span-12 md:col-span-6 lg:col-span-4 md:mb-0 mb-24 md:hover:scale-105 transition ease-in-out hover:shadow-2xl">
 						<!-- Card Progetto -->
 						<div
-							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col w-full">
+							class="border border-gray-200 rounded-lg shadow-sm bg-gray-800 border-gray-700 h-full flex flex-col w-full">
 							<!-- Sezione Immagine -->
 							<!-- <div
 								:class="[8, 9].includes(project.id) ? 'flex items-center justify-center' : ``"
