@@ -29,7 +29,7 @@ watch(
 	() => router.currentRoute.value.path,
 	(newPath) => {
 		currentRoute.value = newPath;
-	}
+	},
 );
 </script>
 
@@ -46,7 +46,7 @@ watch(
 				<!-- Sezione materiali -->
 				<div class="flex flex-col items-center">
 					<h3 class="text-xl font-jetbrains-mono text-[#FFD447] mb-6">Materiali</h3>
-					
+
 					<!-- PDF Desktop -->
 					<a
 						v-if="!isMobile"
@@ -55,7 +55,7 @@ watch(
 						<i class="fas fa-file-download"></i>
 						<span>Mio CV</span>
 					</a>
-					
+
 					<!-- PDF Mobile -->
 					<a
 						v-else
@@ -66,15 +66,15 @@ watch(
 						<span class="text-center">Mio CV</span>
 					</a>
 
-										<!-- PDF Desktop -->
+					<!-- PDF Desktop -->
 					<a
 						v-if="!isMobile"
 						@click="showPdf('/LucaAgatinoPriviteraCVENG.pdf', 'CV di Luca Privitera')"
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6 cursor-pointer">
 						<i class="fas fa-file-download"></i>
-						<span>Mio CV</span>
+						<span>Mio CV (EN)</span>
 					</a>
-					
+
 					<!-- PDF Mobile -->
 					<a
 						v-else
@@ -82,7 +82,7 @@ watch(
 						target="_blank"
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6">
 						<i class="fas fa-file-download"></i>
-						<span class="text-center">Mio CV</span>
+						<span class="text-center">Mio CV (EN)</span>
 					</a>
 
 					<!-- PDF Desktop -->
@@ -93,7 +93,7 @@ watch(
 						<i class="fas fa-file-download"></i>
 						<span class="text-center">Attestato Coding Week</span>
 					</a>
-					
+
 					<!-- PDF Mobile -->
 					<a
 						v-else
@@ -112,7 +112,7 @@ watch(
 						<i class="fas fa-file-download m"></i>
 						<span class="text-center">Attestato Master</span>
 					</a>
-					
+
 					<!-- PDF Mobile -->
 					<a
 						v-else
@@ -185,18 +185,12 @@ watch(
 			<div class="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-hidden" @click.stop>
 				<div class="flex justify-between items-center p-4 border-b">
 					<h3 class="text-xl font-bold text-black">{{ selectedPdf.title }}</h3>
-					<button
-						@click="closePdf"
-						class="text-gray-500 hover:text-gray-700 text-2xl"
-						aria-label="Chiudi">
+					<button @click="closePdf" class="text-gray-500 hover:text-gray-700 text-2xl" aria-label="Chiudi">
 						<i class="fas fa-times"></i>
 					</button>
 				</div>
 				<div class="p-4">
-					<iframe
-						:src="selectedPdf.url"
-						class="w-full h-[70vh]"
-						frameborder="0"></iframe>
+					<iframe :src="selectedPdf.url" class="w-full h-[70vh]" frameborder="0"></iframe>
 				</div>
 			</div>
 		</div>
