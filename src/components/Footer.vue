@@ -66,6 +66,25 @@ watch(
 						<span class="text-center">Mio CV</span>
 					</a>
 
+										<!-- PDF Desktop -->
+					<a
+						v-if="!isMobile"
+						@click="showPdf('/LucaAgatinoPriviteraCVENG.pdf', 'CV di Luca Privitera')"
+						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6 cursor-pointer">
+						<i class="fas fa-file-download"></i>
+						<span>Mio CV</span>
+					</a>
+					
+					<!-- PDF Mobile -->
+					<a
+						v-else
+						href="/LucaAgatinoPriviteraCVENG.pdf"
+						target="_blank"
+						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6">
+						<i class="fas fa-file-download"></i>
+						<span class="text-center">Mio CV</span>
+					</a>
+
 					<!-- PDF Desktop -->
 					<a
 						v-if="!isMobile"
