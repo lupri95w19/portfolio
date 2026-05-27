@@ -113,7 +113,7 @@ const prevPage = () => {
 						class="flex flex-col place-items-center md:hover:scale-105 transition ease-in-out hover:shadow-2xl">
 						<!-- Card Progetto -->
 						<div
-							class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-full flex flex-col w-full">
+							class="bg-white border border-gray-200 rounded-lg shadow-sm bg-gray-800 border-gray-700 h-full flex flex-col w-full">
 							<!-- Sezione Immagine -->
 							<!-- <div
 								:class="[8, 9].includes(project.id) ? 'flex items-center justify-center' : ``"
@@ -159,10 +159,10 @@ const prevPage = () => {
 							<!-- Sezione Contenuto -->
 							<div class="p-5 flex-grow flex flex-col h-[676px] sm:h-[476px] md:h-[660px] lg:h-[676px]">
 								<div class="h-[120px]">
-									<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white h-[64px]">
+									<h2 class="mb-2 text-2xl font-bold tracking-tight text-white h-[64px]">
 										{{ project.title }}
 									</h2>
-									<h3 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white h-[56px]">
+									<h3 class="mb-2 text-lg font-bold tracking-tight text-white h-[56px]">
 										{{ project.subtitle }}
 									</h3>
 								</div>
