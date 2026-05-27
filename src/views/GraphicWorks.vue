@@ -159,10 +159,10 @@ const prevPage = () => {
 							<!-- Sezione Contenuto -->
 							<div class="p-5 flex-grow flex flex-col h-[676px] sm:h-[476px] md:h-[660px] lg:h-[676px]">
 								<div class="h-[120px]">
-									<h2 class="mb-2 text-2xl font-bold tracking-tight text-white h-[64px]">
+									<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 h-[64px]">
 										{{ project.title }}
 									</h2>
-									<h3 class="mb-2 text-lg font-bold tracking-tight text-white h-[56px]">
+									<h3 class="mb-2 text-lg font-bold tracking-tight text-gray-900 h-[56px]">
 										{{ project.subtitle }}
 									</h3>
 								</div>
