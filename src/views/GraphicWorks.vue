@@ -166,9 +166,9 @@ const prevPage = () => {
 										{{ project.subtitle }}
 									</h3>
 								</div>
-
-								<p class="mb-2 mt-2 font-normal text-[#D4D8DD]">{{ project.paragraph1 }}</p>
-								<p class="mb-4 font-normal text-[#D4D8DD]">{{ project.paragraph2 }}</p>
+								<!-- text-[#D4D8DD] -->
+								<p class="mb-2 mt-2 font-normal">{{ project.paragraph1 }}</p>
+								<p class="mb-4 font-normal">{{ project.paragraph2 }}</p>
 
 								<!-- Bottone -->
 								<button
@@ -181,10 +181,11 @@ const prevPage = () => {
 
 								<div class="h-[136px]">
 									<div class="flex flex-wrap gap-2 mt-4 pb-8">
+										<!-- bg-gray-100 bg-[#E5E7EB] -->
 										<span
 											v-for="(tag, index) in project.tags"
 											:key="index"
-											class="text-xs px-2 py-1 bg-gray-100 bg-[#E5E7EB] rounded-full">
+											class="text-xs px-2 py-1  bg-[#00D0F0]  rounded-full">
 											{{ tag }}
 										</span>
 									</div>
