@@ -48,7 +48,7 @@ export const useProjectStoreDev = defineStore('projectStore', {
                 subtitle: 'Web Design',
                 paragraph1: 'Progettazione e sviluppo end-to-end di un sito web.',
                 paragraph2:
-                    "Realizzato completamente in autonomia: dall'UI/UX design all'implementazione con HTML5, CSS3 e JavaScript vanilla, garantendo prestazioni ottimali senza l'utilizzo di framework.",
+                    "Realizzato completamente in autonomia: dall'UI/UX design all'implementazione con HTML5, CSS3 e JavaScript plain, garantendo prestazioni ottimali senza l'utilizzo di framework.",
                 tags: ['HTML5', 'CSS3', 'JavaScript', `jQuery`],
                 classCust: 'object-cover',
             },

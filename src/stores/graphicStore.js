@@ -147,7 +147,7 @@ export const useProjectStore = defineStore('graphicProjects', {
                 subtitle: 'Web Design',
                 paragraph1: 'Progettazione e sviluppo end-to-end di un sito web.',
                 paragraph2:
-                    "Realizzato completamente in autonomia: dall'UI/UX design all'implementazione con HTML5, CSS3 e JavaScript vanilla.",
+                    "Realizzato completamente in autonomia: dall'UI/UX design all'implementazione con HTML5, CSS3 e JavaScript plain.",
                 tags: ['HTML5', 'CSS3', 'JavaScript', `jQuery`],
                 specialClass: ' object-top',
             },
