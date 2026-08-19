@@ -681,7 +681,7 @@ onMounted(() => {
 							class="inline-block lg:mb-0 :md-mb-8 w-full lg:text-left md:text-center sm:text-center">
 							<a class="inline-block mb-8" href="#">
 								<h2
-									class="sm:inline inline-block md:text-left text-center text-black text-4xl font-jetbrains-mono relative group">
+									class="sm:inline inline-block md:text-left text-center text-black text-4xl font-inter relative group">
 									Miniatures
 									<span
 										class="cursor absolute right-0 top-0 h-full w-[5px] bg-black opacity-0 group-hover:opacity-100 animate-blink"></span>
@@ -700,7 +700,7 @@ onMounted(() => {
 									<div class="p-0 flex items-center justify-center h-[282px]">
 										<img
 											class="max-h-full object-contain p-8 transition-all duration-500 ease-in-out hover:animate-bob"
-											src="/codice.svg"
+											src="/mini.png"
 											alt="icona codice" />
 									</div>
 								</div>
