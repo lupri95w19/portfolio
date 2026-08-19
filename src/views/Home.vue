@@ -63,12 +63,12 @@ const currentTyping = ref('');
 
 // const typeArray = ['Web Developer', 'FE Lover', 'Graphic Designer', 'Photoshop Enjoyer', 'PC Gamer <i class="fa-brands fa-steam"></i>'];
 const typeArray = [
-	{ text: '💻 Web Developer', },
+	{ text: '💻 Web Developer' },
 	{ text: '💻 FE Lover' },
 	{ text: '✏️ Graphic Designer' },
 	{ text: '📸 Photoshop Enjoyer' },
 	{ text: 'PC Gamer', icon: 'fa-brands fa-steam' },
-	{ text: '🎨 Miniature Painter'},
+	{ text: '🎨 Miniature Painter' },
 ];
 const typingSpeed = 25;
 const newTextDelay = 500;
@@ -125,7 +125,8 @@ onMounted(() => {
 	<div class="w-screen bg-[#0A1128] snap-y">
 		<section
 			class="lg:h-[93.5vh] h-auto bg-[#0A1128] relative flex flex-col justify-center overflow-x-hidden snap-mandatory">
-			<div class="max-w-screen-lg container m-auto flex justify-center h-[110vh] md:h-unset items-start lg:items-center">
+			<div
+				class="max-w-screen-lg container m-auto flex justify-center h-unset md:h-unset sm:h-unset items-start lg:items-center">
 				<div class="container mx-auto md:px-16 px-4 lg:py-0 md:py-32">
 					<div class="grid grid-cols-12 mb-4 gap-4">
 						<div class="col-span-4"></div>
@@ -178,8 +179,9 @@ onMounted(() => {
 						</div>
 
 						<!-- Terminale -->
+						<!-- prima h-[50px] -->
 						<div
-							class="lg:col-span-8 md:col-span-12 sm:col-span-12 col-span-12 p-0 rounded-lg w-full rounded-t-lg h-[550px] lg:mt-0 md:mt-16 mt-16"
+							class="lg:col-span-8 md:col-span-12 sm:col-span-12 col-span-12 p-0 rounded-lg w-full rounded-t-lg lg:mt-0 md:mt-16 mt-16"
 							v-motion
 							:initial="{ opacity: 0, x: '30vw' }"
 							:visible-once="{
@@ -207,7 +209,7 @@ onMounted(() => {
 							</div>
 
 							<div
-								class="bg-[#2D2D2D] text-white font-mono p-0 rounded-lg col-span-8 w-full shadow-lg border border-gray-700 rounded-t-lg bg-[#181818] w-[300px] lg:h-[550px]">
+								class="bg-[#2D2D2D] text-white font-mono p-0 rounded-lg col-span-8 w-full shadow-lg border border-gray-700 rounded-t-lg bg-[#181818] w-[300px] lg:h-[550px] pointer-events-none">
 								<!-- prima aveva sm:h-full-->
 								<!-- Barra superiore -->
 								<div class="flex items-center space-x-2 p-4 bg-black rounded-t-lg">
@@ -236,8 +238,8 @@ onMounted(() => {
 											<!-- Lista completata nuova-->
 											<!-- <li v-for="(item, index) in completedTexts" :key="index">✅ {{ item }}</li> -->
 											<li v-for="(item, index) in completedTexts" :key="index">
-												<i v-if="item.icon" :class="item.icon"></i> {{ item.text }}
-												
+												<i v-if="item.icon" :class="item.icon"></i>
+												{{ item.text }}
 											</li>
 
 											<!-- Quello che sta scrivendo in tempo reale -->
@@ -432,7 +434,7 @@ onMounted(() => {
 						<!-- Linea centrale -->
 						<div
 							class="absolute left-1/2 top-0 h-full w-0.5 sm:w-1 md:w-1.5 bg-custom-bar transform -translate-x-1/2 z-0"></div>
-							<!-- a lavoro trovato cambiare dal css -->
+						<!-- a lavoro trovato cambiare dal css -->
 
 						<!-- Step 1 -->
 						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
@@ -524,7 +526,7 @@ onMounted(() => {
 						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
 							<!-- Data -->
 							<div class="w-full md:w-5/12 md:pr-8 order-1 md:text-right text-center">
-								<h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500 ">2025</h3>
+								<h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500">2025</h3>
 								<!-- text-melon per attuale lavoro -->
 							</div>
 
@@ -536,14 +538,15 @@ onMounted(() => {
 								target="_blank">
 								<div
 									class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-[#FF8C00] via-[#FFB347] to-[#FFD447] rounded-full transform group-hover:scale-110 sm:group-hover:scale-125 transition-transform duration-300"></div>
-									<!-- bg-gradient-to-r from-[#FAB3A9] via-[#FDD0C5] to-[#FFE9E4] per lavoro attuale -->
+								<!-- bg-gradient-to-r from-[#FAB3A9] via-[#FDD0C5] to-[#FFE9E4] per lavoro attuale -->
 							</a>
 
 							<!-- Contenuto destro -->
 							<div class="w-full md:w-5/12 mt-6 md:mt-0 md:pl-8 order-3">
 								<h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">Play Code SRLS</h3>
 								<p class="text-sm sm:text-base text-gray-300 mt-2">
-									Sviluppavo software integrando competenze di front-end e back-end, e inoltre realizzavo artefatti comunicativi come graphic designer
+									Sviluppavo software integrando competenze di front-end e back-end, e inoltre realizzavo artefatti
+									comunicativi come graphic designer
 								</p>
 							</div>
 						</div>
@@ -566,7 +569,7 @@ onMounted(() => {
 				<div class="grid grid-cols-12 lg:gap-20 md:gap-0 place-items-center">
 					<!-- Web Dev -->
 					<div
-						class="lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12 flex justify-end"
+						class="lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12 flex justify-end md:mb-0 sm:mb-32 mb-32"
 						v-motion
 						:initial="{ opacity: 0, x: '-30vw' }"
 						:visible-once="{
@@ -615,7 +618,7 @@ onMounted(() => {
 
 					<!-- Graphic Design -->
 					<div
-						class="lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12 lg:mt-0 md:mt-16 sm:mt-16 mt-16 md:mb-0 sm:mb-32 mb-32 w-full sm:w-auto"
+						class="lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12 md:mb-0 sm:mb-32 mb-32 w-full sm:w-auto"
 						v-motion
 						:initial="{ opacity: 0, x: '30vw' }"
 						:visible-once="{
@@ -653,6 +656,55 @@ onMounted(() => {
 										alt="monogramma graphic design" />
 								</div>
 							</div>
+						</router-link>
+					</div>
+
+					<!-- Miniatures -->
+					<div
+						class="lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12 md:mb-0 sm:mb-32 mb-32 w-full sm:w-auto"
+						v-motion
+						:initial="{ opacity: 0, x: '-30vw' }"
+						:visible-once="{
+							opacity: 1,
+							x: '0vw',
+							transition: {
+								type: 'spring',
+								stiffness: 380,
+								damping: 35,
+								mass: 0.7,
+								restDelta: 0.001,
+								delay: 300,
+							},
+						}">
+						<router-link
+							to="/miniatures"
+							class="inline-block lg:mb-0 :md-mb-8 w-full lg:text-left md:text-center sm:text-center">
+							<a class="inline-block mb-8" href="#">
+								<h2
+									class="sm:inline inline-block md:text-left text-center text-black text-4xl font-jetbrains-mono relative group">
+									Miniatures
+									<span
+										class="cursor absolute right-0 top-0 h-full w-[5px] bg-black opacity-0 group-hover:opacity-100 animate-blink"></span>
+								</h2>
+							</a>
+							<a href="#">
+								<div class="sm:w-96 w-full border bg-[#303031] rounded-md shadow-lg h-[318px]">
+									<!-- Header -->
+									<div class="flex justify-end items-center bg-[#161616] px-4 py-2 text-sm font-semibold rounded-md">
+										<div class="flex gap-2 text-[#E5E7EB] place-items-center">
+											<div>&#x2212;</div>
+											<div><i class="fa-regular fa-square text-xs"></i></div>
+											<div>&#x2715;</div>
+										</div>
+									</div>
+									<div class="p-0 flex items-center justify-center h-[282px]">
+										<img
+											class="max-h-full object-contain p-8 transition-all duration-500 ease-in-out hover:animate-bob"
+											src="/codice.svg"
+											alt="icona codice" />
+									</div>
+								</div>
+							</a>
 						</router-link>
 					</div>
 				</div>
@@ -746,12 +798,16 @@ onMounted(() => {
 	0%,
 	100% {
 		background-color: #28a745; /* Verde normale */
-		box-shadow: 0 0 5px #28a745, 0 0 15px #28a745; /* Bagliore verde normale */
+		box-shadow:
+			0 0 5px #28a745,
+			0 0 15px #28a745; /* Bagliore verde normale */
 		transform: scale(1); /* Dimensione normale */
 	}
 	50% {
 		background-color: #00ff00; /* Verde più intenso */
-		box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00; /* Bagliore più forte */
+		box-shadow:
+			0 0 20px #00ff00,
+			0 0 40px #00ff00; /* Bagliore più forte */
 		transform: scale(1.2);
 	}
 }

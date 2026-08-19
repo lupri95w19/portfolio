@@ -33,19 +33,19 @@ const scrollToSection = (sectionId) => {
   <div class="flex justify-center sticky top-0 left-0 md:top-10 md:left-0 z-40 py-4 sm:px-0 px-4">
     <div id="header" class="bg-[#0a0908] rounded-full py-4 md:px-8 px-[20px] sticky top-0 right-0 inline-flex">
       <div class="flex gap-4">
-        <div class="m-auto" v-if="currentRoute !== '/'">
+        <div class="m-auto centered-a" v-if="currentRoute !== '/'">
           <RouterLink to="/" @click.prevent="navigateToSection('home')">Home</RouterLink>
         </div>
-        <div class="m-auto" v-if="currentRoute == '/'">
+        <div class="m-auto centered-a" v-if="currentRoute == '/'">
           <a class="" @click="navigateToSection('about')">About</a>
         </div>
-        <div class="m-auto" v-if="currentRoute == '/'">
+        <div class="m-auto centered-a" v-if="currentRoute == '/'">
           <a class="" @click="navigateToSection('career')">La mia carriera</a>
         </div>
-        <div class="m-auto" v-if="currentRoute == '/'">
+        <div class="m-auto centered-a" v-if="currentRoute == '/'">
           <a class="" @click="navigateToSection('works')">I miei lavori</a>
         </div>
-        <div class="m-auto" v-if="currentRoute == '/'">
+        <div class="m-auto centered-a" v-if="currentRoute == '/'">
           <a class="" @click="navigateToSection('contact')">Contattami</a>
         </div>
       </div>
@@ -66,5 +66,11 @@ a {
 
 a:hover {
   color: #FFD447; /* Colore hover personalizzabile */
+}
+
+.centered-a a{
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 </style>

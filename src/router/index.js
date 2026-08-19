@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Graphic from '../views/GraphicWorks.vue';
 import Dev from '../views/DevWorks.vue';
+import Miniatures from '../views/MiniaturesWorks.vue';
 import NotFound from '../views/404.vue';
 
 // import Aboutfrom '../views/About.vue'
@@ -26,6 +27,13 @@ const routes = [
 		component: Dev,
 		meta: {
 			title: 'Luca Privitera - Lavori da Developer',
+		},
+	},
+		{
+		path: '/miniatures',
+		component: Miniatures,
+		meta: {
+			title: 'Luca Privitera - Miniatures',
 		},
 	},
 	{ path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
