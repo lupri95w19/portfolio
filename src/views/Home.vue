@@ -673,7 +673,7 @@ onMounted(() => {
 								damping: 35,
 								mass: 0.7,
 								restDelta: 0.001,
-								delay: 300,
+								delay: 900,
 							},
 						}">
 						<router-link
