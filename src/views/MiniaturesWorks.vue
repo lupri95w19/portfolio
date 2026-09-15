@@ -129,7 +129,7 @@ watch(searchQuery, () => {
 </script>
 
 <template>
-	<div class="w-screen">
+	<div class="w-[100%]">
 		<section id="works" class="flex flex-col justify-center bg-[#C16E70]">
 			<div class="text-lg px-4 sm:px-32 md:px-24 lg:px-8">
 				<h1 class="mt-32 mb-42 text-center text-black">Le mie miniature</h1>
@@ -227,16 +227,7 @@ watch(searchQuery, () => {
 									</h3>
 								</div>
 
-								<!-- Bottone -->
-								<button
-									id="complete"
-									@click="openModal(project)"
-									type="button"
-									class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-[#C06E52] rounded-lg focus:ring-4 focus:outline-none">
-									Apri la foto
-								</button>
-
-								<div class="h-[136px]">
+								<div>
 									<div class="flex flex-wrap gap-2 mt-4 pb-8">
 										<span
 											v-for="(tag, index) in project.tags"
