@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import OtherJobs from '../components/OtherJobs.vue';
@@ -61,14 +61,32 @@ const currentPage = ref(1); // Pagina corrente
 const projectsPerPage = 12; // Numero di progetti per pagina
 
 // Calcola i progetti da mostrare in base alla pagina corrente
+const filteredProjects = computed(() => {
+	if (!debouncedQuery.value) return miniStore.projects;
+
+	const words = debouncedQuery.value.toLowerCase().split(" ");
+
+
+	return miniStore.projects.filter((p) => {
+		const title = p.title?.toLowerCase() || '';
+		const subtitle = p.subtitle?.toLowerCase() || '';
+		const tags = p.tags?.map((t) => t.toLowerCase()) || [];
+
+		// ogni parola deve essere trovata in almeno uno dei campi
+		return words.every(
+			(word) => title.includes(word) || subtitle.includes(word) || tags.some((tag) => tag.includes(word)),
+		);
+	});
+});
+
 const paginatedProjects = computed(() => {
 	const start = (currentPage.value - 1) * projectsPerPage;
-	return [...miniStore.projects].slice(start, start + projectsPerPage);
+	return filteredProjects.value.slice(start, start + projectsPerPage);
 });
 
 // Calcola il numero totale di pagine
 const totalPages = computed(() => {
-	return Math.ceil(miniStore.projects.length / projectsPerPage);
+	return Math.ceil(filteredProjects.value.length / projectsPerPage);
 });
 
 // Funzioni per cambiare pagina
@@ -83,7 +101,7 @@ const nextPage = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 		setTimeout(() => {
 			currentPage.value++;
-		}, 500);
+		}, 300);
 	}
 };
 
@@ -92,9 +110,22 @@ const prevPage = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 		setTimeout(() => {
 			currentPage.value--;
-		}, 500);
+		}, 300);
 	}
 };
+
+const searchQuery = ref('');
+const debouncedQuery = ref('');
+let debounceTimer = null;
+
+watch(searchQuery, () => {
+    clearTimeout(debounceTimer);
+
+    debounceTimer = setTimeout(() => {
+        debouncedQuery.value = searchQuery.value;
+        currentPage.value = 1;
+    }, 300);
+});
 </script>
 
 <template>
@@ -113,6 +144,19 @@ const prevPage = () => {
 
 			<div
 				class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center px-4 sm:px-32 md:px-24 lg:px-8">
+				<!-- Search -->
+
+				<div class="centered mb-10">
+					<div class="search">
+						<input v-model="searchQuery" type="text" placeholder="Cerca..." />
+
+						<button>
+							<span class="search-icon"></span>
+							<label>Cerca</label>
+						</button>
+					</div>
+				</div>
+
 				<!-- Card Dev e Card Grafico -->
 				<div class="grid grid-cols-12 md:gap-10">
 					<!-- Loop attraverso i progetti -->
@@ -344,4 +388,129 @@ button.customButton:hover {
 #complete {
 	background: #c06e52;
 }
+
+
+
+
+
+
+
+
+
+.centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.search {
+	position: relative;
+	width: 40ch;
+	height: 3rem;
+	padding-left: 1.5rem;
+	border-radius: 1.5rem;
+	background: #ffffff;
+	box-shadow: 0 1.25rem 5rem -1rem rgba(0, 0, 30, 0.5);
+	transition: transform 200ms ease-in-out;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: 1.5rem;
+		box-shadow: 0 0.5rem 2rem -1rem rgba(0, 0, 100, 0.5);
+		opacity: 0;
+		pointer-events: none;
+
+		transition: opacity 300ms ease-in-out;
+	}
+
+	input {
+		all: unset;
+		height: 100%;
+		color: #333355;
+
+		&::placeholder {
+			color: inherit;
+			opacity: 0.3;
+		}
+	}
+
+	button {
+		all: unset;
+		position: absolute;
+		right: 0;
+		height: 3rem;
+		padding-left: 3rem;
+		border-radius: 1.5rem;
+		background: #296ec7;
+		cursor: pointer;
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border-radius: 1.5rem;
+			box-shadow: 0 0.5rem 2rem 0 rgb(41, 110, 199, 0.25),
+				0 0.5rem 1rem -0.75rem rgb(0, 0, 0, 0.5);
+			opacity: 0;
+			transition: opacity 300ms ease-in-out;
+		}
+
+		&:hover::before {
+			opacity: 1;
+		}
+
+		label {
+			display: block;
+			opacity: 0;
+			color: white;
+			width: 0;
+			transition: width 200ms ease-in-out, opacity 100ms ease-in-out;
+		}
+
+		.search-icon {
+			position: absolute;
+			height: 0.875rem;
+			width: 0.875rem;
+			top: 1rem;
+			left: 0.875rem;
+			border: 0.125rem solid white;
+			border-radius: 50%;
+			box-sizing: border-box;
+			transform: rotate(-45deg);
+
+			&::after {
+				content: "";
+				position: absolute;
+				height: 0.5rem;
+				width: 0.125rem;
+				background: white;
+				left: calc(50% - (0.125rem / 2));
+				bottom: -0.6rem;
+			}
+		}
+	}
+
+	&:has(input:not(:placeholder-shown)) {
+		button {
+			label {
+				opacity: 1;
+				width: 3rem;
+				margin-left: -0.5rem;
+				padding-right: 1rem;
+			}
+		}
+	}
+
+	&:has(input:focus) {
+		transform: translateY(-0.5rem);
+		&::before {
+			opacity: 1;
+		}
+	}
+}
+
 </style>
