@@ -142,6 +142,13 @@ watch(
 							target="_blank">
 							<i class="fab fa-github"></i>
 						</a>
+						<a
+							href="https://www.vinted.it/member/289931557"
+							class="text-2xl hover:text-[#FFB347] transition-colors"
+							aria-label="GitHub"
+							target="_blank">
+							<i class="">Vinted</i>
+						</a>
 					</div>
 				</div>
 

@@ -2,6 +2,7 @@
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
+import OtherJobs from '../components/OtherJobs.vue';
 
 // Fix pdf
 const isMobile = ref(false);
@@ -53,6 +54,7 @@ const prevImage = () => {
 
 // Store
 import { useProjectStore } from '@/stores/graphicStore'; // importi lo store
+import Paginate from '../components/Paginate.vue';
 const graphicStore = useProjectStore(); // ← Usa lo stesso nome dell'export, presente nello store
 
 const currentPage = ref(1); // Pagina corrente
@@ -102,6 +104,12 @@ const prevPage = () => {
 				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come graphic designer</h1>
 			</div>
 			<Header />
+			<Paginate
+				:currentPage="currentPage"
+				:totalPages="totalPages"
+				@prev="prevPage"
+				@next="nextPage"
+				@goTo="goToPage" />
 			<div
 				class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center px-4 sm:px-32 md:px-24 lg:px-8">
 				<!-- Card Dev e Card Grafico -->
@@ -185,7 +193,7 @@ const prevPage = () => {
 										<span
 											v-for="(tag, index) in project.tags"
 											:key="index"
-											class="text-xs px-2 py-1  bg-[#00D0F0]  rounded-full">
+											class="text-xs px-2 py-1 bg-[#00D0F0] rounded-full">
 											{{ tag }}
 										</span>
 									</div>
@@ -272,51 +280,14 @@ const prevPage = () => {
 					</Modal>
 				</div>
 
-				<!-- Paginazione -->
-				<div class="w-full text-xs mt-10 flex justify-center items-center">
-					<!-- Bottone Precedente -->
-					<button
-						@click="prevPage"
-						:disabled="currentPage === 1"
-						class="px-4 py-2 text-white rounded-md btn custom-bg customButton"
-						type="button">
-						Precedente
-					</button>
+				<Paginate
+					:currentPage="currentPage"
+					:totalPages="totalPages"
+					@prev="prevPage"
+					@next="nextPage"
+					@goTo="goToPage" />
 
-					<!-- Numero di Pagina -->
-					<h2 class="mx-2 sm:mx-4 text-lg text-center">Pagina {{ currentPage }} di {{ totalPages }}</h2>
-
-					<!-- Bottone Successivo -->
-					<button
-						@click="nextPage"
-						:disabled="currentPage === totalPages"
-						class="px-4 py-2 bg-[#181818] text-white rounded-md customButton"
-						type="button">
-						Successivo
-					</button>
-				</div>
-
-				<div class="w-full sm:w-96 text-xs mt-48 mb-80 flex justify-center flex-col">
-					<h1 class="text-black mb-4 w-full text-center">Controlla anche i miei lavori da Developer</h1>
-					<router-link to="/dev" class="inline-flex flex flex-col place-items-center sm:px-0 px-8">
-						<div class="w-full border bg-[#303031] rounded-md shadow-lg h-[318px]">
-							<!-- Header -->
-							<div class="flex justify-end items-center bg-[#161616] px-4 py-2 text-sm font-semibold rounded-md">
-								<div class="flex gap-2 text-[#E5E7EB] place-items-center">
-									<div>&#x2212;</div>
-									<div><i class="fa-regular fa-square text-xs"></i></div>
-									<div>&#x2715;</div>
-								</div>
-							</div>
-							<div class="p-0 flex items-center justify-center h-[282px]">
-								<img
-									class="max-h-full object-contain p-8 transition-all duration-500 ease-in-out hover:animate-bob"
-									src="/codice.svg"
-									alt="icona codice" />
-							</div>
-						</div>
-					</router-link>
-				</div>
+				<OtherJobs />
 			</div>
 			<Footer />
 		</section>

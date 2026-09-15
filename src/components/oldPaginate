@@ -1,0 +1,23 @@
+				<!-- Paginazione -->
+				<div class="w-full text-xs mt-10 flex justify-center items-center">
+					<!-- Bottone Precedente -->
+					<button
+						@click="prevPage"
+						:disabled="currentPage === 1"
+						class="px-4 py-2 text-white rounded-md btn custom-bg customButton"
+						type="button">
+						Precedente
+					</button>
+
+					<!-- Numero di Pagina -->
+					<h2 class="mx-2 sm:mx-4 text-lg text-center">Pagina {{ currentPage }} di {{ totalPages }}</h2>
+
+					<!-- Bottone Successivo -->
+					<button
+						@click="nextPage"
+						:disabled="currentPage === totalPages"
+						class="px-4 py-2 bg-[#181818] text-white rounded-md customButton"
+						type="button">
+						Successivo
+					</button>
+				</div>
