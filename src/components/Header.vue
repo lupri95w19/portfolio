@@ -30,7 +30,7 @@ const scrollToSection = (sectionId) => {
 </script>
 
 <template>
-  <div class="flex justify-center sticky top-0 left-0 md:top-10 md:left-0 z-40 py-4 sm:px-0 px-4 z-1000">
+  <div class="flex justify-center sticky top-0 left-0 md:top-10 md:left-0 z-40 py-4 sm:px-0 px-4 z-1000 w-50 m-auto">
     <div id="header" class="bg-[#0a0908] rounded-full py-4 md:px-8 px-[20px] sticky top-0 right-0 inline-flex">
       <div class="flex gap-4">
         <div class="m-auto centered-a" v-if="currentRoute !== '/'">

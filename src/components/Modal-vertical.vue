@@ -7,7 +7,7 @@
       <div class="bg-[#7A7978] rounded-lg m-5 md:m-6 sm:w-[70vw] relative w-[100vw] h-full">
         <!-- prima w-full -->
         <button
-          class="absolute top-3 right-3 text-white hover:text-red-400 z-40"
+          class="absolute top-3 right-3 text-white hover:text-red-400 z-9999"
           @click="close"
         >
           &times;
