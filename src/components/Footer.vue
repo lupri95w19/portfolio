@@ -130,24 +130,24 @@ watch(
 					<div class="flex gap-4 text-center">
 						<a
 							href="https://www.linkedin.com/in/luca-privitera-a1545a31b/"
-							class="text-2xl hover:text-[#FFB347] transition-colors text-center"
+							class="text-2xl hover:text-[#FFB347] transition-colors text-center flex items-center"
 							aria-label="LinkedIn"
 							target="_blank">
 							<i class="fab fa-linkedin-in"></i>
 						</a>
 						<a
 							href="https://github.com/lupri95w19"
-							class="text-2xl hover:text-[#FFB347] transition-colors"
+							class="text-2xl hover:text-[#FFB347] transition-colors flex items-center"
 							aria-label="GitHub"
 							target="_blank">
 							<i class="fab fa-github"></i>
 						</a>
 						<a
 							href="https://www.vinted.it/member/289931557"
-							class="text-2xl hover:text-[#FFB347] transition-colors"
+							class="text-2xl hover:text-[#FFB347] transition-colors flex items-center"
 							aria-label="GitHub"
 							target="_blank">
-							<i class="">Vinted</i>
+							<i class="fab fa-vinted"><img class="h-[25px] rounded-full" src="/vinted.jpeg"></i>
 						</a>
 					</div>
 				</div>

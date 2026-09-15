@@ -173,3 +173,7 @@ button:focus-visible {
 	display: block;
 	text-align: center;
 }
+
+.customButton{
+	background-color: #1e2939;
+}

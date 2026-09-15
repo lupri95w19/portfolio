@@ -6,7 +6,7 @@
 			:disabled="currentPage === 1"
 			class="px-4 py-2 text-white rounded-md btn custom-bg customButton"
 			type="button">
-			Precedente
+			<i class="fa-solid fa-circle-left text-2xl"></i>
 		</button>
 
 		<!-- Numero di Pagina -->
@@ -31,9 +31,9 @@
 		<button
 			@click="emit('next')"
 			:disabled="currentPage === totalPages"
-			class="px-4 py-2 bg-[#181818] text-white rounded-md customButton"
+			class="px-4 py-2 bg-[#181818] text-white rounded-full customButton"
 			type="button">
-			Successivo
+			<i class="fa-solid fa-circle-right text-2xl"></i>
 		</button>
 	</div>
 </template>
@@ -55,3 +55,10 @@ watch(() => props.currentPage, (newVal) => {
     localPage.value = newVal
 })
 </script>
+
+<style scoped>
+button{
+    padding: 12px;
+    border-radius: 9999px;
+}
+</style>
