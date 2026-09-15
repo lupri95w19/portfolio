@@ -148,7 +148,7 @@ watch(searchQuery, () => {
 
 				<div class="centered mb-10">
 					<div class="search">
-						<input v-model="searchQuery" type="text" placeholder="Cerca..." />
+						<input class="w-full" v-model="searchQuery" type="text" placeholder="Cerca..." />
 
 						<button>
 							<span class="search-icon"></span>
