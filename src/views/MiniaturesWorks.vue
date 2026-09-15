@@ -130,7 +130,7 @@ watch(searchQuery, () => {
 
 <template>
 	<div class="w-screen">
-		<section id="works" class="flex flex-col justify-center bg-[#D5A021]">
+		<section id="works" class="flex flex-col justify-center bg-[#C16E70]">
 			<div class="text-lg px-4 sm:px-32 md:px-24 lg:px-8">
 				<h1 class="mt-32 mb-42 text-center text-black">Le mie miniature</h1>
 			</div>
