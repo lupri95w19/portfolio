@@ -177,7 +177,7 @@ onMounted(() => {
 								</a>
 								<div class="flex bg-blue-700 hover:bg-blue-800 rounded-lg px-3 py-3 mt-4 gap-1 w-[125px] justify-center">
 									<a
-										href="https://www.linkedin.com/in/luca-privitera-a1545a31b/"
+										href="https://www.vinted.it/member/289931557"
 										class="text-white flex"
 										target="_blank"
 										rel="noopener noreferrer">
