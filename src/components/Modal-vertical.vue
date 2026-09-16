@@ -1,7 +1,7 @@
 <template>
     <div
       v-if="show"
-      class="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,0.8)]"
+      class="fixed inset-0 flex items-center justify-center z-9999 bg-[rgba(0,0,0,0.8)]"
       @click.self="close"
     >
       <div class="bg-[#7A7978] rounded-lg m-5 md:m-6 sm:w-[70vw] relative w-[100vw] h-full">

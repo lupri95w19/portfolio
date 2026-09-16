@@ -166,15 +166,33 @@ onMounted(() => {
 							<div class="h-full flex flex-col justify-baseline items-center text-center p-6 mt-12">
 								<h2 class="text-2xl font-bold">Benvenuto</h2>
 								<p class="text-lg mt-2">Iniziamo un nuovo progetto insieme!</p>
+								<!-- prima max-w-max -->
 								<a
 									href="https://www.linkedin.com/in/luca-privitera-a1545a31b/"
-									class="text-white bg-blue-700 hover:bg-blue-800 rounded-lg px-3 py-3 mt-4 max-w-max"
+									class="text-white bg-blue-700 hover:bg-blue-800 rounded-lg px-3 py-3 mt-4 w-[125px]"
 									target="_blank"
 									rel="noopener noreferrer">
 									Contattami
 									<i class="fa-brands fa-linkedin"></i>
 								</a>
-								<img class="p-4 mt-8" src="/Io.png" alt="" />
+								<div class="flex bg-blue-700 hover:bg-blue-800 rounded-lg px-3 py-3 mt-4 gap-1 w-[125px] justify-center">
+									<a
+										href="https://www.linkedin.com/in/luca-privitera-a1545a31b/"
+										class="text-white flex"
+										target="_blank"
+										rel="noopener noreferrer">
+										Miniature
+										<a
+											href="https://www.vinted.it/member/289931557"
+											class="text-2xl hover:text-[#FFB347] transition-colors flex items-center"
+											aria-label="GitHub"
+											target="_blank">
+											<i class="fab fa-vinted"><img class="h-[20px] rounded-full" src="/vinted.jpeg" /></i>
+										</a>
+									</a>
+								</div>
+
+								<img class="p-4 mt-2" src="/Io.png" alt="" />
 							</div>
 							<div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[96px] h-[5px] bg-gray-700 rounded-full"></div>
 						</div>
