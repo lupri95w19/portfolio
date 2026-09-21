@@ -177,13 +177,13 @@ onMounted(() => {
 								</a>
 								<div class="flex bg-blue-700 hover:bg-blue-800 rounded-lg px-3 py-3 mt-4 gap-1 w-[125px] justify-center">
 									<a
-										href="https://www.vinted.it/member/289931557"
+										href="https://www.vinted.it/member/3188099699"
 										class="text-white flex"
 										target="_blank"
 										rel="noopener noreferrer">
 										Miniature
 										<a
-											href="https://www.vinted.it/member/289931557"
+											href="https://www.vinted.it/member/3188099699"
 											class="text-2xl hover:text-[#FFB347] transition-colors flex items-center"
 											aria-label="GitHub"
 											target="_blank">
