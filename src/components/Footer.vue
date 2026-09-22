@@ -143,7 +143,7 @@ watch(
 							<i class="fab fa-github"></i>
 						</a>
 						<a
-							href="https://www.vinted.it/member/289931557"
+							href="https://www.vinted.it/member/3188099699"
 							class="text-2xl hover:text-[#FFB347] transition-colors flex items-center"
 							aria-label="GitHub"
 							target="_blank">
