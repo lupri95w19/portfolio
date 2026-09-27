@@ -35,12 +35,12 @@ watch(
 
 <template>
 	<footer
-		:class="[currentRoute === '/graphic' ? 'bg-[#191716]' : 'bg-[#0A1128]', 'transition-colors duration-500']"
+		:class="[currentRoute === '/graphic' ? 'bg-[#0A1128]' : 'bg-[#191716]', 'transition-colors duration-500']"
 		class="w-full py-12 z-10 border-t border-[#ffffff10]">
 		<!-- h-[322px] -->
 		<div
 			class="max-w-screen-lg mx-auto px-4"
-			:class="[currentRoute === '/graphic' ? 'bg-[#191716]' : 'bg-[#0A1128]', 'transition-colors duration-500']">
+			:class="[currentRoute === '/graphic' ? 'bg-[#0A1128]' : 'bg-[#191716]', 'transition-colors duration-500']">
 			<!-- Contenuto principale -->
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 				<!-- Sezione materiali -->

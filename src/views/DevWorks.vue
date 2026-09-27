@@ -98,7 +98,7 @@ const prevPage = () => {
 
 <template>
 	<div class="w-screen">
-		<section id="works" class="flex flex-col justify-center bg-[#CFFFB3]">
+		<section id="works" class="flex flex-col justify-center bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,#22c1c3_0%,#fdbb2d_100%)]">
 			<div class="text-lg px-4 sm:px-32 md:px-24 lg:px-8">
 				<h1 class="mt-32 mb-42 text-center text-black">I miei lavori come Developer</h1>
 			</div>

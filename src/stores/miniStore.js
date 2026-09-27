@@ -5,6 +5,16 @@ export const useMiniatureStoreDev = defineStore('miniProjects', {
 		projects: [
 			{
 				id: 31,
+				imgpre: '/mini/pre/Darth-Vader.jpg',
+				image: '/mini/Darth-Vader.jpg',
+				images: [{ type: 'image', src: '/mini/Darth-Vader.jpg' }],
+				title: 'Darth Vader',
+				subtitle: 'Star Wars',
+				tags: ['Star Wars', 'Darth Vader', 'Sith' ],
+				specialClass: 'object-contain object-top',
+			},
+			{
+				id: 31,
 				imgpre: '/mini/pre/Basi.jpg',
 				image: '/mini/Basi.jpg',
 				images: [{ type: 'image', src: '/mini/Basi.jpg' }],

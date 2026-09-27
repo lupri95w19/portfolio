@@ -130,7 +130,7 @@ watch(searchQuery, () => {
 
 <template>
 	<div class="w-[100%]">
-		<section id="works" class="flex flex-col justify-center bg-[#C16E70]">
+		<section id="works" class="flex flex-col justify-center bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,#1c92d2_0%,#f2fcfe_100%)]">
 			<div class="text-lg px-4 sm:px-32 md:px-24 lg:px-8">
 				<h1 class="mt-32 mb-42 text-center text-black">Le mie miniature</h1>
 			</div>
