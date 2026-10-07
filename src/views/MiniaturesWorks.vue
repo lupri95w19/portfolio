@@ -146,9 +146,9 @@ watch(searchQuery, () => {
 				class="max-w-screen-lg container m-auto text-black flex flex-col justify-center place-items-center px-4 sm:px-32 md:px-24 lg:px-8">
 				<!-- Search -->
 
-				<div class="centered mb-10">
-					<div class="search">
-						<input class="w-full" v-model="searchQuery" type="text" placeholder="Cerca..." />
+				<div class="mr-auto mb-10 w-full flex justify-center">
+					<div class="search flex">
+						<input class="w-full pl-5" v-model="searchQuery" type="text" placeholder="Cerca..." />
 
 						<button>
 							<span class="search-icon"></span>
@@ -396,11 +396,15 @@ button.customButton:hover {
 	height: 100%;
 }
 
+.w-full.pl-5{
+	padding-left: 1.5rem;
+}
+
 .search {
 	position: relative;
-	width: 40ch;
+	width: 80%;
 	height: 3rem;
-	padding-left: 1.5rem;
+	/* padding-left: 1.5rem; */
 	border-radius: 1.5rem;
 	background: #ffffff;
 	box-shadow: 0 1.25rem 5rem -1rem rgba(0, 0, 30, 0.5);
