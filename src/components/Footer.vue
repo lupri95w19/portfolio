@@ -72,7 +72,7 @@ watch(
 						@click="showPdf('/LucaAgatinoPriviteraCVENG.pdf', 'CV di Luca Privitera')"
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6 cursor-pointer">
 						<i class="fas fa-file-download"></i>
-						<span>Mio CV (EN)</span>
+						<span>My CV (EN)</span>
 					</a>
 
 					<!-- PDF Mobile -->
@@ -82,7 +82,7 @@ watch(
 						target="_blank"
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6">
 						<i class="fas fa-file-download"></i>
-						<span class="text-center">Mio CV (EN)</span>
+						<span class="text-center">My CV (EN)</span>
 					</a>
 
 					<!-- PDF Desktop -->
@@ -147,8 +147,17 @@ watch(
 							class="text-2xl hover:text-[#FFB347] transition-colors flex items-center"
 							aria-label="GitHub"
 							target="_blank">
-							<i class="fab fa-vinted"><img class="h-[25px] rounded-full" src="/vinted.jpeg"></i>
+							<i class="fab fa-vinted"><img class="h-[25px] rounded-full" src="/vinted.jpeg" /></i>
 						</a>
+						<a
+							href="https://www.instagram.com/lupri95w19_punished_venom_luca/"
+							class="text-2xl hover:text-[#FFB347] transition-colors flex items-center"
+							aria-label="Instagram"
+							target="_blank">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+
+						
 					</div>
 				</div>
 
@@ -173,6 +182,12 @@ watch(
 							class="hover:text-[#FFB347] transition-colors text-center"
 							:class="{ 'text-[#FF8C00]': currentRoute === '/graphic' }">
 							Grafica
+						</router-link>
+						<router-link
+							to="/miniatures"
+							class="hover:text-[#FFB347] transition-colors text-center"
+							:class="{ 'text-[#FF8C00]': currentRoute === '/miniatures' }">
+							Miniature
 						</router-link>
 					</nav>
 				</div>
