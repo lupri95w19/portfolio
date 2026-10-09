@@ -171,7 +171,7 @@ export const useMiniatureStoreDev = defineStore('miniProjects', {
 				imgpre: '/mini/pre/Skink-Oracle-on-Trogledon.jpg',
 				image: '/mini/Skink-Oracle-on-Trogledon.jpg',
 				images: [{ type: 'image', src: '/mini/Skink-Oracle-on-Trogledon.jpg' }],
-				title: 'Skink Oracle on Trogledon',
+				title: 'Skink Oracle on Troglodon',
 				subtitle: 'Warhammer Fantasy',
 				tags: ['Warhammer Fantasy', 'Fantasy', 'Seraphon', 'Big', 'Mounted'],
 				specialClass: 'object-contain object-top',
