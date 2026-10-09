@@ -4,13 +4,26 @@ export const useMiniatureStoreDev = defineStore('miniProjects', {
 	state: () => ({
 		projects: [
 			{
+				id: 32,
+				imgpre: '/mini/pre/CHARMANDER.jpg',
+				image: '/mini/CHARMANDER.jpg',
+				images: [
+					{ type: 'image', src: '/mini/CHARMANDER.jpg' },
+					{ type: 'image', src: '/mini/charmander2.jpg' },
+				],
+				title: 'Charmander',
+				subtitle: 'Halloween Charmander',
+				tags: ['Halloween', 'Charmander', 'Pokemon'],
+				specialClass: 'object-contain object-top',
+			},
+			{
 				id: 31,
 				imgpre: '/mini/pre/Darth-Vader.jpg',
 				image: '/mini/Darth-Vader.jpg',
 				images: [{ type: 'image', src: '/mini/Darth-Vader.jpg' }],
 				title: 'Darth Vader',
 				subtitle: 'Star Wars',
-				tags: ['Star Wars', 'Darth Vader', 'Sith' ],
+				tags: ['Star Wars', 'Darth Vader', 'Sith'],
 				specialClass: 'object-contain object-top',
 			},
 			{

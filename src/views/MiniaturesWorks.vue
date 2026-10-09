@@ -243,20 +243,21 @@ watch(searchQuery, () => {
 					<!-- Modale -->
 					<Modal :show="modalOpen" @close="closeModal">
 						<template v-if="selectedProject">
-							<div class="relative w-full h-full">
+							<div class="relative w-full h-[100%]">
 								<!-- Immagine corrente -->
 								<!-- Se è un'immagine -->
-								<div class="relative flex justify-center items-center overflow-hidden h-[90%] h-full">
+								 <!-- prima h-[90%] -->
+								<div class="relative flex justify-center items-center overflow-hidden h-[calc(100vh-45px)]">
 									<!-- Sfondo sfocato con pseudo-elemento -->
 									<div
-										class="absolute inset-0 z-0 bg-center bg-cover blur-[8px] scale-110 opacity-30 z-0"
+										class="absolute inset-0 z-0 bg-center bg-cover blur-[8px] scale-110 opacity-30 scale-[1.5]"
 										:style="`background-image: url(${selectedProject.images[currentImage].src})`"></div>
 
 									<!-- Sfondo sfocato -->
-									<div
+									<!-- <div
 										v-if="selectedProject.images[currentImage].type === 'image'"
 										class="absolute inset-0 bg-cover bg-center blur-[8px] opacity-30 z-0 transition-all duration-300 rounded-lg w-[95%] md:w-full scale-100 m-0 p-0"
-										:style="{ backgroundImage: `url(${selectedProject.images[currentImage].src})` }"></div>
+										:style="{ backgroundImage: `url(${selectedProject.images[currentImage].src})` }"></div> -->
 									<!-- Immagine nitida in primo piano -->
 									<img
 										v-if="selectedProject.images[currentImage].type === 'image'"
@@ -285,8 +286,9 @@ watch(searchQuery, () => {
 								</div>
 
 								<!-- Indicatori -->
+								 <!-- Prima era solo pt-4 -->
 								<div
-									class="flex justify-center mt-4 space-x-2 mt-0 pt-4 bg-[#191919] z-100"
+									class="flex justify-center mt-4 space-x-2 mt-0 py-4 bg-[#191919] z-100 h-[45px] flex align-center"
 									style="margin-top: 0px !important">
 									<div
 										v-for="(img, index) in selectedProject.images"
@@ -309,10 +311,10 @@ watch(searchQuery, () => {
 								</button>
 							</div>
 							<div class="text-white bg-[#191919] px-4 pt-4 pb-4">
-								<h2 class="text-2xl font-bold pb-2">{{ selectedProject.title }}</h2>
+								<!-- <h2 class="text-2xl font-bold pb-2">{{ selectedProject.title }}</h2>
 								<h3 class="text-lg pb-4">{{ selectedProject.subtitle }}</h3>
 								<p class="pb-2">{{ selectedProject.paragraph1 }}</p>
-								<p class="pb-4">{{ selectedProject.paragraph2 }}</p>
+								<p class="pb-4">{{ selectedProject.paragraph2 }}</p> -->
 								<!-- Puoi mettere anche immagine, tag, ecc. -->
 							</div>
 						</template>
