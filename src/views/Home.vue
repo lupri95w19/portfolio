@@ -541,7 +541,7 @@ onMounted(() => {
 							</div>
 						</div>
 
-						<!-- Step 2 -->
+						<!-- Step 4 -->
 						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
 							<!-- Data -->
 							<div class="w-full md:w-5/12 md:pr-8 order-1 md:text-right text-center">
@@ -567,6 +567,39 @@ onMounted(() => {
 									Sviluppavo software integrando competenze di front-end e back-end, e inoltre realizzavo artefatti
 									comunicativi come graphic designer
 								</p>
+							</div>
+						</div>
+
+						<!-- Step 5 -->
+						<div class="relative mb-16 sm:mb-24 md:mb-32 lg:mb-12 flex md:flex-row items-center justify-between">
+							<!-- Contenuto sinistro -->
+							<div
+								class="w-full md:w-5/12 mb-6 md:mb-0 md:pr-8 text-right order-1 sm:block flex flex-col flex-end items-end">
+								<h3
+									class="text-xl sm:text-2xl md:text-3xl font-bold text-white text-left md:text-right lg:text-left w-full">
+									Stampa 3D
+								</h3>
+								<p
+									class="text-sm sm:text-base text-gray-300 mt-2 md:w-full md:px-0 sm:pl-0 text-left md:text-right lg:text-left">
+									Ho iniziato a stampare in 3D, realizzando miniature, figure e oggetti di casa.
+								</p>
+							</div>
+
+							<!-- Punto centrale -->
+							<a
+								href="https://lucaprivitera.netlify.app/miniatures"
+								class="relative w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center group transition-all duration-300 z-10 order-2 md:mx-0 mx-4"
+								aria-label="Vai a dettagli scuole superiori 2013-2019"
+								target="_blank">
+								<div
+									class="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-[#FAB3A9] via-[#FDD0C5] to-[#FFE9E4] rounded-full transform group-hover:scale-110 sm:group-hover:scale-125 transition-transform duration-300"></div>
+							</a>
+
+							<!-- Data -->
+							<div class="w-full md:w-5/12 md:pl-8 order-3 md:order-3 text-left md:text-right">
+								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-yellow-500 md:text-left text-center">
+									2026
+								</h2>
 							</div>
 						</div>
 					</div>
