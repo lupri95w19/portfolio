@@ -88,6 +88,25 @@ watch(
 					<!-- PDF Desktop -->
 					<a
 						v-if="!isMobile"
+						@click="showPdf('/15065_Privitera_L_A_pergamena_triennio.pdf', 'CV di Luca Privitera')"
+						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6 cursor-pointer">
+						<i class="fas fa-file-download"></i>
+						<span>Laurea</span>
+					</a>
+
+					<!-- PDF Mobile -->
+					<a
+						v-else
+						href="/15065_Privitera_L_A_pergamena_triennio.pdf"
+						target="_blank"
+						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6">
+						<i class="fas fa-file-download"></i>
+						<span class="text-center">Laurea</span>
+					</a>
+
+					<!-- PDF Desktop -->
+					<a
+						v-if="!isMobile"
 						@click="showPdf('/AttestatoCodingWeek.pdf', 'Attestato Coding Week')"
 						class="flex items-center gap-2 px-4 py-2 bg-[#FF8C00] hover:bg-[#FFB347] text-black rounded transition-colors mb-6 cursor-pointer">
 						<i class="fas fa-file-download"></i>
@@ -156,8 +175,6 @@ watch(
 							target="_blank">
 							<i class="fa-brands fa-instagram"></i>
 						</a>
-
-						
 					</div>
 				</div>
 
