@@ -4,6 +4,18 @@ export const useMiniatureStoreDev = defineStore('miniProjects', {
 	state: () => ({
 		projects: [
 			{
+				id: 33,
+				imgpre: '/mini/pre/Scout-Squad.jpg',
+				image: '/mini/Scout-Squad.jpg',
+				images: [
+					{ type: 'image', src: '/mini/Scout-Squad.jpg' }
+				],
+				title: 'Scout Squad',
+				subtitle: 'Kill Team: Scout Squad',
+				tags: ['Warhammer40K', 'Sci-fi', 'Scout', 'Kill Team'],
+				specialClass: 'object-contain object-top',
+			},
+			{
 				id: 32,
 				imgpre: '/mini/pre/CHARMANDER.jpg',
 				image: '/mini/CHARMANDER.jpg',

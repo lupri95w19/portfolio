@@ -148,7 +148,7 @@ watch(searchQuery, () => {
 
 				<div class="mr-auto mb-10 w-full flex justify-center">
 					<div class="search flex">
-						<input class="w-full pl-5" v-model="searchQuery" type="text" placeholder="Cerca..." />
+						<input class="force-w-100 pl-5 text-black" v-model="searchQuery" type="text" placeholder="Cerca..." />
 
 						<button>
 							<span class="search-icon"></span>
@@ -510,4 +510,9 @@ button.customButton:hover {
 	}
 }
 
+
+.force-w-100{
+	width: 100% !important;
+	padding-left: 24px !important;
+}
 </style>
