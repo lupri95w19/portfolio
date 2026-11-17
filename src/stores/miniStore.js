@@ -4,6 +4,30 @@ export const useMiniatureStoreDev = defineStore('miniProjects', {
 	state: () => ({
 		projects: [
 			{
+				id: 35,
+				imgpre: '/mini/pre/Ballistus-Dreadnought.jpg',
+				image: '/mini/Ballistus-Dreadnought.jpg',
+				images: [
+					{ type: 'image', src: '/mini/Ballistus-Dreadnought.jpg' }
+				],
+				title: 'Ballistus Dreadnought',
+				subtitle: 'Warhammer40K',
+				tags: ['Warhammer40K', 'Sci-fi', 'Dreadnought', 'Ballistus', 'Space Marine',  'Mech'],
+				specialClass: 'object-contain object-top',
+			},
+			{
+				id: 34,
+				imgpre: '/mini/pre/Ravenwing-Black-Knights.jpg',
+				image: '/mini/Ravenwing-Black-Knights.jpg',
+				images: [
+					{ type: 'image', src: '/mini/Ravenwing-Black-Knights.jpg' }
+				],
+				title: 'Ravenwing Black Knights',
+				subtitle: 'Warhammer40K',
+				tags: ['Warhammer40K', 'Sci-fi', 'Bikes', 'Black Knights', 'Ravenwing'],
+				specialClass: 'object-contain object-top',
+			},
+			{
 				id: 33,
 				imgpre: '/mini/pre/Scout-Squad.jpg',
 				image: '/mini/Scout-Squad.jpg',
@@ -11,7 +35,7 @@ export const useMiniatureStoreDev = defineStore('miniProjects', {
 					{ type: 'image', src: '/mini/Scout-Squad.jpg' }
 				],
 				title: 'Scout Squad',
-				subtitle: 'Kill Team: Scout Squad',
+				subtitle: 'Warhammer40K',
 				tags: ['Warhammer40K', 'Sci-fi', 'Scout', 'Kill Team'],
 				specialClass: 'object-contain object-top',
 			},

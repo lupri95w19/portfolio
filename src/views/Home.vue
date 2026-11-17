@@ -735,8 +735,7 @@ onMounted(() => {
 								<h2
 									class="sm:inline inline-block md:text-left text-center text-black text-4xl font-inter relative group">
 									Miniatures
-									<span
-										class="cursor absolute right-0 top-0 h-full w-[5px] bg-black opacity-0 group-hover:opacity-100 animate-blink"></span>
+									<!-- <span class="cursor absolute right-0 top-0 h-full w-[5px] bg-black opacity-0 group-hover:opacity-100 animate-blink"></span> -->
 								</h2>
 							</a>
 							<a href="#">
